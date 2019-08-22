@@ -35,4 +35,7 @@ C:\Users\u1269344\Github\Slapstick\Slapstick\obj\x86\Debug\Slapstick.csproj.Core
 C:\Users\u1269344\Github\Slapstick\Slapstick\obj\x86\Debug\Slapstick.csproj.CopyComplete
 C:\Users\u1269344\Github\Slapstick\Slapstick\obj\x86\Debug\Slapstick.exe
 C:\Users\u1269344\Github\Slapstick\Slapstick\obj\x86\Debug\Slapstick.pdb
+<<<<<<< HEAD
 C:\Users\u1269344\Github\Slapstick\Slapstick\obj\x86\Debug\Slapstick.csprojAssemblyReference.cache
+=======
+>>>>>>> master

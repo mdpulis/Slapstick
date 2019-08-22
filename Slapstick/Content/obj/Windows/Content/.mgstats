@@ -1,8 +1,15 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+<<<<<<< HEAD
 "C:/Users/u1269344/Github/Slapstick/Slapstick/Content/Fonts/Arial.spritefont","C:/Users/u1269344/Github/Slapstick/Slapstick/Content/bin/Windows/Content/Fonts/Arial.xnb","FontDescriptionProcessor","SpriteFontContent",2068,70673,0.2717086
 "C:/Users/u1269344/Github/Slapstick/Slapstick/Content/Fonts/BigArial.spritefont","C:/Users/u1269344/Github/Slapstick/Slapstick/Content/bin/Windows/Content/Fonts/BigArial.xnb","FontDescriptionProcessor","SpriteFontContent",2068,267281,0.0519634
 "C:/Users/u1269344/Github/Slapstick/Slapstick/Content/Fonts/Score.spritefont","C:/Users/u1269344/Github/Slapstick/Slapstick/Content/bin/Windows/Content/Fonts/Score.xnb","FontDescriptionProcessor","SpriteFontContent",2068,21521,0.0289704
 "C:/Users/u1269344/Github/Slapstick/Slapstick/Content/Fonts/Timer.spritefont","C:/Users/u1269344/Github/Slapstick/Slapstick/Content/bin/Windows/Content/Fonts/Timer.xnb","FontDescriptionProcessor","SpriteFontContent",2068,21521,0.027958
+=======
+"C:/Users/u1269344/Github/Slapstick/Slapstick/Content/Fonts/Arial.spritefont","C:/Users/u1269344/Github/Slapstick/Slapstick/Content/bin/Windows/Content/Fonts/Arial.xnb","FontDescriptionProcessor","SpriteFontContent",2068,70673,0.2617432
+"C:/Users/u1269344/Github/Slapstick/Slapstick/Content/Fonts/BigArial.spritefont","C:/Users/u1269344/Github/Slapstick/Slapstick/Content/bin/Windows/Content/Fonts/BigArial.xnb","FontDescriptionProcessor","SpriteFontContent",2068,267281,0.0489538
+"C:/Users/u1269344/Github/Slapstick/Slapstick/Content/Fonts/Score.spritefont","C:/Users/u1269344/Github/Slapstick/Slapstick/Content/bin/Windows/Content/Fonts/Score.xnb","FontDescriptionProcessor","SpriteFontContent",2068,21521,0.028954
+"C:/Users/u1269344/Github/Slapstick/Slapstick/Content/Fonts/Timer.spritefont","C:/Users/u1269344/Github/Slapstick/Slapstick/Content/bin/Windows/Content/Fonts/Timer.xnb","FontDescriptionProcessor","SpriteFontContent",2068,21521,0.0249742
+>>>>>>> master
 "C:/Users/u1269344/Github/Slapstick/Slapstick/Content/Images/ball.png","C:/Users/u1269344/Github/Slapstick/Slapstick/Content/bin/Windows/Content/Images/ball.xnb","TextureProcessor","Texture2DContent",8368,16469,0.0219733
 "C:/Users/u1269344/Github/Slapstick/Slapstick/Content/Images/Clapping_Hands_Emoji_grande.png","C:/Users/u1269344/Github/Slapstick/Slapstick/Content/bin/Windows/Content/Images/Clapping_Hands_Emoji_grande.xnb","TextureProcessor","Texture2DContent",248377,1440085,0.0489573
 "C:/Users/u1269344/Github/Slapstick/Slapstick/Content/Images/earth.png","C:/Users/u1269344/Github/Slapstick/Slapstick/Content/bin/Windows/Content/Images/earth.xnb","TextureProcessor","Texture2DContent",52980,133301,0.0139936
