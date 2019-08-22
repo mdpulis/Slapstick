@@ -16,18 +16,18 @@ namespace Slapstick
         bool isNoisy;
         Texture2D tex, noisy, normy;
         System.Random random = new System.Random();
-        public Person makePerson(GraphicsDeviceManager gdm)
+        public Person makePerson(GraphicsDeviceManager gdm, int bpm)
         {
             Person p = new Person();
             direction = random.Next(2) == 1 ? Direction.right : Direction.left;
             isNoisy = random.Next(2) == 1 ? true : false;
             tex = isNoisy ? noisy : normy;
-            p.Initialize(direction, isNoisy, (random.Next(4) + 1) * 5, 0, tex, gdm);
+            p.Initialize(direction, isNoisy, random.Next(5) * 5 + bpm, 0, tex, gdm);
             return p;
         }
         public void LoadContent(ContentManager Content)
         {
-            noisy = Content.Load<Texture2D>("Images/ball");
+            noisy = Content.Load<Texture2D>("Images/shuttle");
             normy = Content.Load<Texture2D>("Images/ball");
         }
     }

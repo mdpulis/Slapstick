@@ -27,7 +27,7 @@ namespace Slapstick
         PersonManager pm = new PersonManager();
         List<Person> people = new List<Person>();
         double personTimer;
-
+        double bpmIncreaseTimer;
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -95,15 +95,30 @@ namespace Slapstick
 
 
             personTimer += gameTime.ElapsedGameTime.TotalSeconds;
-            if (personTimer >= 5)
+            bpmIncreaseTimer += gameTime.ElapsedGameTime.TotalSeconds;
+            if (personTimer >= 6 - gameUI.beatsPerMinute * 2.0 / 100)
             {
-                people.Add(pm.makePerson(graphics));
+                people.Add(pm.makePerson(graphics, gameUI.beatsPerMinute));
                 personTimer = 0;
             }
+            if(bpmIncreaseTimer >= 30)
+            {
+                gameUI.addBPM();
+                bpmIncreaseTimer = 0;
+            }
 
+            int peopleIndexToDelete = -1;
             foreach (Person p in people)
             {
                 p.Update(gameTime);
+                if (p.position.X < 0 || p.position.X > 1920)
+                {
+                    peopleIndexToDelete = people.IndexOf(p);
+                }
+            }
+            if(peopleIndexToDelete != -1)
+            {
+                people.RemoveAt(peopleIndexToDelete);
             }
 
             playerInput.Update(gameTime, people);
@@ -125,10 +140,9 @@ namespace Slapstick
 
             playerInput.Draw(spriteBatch, gameTime);
             //spriteBatch.Draw(shuttle, new Vector2(450, 240), Color.White);
-            foreach (Person p in people)
-                spriteBatch.Draw(p.texture, p.position, Color.White);
+            foreach (Person p in people)       
             {
-                // TODO: Add your drawing code here
+                spriteBatch.Draw(p.texture, p.position, Color.White);
             }
 
             spriteBatch.DrawString(fontScore, "Score : " + gameUI.score, new Vector2(0, 0), Color.Red);
