@@ -113,6 +113,18 @@
 /processorParam:TextureFormat=Color
 /build:Images/square_150x150.png
 
+#begin Images/square_150x150_white.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Images/square_150x150_white.png
+
 #begin Images/square_200x200.png
 /importer:TextureImporter
 /processor:TextureProcessor

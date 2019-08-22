@@ -66,6 +66,7 @@ C:\Users\u1269344\Github\Slapstick\Slapstick\obj\x86\Debug\Slapstick.exe
 C:\Users\u1269344\Github\Slapstick\Slapstick\obj\x86\Debug\Slapstick.pdb
 C:\Users\u1269344\Github\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Images\ball.xnb
 C:\Users\u1273354\Desktop\Projects\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Images\ball.xnb
+<<<<<<< Updated upstream
 C:\Users\u1274834\source\repos\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Images\ball.xnb
 C:\Users\u1274834\source\repos\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Images\Clapping_Hands_Emoji_grande.xnb
 C:\Users\u1274834\source\repos\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Images\earth.xnb
@@ -104,3 +105,6 @@ C:\Users\u1269344\Github\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Fonts
 C:\Users\u1269344\Github\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Fonts\Timer.xnb
 C:\Users\u1269344\Github\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Sounds\metronome_beat.xnb
 C:\Users\u1274834\source\repos\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Sounds\metronome_beat.xnb
+=======
+C:\Users\u1273354\Desktop\Projects\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Images\square_150x150_white.xnb
+>>>>>>> Stashed changes

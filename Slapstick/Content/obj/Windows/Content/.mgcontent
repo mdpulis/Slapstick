@@ -4,6 +4,7 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
+<<<<<<< Updated upstream
     <File>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/Fonts/Arial.spritefont</File>
     <File>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/Fonts/BigArial.spritefont</File>
     <File>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/Fonts/Score.spritefont</File>
@@ -18,6 +19,20 @@
     <File>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/Images/stars.jpg</File>
     <File>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/Images/theatre.jpg</File>
     <File>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/Sounds/metronome_beat.wav</File>
+=======
+    <File>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Fonts/Arial.spritefont</File>
+    <File>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Fonts/BigArial.spritefont</File>
+    <File>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Images/ball.png</File>
+    <File>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Images/Clapping_Hands_Emoji_grande.png</File>
+    <File>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Images/earth.png</File>
+    <File>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Images/shuttle.png</File>
+    <File>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Images/SmileyWalk.png</File>
+    <File>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Images/square_150x150.png</File>
+    <File>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Images/square_150x150_white.png</File>
+    <File>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Images/square_200x200.png</File>
+    <File>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Images/stars.jpg</File>
+    <File>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Images/theatre.jpg</File>
+>>>>>>> Stashed changes
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />
@@ -32,7 +47,10 @@
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
+<<<<<<< Updated upstream
     <File xsi:nil="true" />
     <File xsi:nil="true" />
+=======
+>>>>>>> Stashed changes
   </DestFiles>
 </SourceFileCollection>
