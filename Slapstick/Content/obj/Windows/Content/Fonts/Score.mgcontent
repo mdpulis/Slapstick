@@ -3,11 +3,7 @@
   <SourceFile>C:/Users/u1269344/Github/Slapstick/Slapstick/Content/Fonts/Score.spritefont</SourceFile>
   <SourceTime>2019-08-22T14:26:46.6036165-06:00</SourceTime>
   <DestFile>C:/Users/u1269344/Github/Slapstick/Slapstick/Content/bin/Windows/Content/Fonts/Score.xnb</DestFile>
-<<<<<<< HEAD
-  <DestTime>2019-08-22T15:49:14.3472702-06:00</DestTime>
-=======
-  <DestTime>2019-08-22T15:21:48.2423768-06:00</DestTime>
->>>>>>> master
+  <DestTime>2019-08-22T15:59:51.0365389-06:00</DestTime>
   <Importer>FontDescriptionImporter</Importer>
   <ImporterTime>2018-12-08T09:35:54-07:00</ImporterTime>
   <Processor>FontDescriptionProcessor</Processor>
