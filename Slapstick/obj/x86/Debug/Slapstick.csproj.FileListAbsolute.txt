@@ -102,3 +102,4 @@ C:\Users\u1274834\source\repos\Slapstick\Slapstick\bin\Windows\x86\Debug\Content
 C:\Users\u1274834\source\repos\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Fonts\Timer.xnb
 C:\Users\u1269344\Github\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Fonts\Score.xnb
 C:\Users\u1269344\Github\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Fonts\Timer.xnb
+C:\Users\u1269344\Github\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Sounds\metronome_beat.xnb

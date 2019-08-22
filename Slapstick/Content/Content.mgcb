@@ -149,3 +149,9 @@
 /processorParam:TextureFormat=Color
 /build:Images/theatre.jpg
 
+#begin Sounds/metronome_beat.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/metronome_beat.wav
+

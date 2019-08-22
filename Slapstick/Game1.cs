@@ -28,6 +28,8 @@ namespace Slapstick
         List<Person> people = new List<Person>();
         double personTimer;
         double bpmIncreaseTimer;
+
+        SoundManager sm = new SoundManager();
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -62,7 +64,7 @@ namespace Slapstick
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             pm.LoadContent(Content);
-
+            sm.LoadContent(Content);
             background = Content.Load<Texture2D>("Images/theatre");
             font = Content.Load<SpriteFont>("Fonts/Arial");
             fontScore = Content.Load<SpriteFont>("Fonts/Score");
@@ -120,6 +122,8 @@ namespace Slapstick
             {
                 people.RemoveAt(peopleIndexToDelete);
             }
+
+            sm.Update(gameTime, gameUI);
 
             playerInput.Update(gameTime, people);
 

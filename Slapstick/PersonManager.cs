@@ -22,7 +22,7 @@ namespace Slapstick
             direction = random.Next(2) == 1 ? Direction.right : Direction.left;
             isNoisy = random.Next(2) == 1 ? true : false;
             tex = isNoisy ? noisy : normy;
-            p.Initialize(direction, isNoisy, random.Next(5) * 5 + bpm, 0, tex, gdm);
+            p.Initialize(direction, isNoisy, random.Next(5) * 5 + bpm, 0, tex, gdm); //Third value is speed, increases as BPM increases. 4th value is unused but could be used for different characters
             return p;
         }
         public void LoadContent(ContentManager Content)
