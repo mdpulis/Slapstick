@@ -57,5 +57,15 @@ namespace Slapstick
         {
 
         }
+
+        public float getCenterX()
+        {
+            return position.X + texture.Width / 2;
+        }
+
+        public bool isNoisy()
+        {
+            return noisy;
+        }
     }
 }
