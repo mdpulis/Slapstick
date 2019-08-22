@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.Collections.Generic;
 
 namespace Slapstick
 {
@@ -72,7 +73,7 @@ namespace Slapstick
         /// checking for collisions, gathering input, and playing audio.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
-        public void Update(GameTime gameTime)
+        public void Update(GameTime gameTime, List<Person> people)
         {
             
 

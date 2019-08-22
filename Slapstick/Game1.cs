@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.Collections.Generic;
 
 namespace Slapstick
 {
@@ -21,8 +22,9 @@ namespace Slapstick
         PlayerInput playerInput;
 
         PersonManager pm = new PersonManager();
-        System.Collections.Generic.List<Person> people = new System.Collections.Generic.List<Person>();
+        List<Person> people = new List<Person>();
         double personTimer;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -85,8 +87,6 @@ namespace Slapstick
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            // TODO: Add your update logic here
-            playerInput.Update(gameTime);
 
             personTimer += gameTime.ElapsedGameTime.TotalSeconds;
             if (personTimer >= 5)
@@ -99,6 +99,9 @@ namespace Slapstick
             {
                 p.Update(gameTime);
             }
+
+            playerInput.Update(gameTime, people);
+
 
             base.Update(gameTime);
         }
