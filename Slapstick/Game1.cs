@@ -20,6 +20,9 @@ namespace Slapstick
         //Classes responsible for managing lots of content and functionality
         PlayerInput playerInput;
 
+        PersonManager pm = new PersonManager();
+        System.Collections.Generic.List<Person> people = new System.Collections.Generic.List<Person>();
+        double personTimer;
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -52,6 +55,7 @@ namespace Slapstick
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            pm.LoadContent(Content);
 
             background = Content.Load<Texture2D>("Images/theatre");
             font = Content.Load<SpriteFont>("Fonts/Arial");
@@ -84,6 +88,18 @@ namespace Slapstick
             // TODO: Add your update logic here
             playerInput.Update(gameTime);
 
+            personTimer += gameTime.ElapsedGameTime.TotalSeconds;
+            if (personTimer >= 5)
+            {
+                people.Add(pm.makePerson(graphics));
+                personTimer = 0;
+            }
+
+            foreach (Person p in people)
+            {
+                p.Update(gameTime);
+            }
+
             base.Update(gameTime);
         }
 
@@ -94,7 +110,13 @@ namespace Slapstick
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
+            spriteBatch.Begin();
+            foreach (Person p in people)
+                spriteBatch.Draw(p.texture, p.position, Color.White);
+            {
+            // TODO: Add your drawing code here
+            spriteBatch.End();
+            }
 
             spriteBatch.Begin();
 
