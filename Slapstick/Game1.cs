@@ -15,6 +15,9 @@ namespace Slapstick
 
         Texture2D background;
         SpriteFont font;
+        private SpriteFont fontScore;
+        private SpriteFont fontTimer;
+        private UI gameUI;
         
 
         //Classes responsible for managing lots of content and functionality
@@ -43,6 +46,7 @@ namespace Slapstick
         {
             // TODO: Add your initialization logic here
             playerInput = new PlayerInput();
+            gameUI = new UI();
 
             base.Initialize();
         }
@@ -59,6 +63,8 @@ namespace Slapstick
 
             background = Content.Load<Texture2D>("Images/theatre");
             font = Content.Load<SpriteFont>("Fonts/Arial");
+            fontScore = Content.Load<SpriteFont>("Fonts/Score");
+            fontTimer = Content.Load<SpriteFont>("Fonts/Timer");
 
 
             playerInput.LoadContent(Content);
@@ -121,6 +127,9 @@ namespace Slapstick
             {
                 // TODO: Add your drawing code here
             }
+
+            spriteBatch.DrawString(fontScore, "Score : " + gameUI.score, new Vector2(0, 0), Color.Red);
+            spriteBatch.DrawString(fontTimer, "Time " + gameTime.TotalGameTime.Minutes + ":" + gameTime.TotalGameTime.Seconds, new Vector2(0, 0), Color.Red);
             spriteBatch.End();
 
             base.Draw(gameTime);
