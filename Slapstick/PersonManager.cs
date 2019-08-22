@@ -27,8 +27,8 @@ namespace Slapstick
         }
         public void LoadContent(ContentManager Content)
         {
-            noisy = Content.Load<Texture2D>("ball");
-            normy = Content.Load<Texture2D>("ball");
+            noisy = Content.Load<Texture2D>("Images/ball");
+            normy = Content.Load<Texture2D>("Images/ball");
         }
     }
 }

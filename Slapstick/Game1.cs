@@ -111,20 +111,16 @@ namespace Slapstick
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.Begin();
-            foreach (Person p in people)
-                spriteBatch.Draw(p.texture, p.position, Color.White);
-            {
-            // TODO: Add your drawing code here
-            spriteBatch.End();
-            }
-
-            spriteBatch.Begin();
-
+            
             spriteBatch.Draw(background, new Rectangle(0, 0, 1920, 1080), Color.White);
 
             playerInput.Draw(spriteBatch, gameTime);
             //spriteBatch.Draw(shuttle, new Vector2(450, 240), Color.White);
-
+            foreach (Person p in people)
+                spriteBatch.Draw(p.texture, p.position, Color.White);
+            {
+                // TODO: Add your drawing code here
+            }
             spriteBatch.End();
 
             base.Draw(gameTime);
