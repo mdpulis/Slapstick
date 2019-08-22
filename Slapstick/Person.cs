@@ -27,12 +27,12 @@ namespace Slapstick
             if (dir == Direction.left)
             {
                 position = new Vector2(gdm.PreferredBackBufferWidth,
-                gdm.PreferredBackBufferHeight / 2);
+                700);
             }
             else
             {
                 position = new Vector2(0,
-                gdm.PreferredBackBufferHeight / 2);
+                700);
             }
 
         }
@@ -48,6 +48,7 @@ namespace Slapstick
             {
                 position.X += speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
             }
+            
 
         }
 
