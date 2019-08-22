@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.757
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slapstick", "Slapstick\Slapstick.csproj", "{4ED637F1-3912-4C30-8842-1873E621AC39}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A1F97AAC-C67E-45AD-89B5-C08C2BD50ECD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4ED637F1-3912-4C30-8842-1873E621AC39}.Debug|x86.ActiveCfg = Debug|x86
+		{4ED637F1-3912-4C30-8842-1873E621AC39}.Debug|x86.Build.0 = Debug|x86
+		{4ED637F1-3912-4C30-8842-1873E621AC39}.Release|x86.ActiveCfg = Release|x86
+		{4ED637F1-3912-4C30-8842-1873E621AC39}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EB4CB33E-A5E5-483D-BC12-E092A5AA177C}
+	EndGlobalSection
+EndGlobal
