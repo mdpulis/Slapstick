@@ -24,6 +24,8 @@ namespace Slapstick
             //if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
             //    Exit();
 
+            //testing testing
+
             // TODO: Add your update logic here
         }
     }
