@@ -15,7 +15,11 @@ namespace Slapstick
         SpriteBatch spriteBatch;
 
         Texture2D background;
+        Texture2D tree;
+        Texture2D sky;
+        Texture2D cloud;
         SpriteFont font;
+
         private SpriteFont fontScore;
         private SpriteFont fontTimer;
         private UI gameUI;
@@ -30,6 +34,7 @@ namespace Slapstick
         double bpmIncreaseTimer;
 
         SoundManager sm = new SoundManager();
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -65,7 +70,11 @@ namespace Slapstick
             spriteBatch = new SpriteBatch(GraphicsDevice);
             pm.LoadContent(Content);
             sm.LoadContent(Content);
-            background = Content.Load<Texture2D>("Images/theatre");
+            background = Content.Load<Texture2D>("Images/chinese_theatre");
+            tree = Content.Load<Texture2D>("Images/tree");
+            sky = Content.Load<Texture2D>("Images/sky");
+            cloud = Content.Load<Texture2D>("Images/cloud");
+
             font = Content.Load<SpriteFont>("Fonts/Arial");
             fontScore = Content.Load<SpriteFont>("Fonts/Score");
             fontTimer = Content.Load<SpriteFont>("Fonts/Timer");
@@ -139,8 +148,11 @@ namespace Slapstick
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.Begin();
-            
+
+            spriteBatch.Draw(sky, new Rectangle(0, 0, 1920, 442), Color.White);
             spriteBatch.Draw(background, new Rectangle(0, 0, 1920, 1080), Color.White);
+            spriteBatch.Draw(cloud, new Vector2(700, 0), Color.White);
+            spriteBatch.Draw(tree, new Vector2(300, 900), Color.White);
 
             playerInput.Draw(spriteBatch, gameTime);
             //spriteBatch.Draw(shuttle, new Vector2(450, 240), Color.White);

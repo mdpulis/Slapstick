@@ -273,7 +273,7 @@ namespace Slapstick
         {
             for(int i = 0; i < people.Count; i++)
             {
-                if (people[i].position.X > xStartPosition && people[i].position.X < xEndPosition)
+                if (people[i].getCenterX() > xStartPosition && people[i].getCenterX() < xEndPosition)
                 {
                     people.RemoveAt(i);
                     i--;
