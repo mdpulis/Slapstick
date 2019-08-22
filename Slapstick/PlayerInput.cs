@@ -184,7 +184,7 @@ namespace Slapstick
             {
                 aCooldownTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
                 float aTimePercentage = aCooldownTime / LONG_COOLDOWN_TIME;
-                aFill = (int)(aTimePercentage * 150.0f);
+                aFill = (int)(aTimePercentage * PAD_PIXEL_HEIGHT);
 
                 if (aCooldownTime >= LONG_COOLDOWN_TIME)
                 {
@@ -198,7 +198,7 @@ namespace Slapstick
             {
                 sCooldownTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
                 float sTimePercentage = sCooldownTime / MEDIUM_COOLDOWN_TIME;
-                sFill = (int)(sTimePercentage * 150.0f);
+                sFill = (int)(sTimePercentage * PAD_PIXEL_HEIGHT);
 
                 if (sCooldownTime >= MEDIUM_COOLDOWN_TIME)
                 {
@@ -212,7 +212,7 @@ namespace Slapstick
             {
                 dCooldownTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
                 float dTimePercentage = dCooldownTime / SHORT_COOLDOWN_TIME;
-                dFill = (int)(dTimePercentage * 150.0f);
+                dFill = (int)(dTimePercentage * PAD_PIXEL_HEIGHT);
 
                 if (dCooldownTime >= SHORT_COOLDOWN_TIME)
                 {
@@ -226,7 +226,7 @@ namespace Slapstick
             {
                 jCooldownTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
                 float jTimePercentage = jCooldownTime / SHORT_COOLDOWN_TIME;
-                jFill = (int)(jTimePercentage * 150.0f);
+                jFill = (int)(jTimePercentage * PAD_PIXEL_HEIGHT);
 
                 if (jCooldownTime >= SHORT_COOLDOWN_TIME)
                 {
@@ -240,7 +240,7 @@ namespace Slapstick
             {
                 kCooldownTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
                 float kTimePercentage = kCooldownTime / MEDIUM_COOLDOWN_TIME;
-                kFill = (int)(kTimePercentage * 150.0f);
+                kFill = (int)(kTimePercentage * PAD_PIXEL_HEIGHT);
 
                 if (kCooldownTime >= MEDIUM_COOLDOWN_TIME)
                 {
@@ -254,7 +254,7 @@ namespace Slapstick
             {
                 lCooldownTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
                 float lTimePercentage = lCooldownTime / LONG_COOLDOWN_TIME;
-                lFill = (int)(lTimePercentage * 150.0f);
+                lFill = (int)(lTimePercentage * PAD_PIXEL_HEIGHT);
 
                 if (lCooldownTime >= LONG_COOLDOWN_TIME)
                 {
@@ -273,7 +273,7 @@ namespace Slapstick
         {
             for(int i = 0; i < people.Count; i++)
             {
-                if (people[i].position.X > xStartPosition || people[i].position.Y < xEndPosition)
+                if (people[i].position.X > xStartPosition && people[i].position.X < xEndPosition)
                 {
                     people.RemoveAt(i);
                     i--;
