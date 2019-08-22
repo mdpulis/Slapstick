@@ -150,7 +150,7 @@ namespace Slapstick
             }
 
             spriteBatch.DrawString(fontScore, "Score : " + gameUI.score, new Vector2(0, 0), Color.Red);
-            spriteBatch.DrawString(fontTimer, "Time " + gameTime.TotalGameTime.Minutes + ":" + gameTime.TotalGameTime.Seconds, new Vector2(0, 0), Color.Red);
+            spriteBatch.DrawString(fontTimer, "Time " + gameTime.TotalGameTime.Minutes + ":" + gameTime.TotalGameTime.Seconds, new Vector2(0, 15), Color.Red);
             spriteBatch.End();
 
             base.Draw(gameTime);

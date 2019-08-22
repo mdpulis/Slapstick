@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/u1269344/Github/Slapstick/Slapstick/Content/Images/theatre.jpg</SourceFile>
-  <SourceTime>2019-08-22T12:41:42.9104099-06:00</SourceTime>
-  <DestFile>C:/Users/u1269344/Github/Slapstick/Slapstick/Content/bin/Windows/Content/Images/theatre.xnb</DestFile>
-  <DestTime>2019-08-22T14:37:16.2047619-06:00</DestTime>
+  <SourceFile>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/Images/theatre.jpg</SourceFile>
+  <SourceTime>2019-08-22T12:47:50.7753464-06:00</SourceTime>
+  <DestFile>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/bin/Windows/Content/Images/theatre.xnb</DestFile>
+  <DestTime>2019-08-22T15:15:10.6393401-06:00</DestTime>
   <Importer>TextureImporter</Importer>
-  <ImporterTime>2018-12-08T09:35:54-07:00</ImporterTime>
+  <ImporterTime>2019-08-22T06:59:50-06:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
-  <ProcessorTime>2018-12-08T09:35:54-07:00</ProcessorTime>
+  <ProcessorTime>2019-08-22T06:59:50-06:00</ProcessorTime>
   <Parameters>
     <Key>ColorKeyColor</Key>
     <Value>255,0,255,255</Value>
