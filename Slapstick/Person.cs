@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Slapstick
 {
-    class Person
+    public class Person
     {
         private Direction direction;
 
