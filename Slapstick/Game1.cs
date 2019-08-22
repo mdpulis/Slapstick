@@ -9,14 +9,24 @@ namespace Slapstick
     /// </summary>
     public class Game1 : Game
     {
+        //Sprites
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+        Texture2D background;
+        SpriteFont font;
+        
+
+        //Classes responsible for managing lots of content and functionality
         PlayerInput playerInput;
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
+            graphics.PreferredBackBufferWidth = 1920;  // set this value to the desired width of your window
+            graphics.PreferredBackBufferHeight = 1080;   // set this value to the desired height of your window
+            graphics.ApplyChanges();
+
             Content.RootDirectory = "Content";
         }
 
@@ -29,6 +39,7 @@ namespace Slapstick
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            playerInput = new PlayerInput();
 
             base.Initialize();
         }
@@ -42,7 +53,11 @@ namespace Slapstick
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            // TODO: use this.Content to load your game content here
+            background = Content.Load<Texture2D>("Images/theatre");
+            font = Content.Load<SpriteFont>("Fonts/Arial");
+
+
+            playerInput.LoadContent(Content);
         }
 
         /// <summary>
@@ -52,6 +67,8 @@ namespace Slapstick
         protected override void UnloadContent()
         {
             // TODO: Unload any non ContentManager content here
+
+            playerInput.UnloadContent();
         }
 
         /// <summary>
@@ -78,7 +95,15 @@ namespace Slapstick
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
+
+            spriteBatch.Begin();
+
+            spriteBatch.Draw(background, new Rectangle(0, 0, 1920, 1080), Color.White);
+
+            playerInput.Draw(spriteBatch, gameTime);
+            //spriteBatch.Draw(shuttle, new Vector2(450, 240), Color.White);
+
+            spriteBatch.End();
 
             base.Draw(gameTime);
         }
