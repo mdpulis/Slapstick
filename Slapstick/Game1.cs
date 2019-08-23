@@ -14,21 +14,18 @@ namespace Slapstick
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        Texture2D background;
-        Texture2D tree;
-        Texture2D sky;
-        Texture2D cloud;
         SpriteFont font;
 
         private SpriteFont fontScore;
         private SpriteFont fontTimer;
-        private UI gameUI;
         
 
         //Classes responsible for managing lots of content and functionality
-        PlayerInput playerInput;
+        private PlayerInput playerInput = new PlayerInput();
+        private BackgroundManager backgroundManager = new BackgroundManager();
+        private UI gameUI = new UI();
+        private PersonManager pm = new PersonManager();
 
-        PersonManager pm = new PersonManager();
         List<Person> people = new List<Person>();
         double personTimer;
         double bpmIncreaseTimer;
@@ -54,8 +51,6 @@ namespace Slapstick
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            playerInput = new PlayerInput();
-            gameUI = new UI();
 
             base.Initialize();
         }
@@ -68,18 +63,14 @@ namespace Slapstick
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            pm.LoadContent(Content);
-            sm.LoadContent(Content);
-            background = Content.Load<Texture2D>("Images/chinese_theatre");
-            tree = Content.Load<Texture2D>("Images/tree");
-            sky = Content.Load<Texture2D>("Images/sky");
-            cloud = Content.Load<Texture2D>("Images/cloud");
-
+            
             font = Content.Load<SpriteFont>("Fonts/Arial");
             fontScore = Content.Load<SpriteFont>("Fonts/Score");
             fontTimer = Content.Load<SpriteFont>("Fonts/Timer");
 
-
+            pm.LoadContent(Content);
+            sm.LoadContent(Content);
+            backgroundManager.LoadContent(Content);
             playerInput.LoadContent(Content);
         }
 
@@ -91,6 +82,7 @@ namespace Slapstick
         {
             // TODO: Unload any non ContentManager content here
 
+            backgroundManager.UnloadContent();
             playerInput.UnloadContent();
         }
 
@@ -149,13 +141,9 @@ namespace Slapstick
             GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.Begin();
 
-            spriteBatch.Draw(sky, new Rectangle(0, 0, 1920, 442), Color.White);
-            spriteBatch.Draw(background, new Rectangle(0, 0, 1920, 1080), Color.White);
-            spriteBatch.Draw(cloud, new Vector2(700, 0), Color.White);
-            spriteBatch.Draw(tree, new Vector2(300, 900), Color.White);
-
+            backgroundManager.Draw(spriteBatch, gameTime);
             playerInput.Draw(spriteBatch, gameTime);
-            //spriteBatch.Draw(shuttle, new Vector2(450, 240), Color.White);
+
             foreach (Person p in people)       
             {
                 spriteBatch.Draw(p.texture, p.position, Color.White);

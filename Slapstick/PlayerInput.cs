@@ -20,13 +20,6 @@ namespace Slapstick
         private const int PAD_PIXEL_WIDTH = 150;
         private const int PAD_PIXEL_HEIGHT = 150;
 
-        //private Texture2D aPad;
-        //private Texture2D sPad;
-        //private Texture2D dPad;
-        //private Texture2D jPad;
-        //private Texture2D kPad;
-        //private Texture2D lPad;
-
         private Texture2D whiteSquare;
         private Texture2D graySquare;
 
@@ -93,16 +86,8 @@ namespace Slapstick
 
         public void LoadContent(ContentManager Content)
         {
-            //aPad = Content.Load<Texture2D>("Images/square_150x150");
-            //sPad = Content.Load<Texture2D>("Images/square_150x150");
-            //dPad = Content.Load<Texture2D>("Images/square_150x150");
-            //jPad = Content.Load<Texture2D>("Images/square_150x150");
-            //kPad = Content.Load<Texture2D>("Images/square_150x150");
-            //lPad = Content.Load<Texture2D>("Images/square_150x150");
-
             graySquare = Content.Load<Texture2D>("Images/square_150x150");
             whiteSquare = Content.Load<Texture2D>("Images/square_150x150_white");
-
 
             font = Content.Load<SpriteFont>("Fonts/BigArial");
 
@@ -279,13 +264,6 @@ namespace Slapstick
                     i--;
                 }
             }
-            //foreach(Person p in people)
-            //{
-            //    if(p.position.X > xStartPosition || p.position.Y < xEndPosition)
-            //    {
-            //        people.Remove(p);
-            //    }
-            //}
         }
 
 
