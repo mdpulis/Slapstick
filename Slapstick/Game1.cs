@@ -29,6 +29,7 @@ namespace Slapstick
         List<Person> people = new List<Person>();
         double personTimer;
         double bpmIncreaseTimer;
+        Vector2 zeroVector = new Vector2(0, 0);
 
         SoundManager sm = new SoundManager();
 
@@ -146,7 +147,7 @@ namespace Slapstick
 
             foreach (Person p in people)       
             {
-                spriteBatch.Draw(p.texture, p.position, Color.White);
+                spriteBatch.Draw(p.texture, p.position, p.currentFrame, Color.White, 0.0f, zeroVector, 1.0f, p.spriteEffects, 0.0f);
             }
 
             spriteBatch.DrawString(fontScore, "Score : " + gameUI.score, new Vector2(0, 0), Color.Red);
