@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
+using System;
 
 namespace Slapstick
 {
@@ -18,6 +19,7 @@ namespace Slapstick
 
         private SpriteFont fontScore;
         private SpriteFont fontTimer;
+        private Texture2D celebTexture;
         
 
         //Classes responsible for managing lots of content and functionality
@@ -27,6 +29,7 @@ namespace Slapstick
         private PersonManager pm = new PersonManager();
 
         List<Person> people = new List<Person>();
+        private Celeb celeb;
         double personTimer;
         double bpmIncreaseTimer;
         Vector2 zeroVector = new Vector2(0, 0);
@@ -52,7 +55,6 @@ namespace Slapstick
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
             base.Initialize();
         }
 
@@ -68,7 +70,8 @@ namespace Slapstick
             font = Content.Load<SpriteFont>("Fonts/Arial");
             fontScore = Content.Load<SpriteFont>("Fonts/Score");
             fontTimer = Content.Load<SpriteFont>("Fonts/Timer");
-
+            celebTexture = Content.Load<Texture2D>("Images/shuttle");
+            celeb = new Celeb(celebTexture, graphics);
             pm.LoadContent(Content);
             sm.LoadContent(Content);
             backgroundManager.LoadContent(Content);
@@ -85,6 +88,7 @@ namespace Slapstick
 
             backgroundManager.UnloadContent();
             playerInput.UnloadContent();
+            
         }
 
         /// <summary>
@@ -119,6 +123,11 @@ namespace Slapstick
                 {
                     peopleIndexToDelete = people.IndexOf(p);
                 }
+                if(( Math.Floor(p.position.X) == celeb.position.X - p.currentFrame.Width) || (Math.Floor(p.position.X) == celeb.position.X + celeb.texture.Width))
+                {
+                    peopleIndexToDelete = people.IndexOf(p);
+                    celeb.collision(p.isNoisy());
+                }
             }
             if(peopleIndexToDelete != -1)
             {
@@ -129,6 +138,10 @@ namespace Slapstick
 
             playerInput.Update(gameTime, people);
 
+            if(celeb.lives == 0)
+            {
+                Exit();
+            }
 
             base.Update(gameTime);
         }
@@ -143,15 +156,17 @@ namespace Slapstick
             spriteBatch.Begin();
 
             backgroundManager.Draw(spriteBatch, gameTime);
+            celeb.Draw(spriteBatch);
             playerInput.Draw(spriteBatch, gameTime);
 
+            
             foreach (Person p in people)       
             {
                 spriteBatch.Draw(p.texture, p.position, p.currentFrame, Color.White, 0.0f, zeroVector, 1.0f, p.spriteEffects, 0.0f);
             }
 
-            spriteBatch.DrawString(fontScore, "Score : " + gameUI.score, new Vector2(0, 0), Color.Red);
-            spriteBatch.DrawString(fontTimer, "Time " + gameTime.TotalGameTime.Minutes + ":" + gameTime.TotalGameTime.Seconds, new Vector2(0, 15), Color.Red);
+            spriteBatch.DrawString(fontScore, "Score : " + gameUI.score, new Vector2(0, 0), Color.CornflowerBlue);
+            spriteBatch.DrawString(fontTimer, "Time " + gameTime.TotalGameTime.Minutes + ":" + gameTime.TotalGameTime.Seconds, new Vector2(0, 30), Color.Red);
             spriteBatch.End();
 
             base.Draw(gameTime);
