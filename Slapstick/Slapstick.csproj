@@ -41,6 +41,7 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="BackgroundManager.cs" />
     <Compile Include="SoundManager.cs" />
     <Compile Include="UI.cs" />
     <Compile Include="Game1.cs" />
