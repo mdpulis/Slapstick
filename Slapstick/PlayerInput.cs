@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace Slapstick
 {
@@ -256,6 +257,7 @@ namespace Slapstick
         /// </summary>
         public void Slap(int xStartPosition, int xEndPosition, List<Person> people)
         {
+            Debug.WriteLine("test");
             for(int i = 0; i < people.Count; i++)
             {
                 if (people[i].getCenterX() > xStartPosition && people[i].getCenterX() < xEndPosition)

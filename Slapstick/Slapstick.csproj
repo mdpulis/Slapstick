@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="BackgroundManager.cs" />
     <Compile Include="Celeb.cs" />
+    <Compile Include="GameState.cs" />
     <Compile Include="SoundManager.cs" />
     <Compile Include="UI.cs" />
     <Compile Include="Game1.cs" />

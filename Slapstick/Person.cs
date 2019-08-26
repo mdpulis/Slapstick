@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -80,8 +81,9 @@ namespace Slapstick
 
         public float getCenterX()
         {
-            return position.X + texture.Width / 2;
+            return position.X + (150 / 2);
         }
+
         public bool isNoisy()
         {
             return noisy;
