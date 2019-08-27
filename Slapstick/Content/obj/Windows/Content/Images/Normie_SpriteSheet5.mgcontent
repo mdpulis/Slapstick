@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Images/Normie_SpriteSheet5.png</SourceFile>
-  <SourceTime>2019-08-26T11:39:59.7771808-06:00</SourceTime>
-  <DestFile>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/bin/Windows/Content/Images/Normie_SpriteSheet5.xnb</DestFile>
-  <DestTime>2019-08-27T13:54:06.0438488-06:00</DestTime>
+  <SourceFile>C:/Users/u1269344/Github/Slapstick/Slapstick/Content/Images/Normie_SpriteSheet5.png</SourceFile>
+  <SourceTime>2019-08-24T16:01:53.1255455-06:00</SourceTime>
+  <DestFile>C:/Users/u1269344/Github/Slapstick/Slapstick/Content/bin/Windows/Content/Images/Normie_SpriteSheet5.xnb</DestFile>
+  <DestTime>2019-08-27T14:39:34.8284769-06:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T09:35:54-07:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

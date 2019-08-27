@@ -302,20 +302,10 @@ namespace Slapstick
         {
             bool slapped = false;
 
-            Debug.WriteLine("test");
             for(int i = 0; i < people.Count; i++)
             {
                 if (people[i].getCenterX() > xStartPosition && people[i].getCenterX() < xEndPosition)
                 {
-                    if(people[i].isNoisy())
-                    {
-                        GameState.Score += 20;
-                    }
-                    else
-                    {
-                        GameState.Score -= 10;
-                    }
-
                     people.RemoveAt(i);
                     i--;
                     slapped = true;
