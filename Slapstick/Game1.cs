@@ -70,7 +70,7 @@ namespace Slapstick
             font = Content.Load<SpriteFont>("Fonts/Arial");
             fontScore = Content.Load<SpriteFont>("Fonts/Score");
             fontTimer = Content.Load<SpriteFont>("Fonts/Timer");
-            celebTexture = Content.Load<Texture2D>("Images/shuttle");
+            celebTexture = Content.Load<Texture2D>("Images/celeb_static_sized");
             celeb = new Celeb(celebTexture, graphics);
             pm.LoadContent(Content);
             sm.LoadContent(Content);
