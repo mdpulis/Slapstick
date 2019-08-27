@@ -25,11 +25,9 @@ namespace Slapstick
         private UI gameUI = new UI();
         private PersonManager pm = new PersonManager();
 
-        List<Person> people = new List<Person>();
         private Celeb celeb;
-        double personTimer;
         double bpmIncreaseTimer;
-        Vector2 zeroVector = new Vector2(0, 0);
+      
 
         SoundManager sm = new SoundManager();
 
@@ -97,42 +95,21 @@ namespace Slapstick
                 Exit();
 
             backgroundManager.Update(gameTime);
-            personTimer += gameTime.ElapsedGameTime.TotalSeconds;
             bpmIncreaseTimer += gameTime.ElapsedGameTime.TotalSeconds;
-            if (personTimer >= 3 - gameUI.beatsPerMinute * 1.0 / 100)
-            {
-                people.Add(pm.makePerson(graphics, gameUI.beatsPerMinute));
-                personTimer = 0;
-            }
+            
             if(bpmIncreaseTimer >= 20)
             {
                 GameState.AddBPM();
                 bpmIncreaseTimer = 0;
             }
 
-            int peopleIndexToDelete = -1;
-            foreach (Person p in people)
-            {
-                p.Update(gameTime);
-                if (p.position.X < 0 || p.position.X > 1920)
-                {
-                    peopleIndexToDelete = people.IndexOf(p);
-                }
-                if((p.getCenterX() >= celeb.position.X) && (p.getCenterX() <= celeb.getCenterX() + celeb.texture.Width / 2))
-                {
-                    peopleIndexToDelete = people.IndexOf(p);
-                    celeb.collision(p.isNoisy());
-                }
-            }
-            if(peopleIndexToDelete != -1)
-            {
-                people.RemoveAt(peopleIndexToDelete);
-            }
+            
 
             sm.Update(gameTime, gameUI);
 
-            playerInput.Update(gameTime, people);
+            playerInput.Update(gameTime, pm.people);
 
+            pm.update(gameTime, graphics, gameUI, celeb);
             if(GameState.Lives == 0)
             {
                 Exit();
@@ -153,13 +130,7 @@ namespace Slapstick
             backgroundManager.Draw(spriteBatch, gameTime);
             celeb.Draw(spriteBatch);
             playerInput.Draw(spriteBatch, gameTime);
-
-            
-            foreach (Person p in people)       
-            {
-                spriteBatch.Draw(p.texture, p.position, p.currentFrame, Color.White, 0.0f, zeroVector, 1.0f, p.spriteEffects, 0.0f);
-            }
-
+            pm.draw(spriteBatch);
             gameUI.Draw(spriteBatch, gameTime, celeb);
             
             spriteBatch.End();

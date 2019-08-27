@@ -10,13 +10,16 @@ using System.Threading.Tasks;
 namespace Slapstick
 {
     public enum Direction { right, left };
-    class PersonManager
+    public class PersonManager
     {
+        public List<Person> people = new List<Person>();
+        double personTimer;
+        Vector2 zeroVector = new Vector2(0, 0);
         Direction direction;
         bool isNoisy;
         Texture2D tex, noisy1, normy1, noisy2, normy2, noisy3, normy3, noisy4, normy4, noisy5, normy5, noisy6, normy6, noisy7, normy7;
         System.Random random = new System.Random();
-        int texNum;
+        int texNum, peopleIndexToDelete;
         public Person makePerson(GraphicsDeviceManager gdm, int bpm)
         {
             Person p = new Person();
@@ -66,6 +69,42 @@ namespace Slapstick
             noisy6 = Content.Load<Texture2D>("Images/Crazy_SpriteSheet6");
             normy7 = Content.Load<Texture2D>("Images/Normie_SpriteSheet7");
             noisy7 = Content.Load<Texture2D>("Images/Crazy_SpriteSheet7");
+        }
+
+        public void update(GameTime gameTime, GraphicsDeviceManager graphics, UI gameUI, Celeb celeb) {
+            personTimer += gameTime.ElapsedGameTime.TotalSeconds;
+            if (personTimer >= 3 - gameUI.beatsPerMinute * 1.0 / 100)
+            {
+                people.Add(makePerson(graphics, gameUI.beatsPerMinute));
+                personTimer = 0;
+            }
+
+            peopleIndexToDelete = -1;
+            foreach (Person p in people)
+            {
+                p.Update(gameTime);
+                if (p.position.X < 0 || p.position.X > 1920)
+                {
+                    peopleIndexToDelete = people.IndexOf(p);
+                }
+                if ((p.getCenterX() >= celeb.position.X) && (p.getCenterX() <= celeb.getCenterX() + celeb.texture.Width / 2))
+                {
+                    peopleIndexToDelete = people.IndexOf(p);
+                    celeb.collision(p.isNoisy());
+                }
+            }
+            if (peopleIndexToDelete != -1)
+            {
+                people.RemoveAt(peopleIndexToDelete);
+            }
+        }
+
+        public void draw(SpriteBatch spriteBatch)
+        {
+            foreach (Person p in people)
+            {
+                spriteBatch.Draw(p.texture, p.position, p.currentFrame, Color.White, 0.0f, zeroVector, 1.0f, p.spriteEffects, 0.0f);
+            }
         }
     }
 }
