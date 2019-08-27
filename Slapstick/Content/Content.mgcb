@@ -346,6 +346,42 @@
 /processorParam:TextureFormat=Color
 /build:Images/slap_hand.png
 
+#begin Images/slap_hand_orange.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Images/slap_hand_orange.png
+
+#begin Images/slap_hand_white.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Images/slap_hand_white.png
+
+#begin Images/slapstick_logo.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Images/slapstick_logo.png
+
 #begin Images/SmileyWalk.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -442,9 +478,9 @@
 /processorParam:Quality=Best
 /build:Sounds/metronome_beat.wav
 
-#begin Sounds/slap_sound_wav.wav
+#begin Sounds/slap_sound.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:Sounds/slap_sound_wav.wav
+/build:Sounds/slap_sound.wav
 
