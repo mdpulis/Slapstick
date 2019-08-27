@@ -73,9 +73,9 @@ namespace Slapstick
 
         public void update(GameTime gameTime, GraphicsDeviceManager graphics, UI gameUI, Celeb celeb) {
             personTimer += gameTime.ElapsedGameTime.TotalSeconds;
-            if (personTimer >= 3 - gameUI.beatsPerMinute * 1.0 / 100)
+            if (personTimer >= 3 - GameState.BeatsPerMinute * 1.0 / 100)
             {
-                people.Add(makePerson(graphics, gameUI.beatsPerMinute));
+                people.Add(makePerson(graphics, GameState.BeatsPerMinute));
                 personTimer = 0;
             }
 
