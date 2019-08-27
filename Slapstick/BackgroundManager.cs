@@ -77,7 +77,7 @@ namespace Slapstick
         {
             cloudTimer += (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-            if(cloudTimer >= 3.0f)
+            if(cloudTimer >= 5.0f)
             {
                 MakeCloud();
                 cloudTimer = 0.0f;
@@ -92,7 +92,8 @@ namespace Slapstick
         private void MakeCloud()
         {
             Cloud c = new Cloud();
-            c.Initialize(random.Next(5) * 5, cloud); //Third value is speed, increases as BPM increases. 4th value is unused but could be used for different characters
+            c.Initialize(random.Next(5)+10 * 3, cloud);
+            clouds.Add(c);
         }
         
 
@@ -100,12 +101,13 @@ namespace Slapstick
         {
             spriteBatch.Draw(sky, new Rectangle(0, 0, 1920, 442), Color.White);
 
-            foreach(Cloud c in clouds)
+            foreach (Cloud c in clouds)
             {
                 spriteBatch.Draw(c.texture, c.position, Color.White);
             }
 
             spriteBatch.Draw(background, new Rectangle(0, 0, 1920, 1080), Color.White);
+            
             spriteBatch.Draw(tree, new Vector2(300, 900), Color.White);
         }
     }

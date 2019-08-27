@@ -81,7 +81,6 @@ namespace Slapstick
         protected override void UnloadContent()
         {
             // TODO: Unload any non ContentManager content here
-
             backgroundManager.UnloadContent();
             playerInput.UnloadContent();
             
@@ -97,7 +96,7 @@ namespace Slapstick
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-
+            backgroundManager.Update(gameTime);
             personTimer += gameTime.ElapsedGameTime.TotalSeconds;
             bpmIncreaseTimer += gameTime.ElapsedGameTime.TotalSeconds;
             if (personTimer >= 6 - gameUI.beatsPerMinute * 2.0 / 100)
