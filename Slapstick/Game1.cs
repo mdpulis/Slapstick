@@ -96,8 +96,17 @@ namespace Slapstick
 
             backgroundManager.Update(gameTime);
             bpmIncreaseTimer += gameTime.ElapsedGameTime.TotalSeconds;
+<<<<<<< Updated upstream
             
             if(bpmIncreaseTimer >= 20)
+=======
+            if (personTimer >= 3 - gameUI.beatsPerMinute * 1.0 / 100)
+            {
+                people.Add(pm.makePerson(graphics, gameUI.beatsPerMinute));
+                personTimer = 0;
+            }
+            if(bpmIncreaseTimer >= 10)
+>>>>>>> Stashed changes
             {
                 GameState.AddBPM();
                 bpmIncreaseTimer = 0;
