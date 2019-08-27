@@ -12,11 +12,8 @@ namespace Slapstick
 {
     public class Celeb
     {
-        public int lives = 3;
-
         public Texture2D texture;
         public Vector2 position;
-
 
 
         public Celeb(Texture2D tex, GraphicsDeviceManager gdm)
@@ -37,7 +34,7 @@ namespace Slapstick
         {
             if (isNoisy)
             {
-                lives--;
+                GameState.Lives--;
             }
         }
 
@@ -45,12 +42,6 @@ namespace Slapstick
         {
             return position.X + (150 / 2);
         }
-
-        public int GetLives()
-        {
-            return lives;
-        }
-
 
 
     }

@@ -32,14 +32,7 @@
 /processor:FontDescriptionProcessor
 /processorParam:PremultiplyAlpha=True
 /processorParam:TextureFormat=Compressed
-/build:Fonts/Score.spritefont
-
-#begin Fonts/Timer.spritefont
-/importer:FontDescriptionImporter
-/processor:FontDescriptionProcessor
-/processorParam:PremultiplyAlpha=True
-/processorParam:TextureFormat=Compressed
-/build:Fonts/Timer.spritefont
+/build:Fonts/Score.spritefont;Fonts/UI.spritefont
 
 #begin Images/ball.png
 /importer:TextureImporter

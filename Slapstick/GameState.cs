@@ -17,9 +17,12 @@
     public static class GameState
     {
 
-        public static int BeatsPerMinute = 80;
+        public static int BeatsPerMinute = 140;
         public static int Score = 0;
+        public static int Lives = 3;
         public static GamePlayState CurrentGamePlayState = GamePlayState.InGame;
+
+        private const int MAX_BEATS_PER_MINUTE = 240;
 
 
         /// <summary>
@@ -29,12 +32,19 @@
         {
             BeatsPerMinute = 80;
             Score = 0;
+            Lives = 3;
             CurrentGamePlayState = GamePlayState.MainMenu;
         }
 
+        /// <summary>
+        /// Adds more beats per minute
+        /// </summary>
         public static void AddBPM()
         {
-            BeatsPerMinute += 20;
+            if(BeatsPerMinute >= MAX_BEATS_PER_MINUTE)
+            {
+                BeatsPerMinute += 20;
+            }
         }
 
 

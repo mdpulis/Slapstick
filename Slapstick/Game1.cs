@@ -106,7 +106,6 @@ namespace Slapstick
             }
             if(bpmIncreaseTimer >= 20)
             {
-                gameUI.addBPM();
                 GameState.AddBPM();
                 bpmIncreaseTimer = 0;
             }
@@ -134,7 +133,7 @@ namespace Slapstick
 
             playerInput.Update(gameTime, people);
 
-            if(celeb.lives == 0)
+            if(GameState.Lives == 0)
             {
                 Exit();
             }
