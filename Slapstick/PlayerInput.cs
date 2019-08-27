@@ -17,6 +17,9 @@ namespace Slapstick
         private const float MEDIUM_COOLDOWN_TIME = 1.6f;
         private const float SHORT_COOLDOWN_TIME = 0.8f;
 
+        private const float SLAP_DISPLAY_TIME = 0.3f;
+
+        private const int SLAP_HEIGHT_LOCATION = 600;
         private const int PAD_HEIGHT_LOCATION = 900;
 
         private const int PAD_PIXEL_WIDTH = 150;
@@ -24,6 +27,16 @@ namespace Slapstick
 
         private Texture2D whiteSquare;
         private Texture2D graySquare;
+        private Texture2D slapHand;
+        private SpriteFont letterFont;
+        private SoundEffect slapSFX;
+
+        private bool aSlapHandActive;
+        private bool sSlapHandActive;
+        private bool dSlapHandActive;
+        private bool jSlapHandActive;
+        private bool kSlapHandActive;
+        private bool lSlapHandActive;
 
         private int aPadLocation;
         private int sPadLocation;
@@ -60,11 +73,6 @@ namespace Slapstick
         private bool kActive = true;
         private bool lActive = true;
 
-        private SpriteFont font;
-
-        private SoundEffect slapSFX;
-
-
 
         public PlayerInput()
         {
@@ -93,16 +101,16 @@ namespace Slapstick
             graySquare = Content.Load<Texture2D>("Images/square_150x150");
             whiteSquare = Content.Load<Texture2D>("Images/square_150x150_white");
 
-            font = Content.Load<SpriteFont>("Fonts/BigArial");
+            slapHand = Content.Load<Texture2D>("Images/slap_hand");
+            letterFont = Content.Load<SpriteFont>("Fonts/BigArial");
             slapSFX = Content.Load<SoundEffect>("Sounds/slap_sound_wav");
 
-
-            aSize = font.MeasureString("a");
-            sSize = font.MeasureString("s");
-            dSize = font.MeasureString("d");
-            jSize = font.MeasureString("j");
-            kSize = font.MeasureString("k");
-            lSize = font.MeasureString("l");
+            aSize = letterFont.MeasureString("a");
+            sSize = letterFont.MeasureString("s");
+            dSize = letterFont.MeasureString("d");
+            jSize = letterFont.MeasureString("j");
+            kSize = letterFont.MeasureString("k");
+            lSize = letterFont.MeasureString("l");
         }
 
         public void UnloadContent()
@@ -123,42 +131,42 @@ namespace Slapstick
                 aActive = false;
                 aCooldownTime = 0.0f;
                 aFill = 0;
-                Slap(aPadLocation, aPadLocation + PAD_PIXEL_WIDTH, people);
+                Slap(aPadLocation, aPadLocation + PAD_PIXEL_WIDTH, ref aSlapHandActive, people);
             }
             if (sActive && Keyboard.GetState().IsKeyDown(Keys.S))
             {
                 sActive = false;
                 sCooldownTime = 0.0f;
                 sFill = 0;
-                Slap(sPadLocation, sPadLocation + PAD_PIXEL_WIDTH, people);
+                Slap(sPadLocation, sPadLocation + PAD_PIXEL_WIDTH, ref sSlapHandActive, people);
             }
             if (dActive && Keyboard.GetState().IsKeyDown(Keys.D))
             {
                 dActive = false;
                 dCooldownTime = 0.0f;
                 dFill = 0;
-                Slap(dPadLocation, dPadLocation + PAD_PIXEL_WIDTH, people);
+                Slap(dPadLocation, dPadLocation + PAD_PIXEL_WIDTH, ref dSlapHandActive, people);
             }
             if (jActive && Keyboard.GetState().IsKeyDown(Keys.J))
             {
                 jActive = false;
                 jCooldownTime = 0.0f;
                 jFill = 0;
-                Slap(jPadLocation, jPadLocation + PAD_PIXEL_WIDTH, people);
+                Slap(jPadLocation, jPadLocation + PAD_PIXEL_WIDTH, ref jSlapHandActive, people);
             }
             if (kActive && Keyboard.GetState().IsKeyDown(Keys.K))
             {
                 kActive = false;
                 kCooldownTime = 0.0f;
                 kFill = 0;
-                Slap(kPadLocation, kPadLocation + PAD_PIXEL_WIDTH, people);
+                Slap(kPadLocation, kPadLocation + PAD_PIXEL_WIDTH, ref kSlapHandActive, people);
             }
             if (lActive && Keyboard.GetState().IsKeyDown(Keys.L))
             {
                 lActive = false;
                 lCooldownTime = 0.0f;
                 lFill = 0;
-                Slap(lPadLocation, lPadLocation + PAD_PIXEL_WIDTH, people);
+                Slap(lPadLocation, lPadLocation + PAD_PIXEL_WIDTH, ref lSlapHandActive, people);
             }
 
             CheckCooldownTimes(gameTime);
@@ -177,6 +185,11 @@ namespace Slapstick
                 float aTimePercentage = aCooldownTime / LONG_COOLDOWN_TIME;
                 aFill = (int)(aTimePercentage * PAD_PIXEL_HEIGHT);
 
+                if (aSlapHandActive && aCooldownTime >= SLAP_DISPLAY_TIME)
+                {
+                    aSlapHandActive = false;
+                }
+
                 if (aCooldownTime >= LONG_COOLDOWN_TIME)
                 {
                     aActive = true;
@@ -190,6 +203,11 @@ namespace Slapstick
                 sCooldownTime += (float)gameTime.ElapsedGameTime.TotalSeconds * GameState.BeatsPerMinute / 100;
                 float sTimePercentage = sCooldownTime / MEDIUM_COOLDOWN_TIME;
                 sFill = (int)(sTimePercentage * PAD_PIXEL_HEIGHT);
+
+                if (sSlapHandActive && sCooldownTime >= SLAP_DISPLAY_TIME)
+                {
+                    sSlapHandActive = false;
+                }
 
                 if (sCooldownTime >= MEDIUM_COOLDOWN_TIME)
                 {
@@ -205,6 +223,11 @@ namespace Slapstick
                 float dTimePercentage = dCooldownTime / SHORT_COOLDOWN_TIME;
                 dFill = (int)(dTimePercentage * PAD_PIXEL_HEIGHT);
 
+                if (dSlapHandActive && dCooldownTime >= SLAP_DISPLAY_TIME)
+                {
+                    dSlapHandActive = false;
+                }
+
                 if (dCooldownTime >= SHORT_COOLDOWN_TIME)
                 {
                     dActive = true;
@@ -218,6 +241,11 @@ namespace Slapstick
                 jCooldownTime += (float)gameTime.ElapsedGameTime.TotalSeconds * GameState.BeatsPerMinute / 100;
                 float jTimePercentage = jCooldownTime / SHORT_COOLDOWN_TIME;
                 jFill = (int)(jTimePercentage * PAD_PIXEL_HEIGHT);
+
+                if (jSlapHandActive && jCooldownTime >= SLAP_DISPLAY_TIME)
+                {
+                    jSlapHandActive = false;
+                }
 
                 if (jCooldownTime >= SHORT_COOLDOWN_TIME)
                 {
@@ -233,6 +261,11 @@ namespace Slapstick
                 float kTimePercentage = kCooldownTime / MEDIUM_COOLDOWN_TIME;
                 kFill = (int)(kTimePercentage * PAD_PIXEL_HEIGHT);
 
+                if (kSlapHandActive && kCooldownTime >= SLAP_DISPLAY_TIME)
+                {
+                    kSlapHandActive = false;
+                }
+
                 if (kCooldownTime >= MEDIUM_COOLDOWN_TIME)
                 {
                     kActive = true;
@@ -247,6 +280,11 @@ namespace Slapstick
                 float lTimePercentage = lCooldownTime / LONG_COOLDOWN_TIME;
                 lFill = (int)(lTimePercentage * PAD_PIXEL_HEIGHT);
 
+                if (lSlapHandActive && lCooldownTime >= SLAP_DISPLAY_TIME)
+                {
+                    lSlapHandActive = false;
+                }
+
                 if (lCooldownTime >= LONG_COOLDOWN_TIME)
                 {
                     lActive = true;
@@ -260,7 +298,7 @@ namespace Slapstick
         /// <summary>
         /// Checks all people to slap!
         /// </summary>
-        public void Slap(int xStartPosition, int xEndPosition, List<Person> people)
+        public void Slap(int xStartPosition, int xEndPosition, ref bool slapHandActive, List<Person> people)
         {
             bool slapped = false;
 
@@ -283,6 +321,8 @@ namespace Slapstick
                     slapped = true;
                 }
             }
+
+            slapHandActive = true;
 
             if(slapped)
             {
@@ -312,12 +352,26 @@ namespace Slapstick
             spriteBatch.Draw(whiteSquare, new Rectangle(kPadLocation + PAD_PIXEL_WIDTH, PAD_HEIGHT_LOCATION + PAD_PIXEL_HEIGHT, PAD_PIXEL_WIDTH, kFill), null, Color.White, MathHelper.Pi, new Vector2(0,0), SpriteEffects.None, 1);
             spriteBatch.Draw(whiteSquare, new Rectangle(lPadLocation + PAD_PIXEL_WIDTH, PAD_HEIGHT_LOCATION + PAD_PIXEL_HEIGHT, PAD_PIXEL_WIDTH, lFill), null, Color.White, MathHelper.Pi, new Vector2(0,0), SpriteEffects.None, 1);
 
-            spriteBatch.DrawString(font, "a", new Vector2(aPadLocation + (PAD_PIXEL_WIDTH / 2), PAD_HEIGHT_LOCATION + (PAD_PIXEL_HEIGHT / 2)), Color.Black, 0, aSize * 0.5f, 1, SpriteEffects.None, 0);
-            spriteBatch.DrawString(font, "s", new Vector2(sPadLocation + (PAD_PIXEL_WIDTH / 2), PAD_HEIGHT_LOCATION + (PAD_PIXEL_HEIGHT / 2)), Color.Black, 0, sSize * 0.5f, 1, SpriteEffects.None, 0);
-            spriteBatch.DrawString(font, "d", new Vector2(dPadLocation + (PAD_PIXEL_WIDTH / 2), PAD_HEIGHT_LOCATION + (PAD_PIXEL_HEIGHT / 2)), Color.Black, 0, dSize * 0.5f, 1, SpriteEffects.None, 0);
-            spriteBatch.DrawString(font, "j", new Vector2(jPadLocation + (PAD_PIXEL_WIDTH / 2), PAD_HEIGHT_LOCATION + (PAD_PIXEL_HEIGHT / 2)), Color.Black, 0, jSize * 0.5f, 1, SpriteEffects.None, 0);
-            spriteBatch.DrawString(font, "k", new Vector2(kPadLocation + (PAD_PIXEL_WIDTH / 2), PAD_HEIGHT_LOCATION + (PAD_PIXEL_HEIGHT / 2)), Color.Black, 0, kSize * 0.5f, 1, SpriteEffects.None, 0);
-            spriteBatch.DrawString(font, "l", new Vector2(lPadLocation + (PAD_PIXEL_WIDTH / 2), PAD_HEIGHT_LOCATION + (PAD_PIXEL_HEIGHT / 2)), Color.Black, 0, lSize * 0.5f, 1, SpriteEffects.None, 0);
+            if (aSlapHandActive)
+                spriteBatch.Draw(slapHand, new Vector2(aPadLocation, SLAP_HEIGHT_LOCATION), Color.White);
+            if (sSlapHandActive)
+                spriteBatch.Draw(slapHand, new Vector2(sPadLocation, SLAP_HEIGHT_LOCATION), Color.White);
+            if (dSlapHandActive)
+                spriteBatch.Draw(slapHand, new Vector2(dPadLocation, SLAP_HEIGHT_LOCATION), Color.White);
+            if (jSlapHandActive)
+                spriteBatch.Draw(slapHand, new Vector2(jPadLocation, SLAP_HEIGHT_LOCATION), Color.White);
+            if (kSlapHandActive)
+                spriteBatch.Draw(slapHand, new Vector2(kPadLocation, SLAP_HEIGHT_LOCATION), Color.White);
+            if (lSlapHandActive)
+                spriteBatch.Draw(slapHand, new Vector2(lPadLocation, SLAP_HEIGHT_LOCATION), Color.White);
+
+
+            spriteBatch.DrawString(letterFont, "a", new Vector2(aPadLocation + (PAD_PIXEL_WIDTH / 2), PAD_HEIGHT_LOCATION + (PAD_PIXEL_HEIGHT / 2)), Color.Black, 0, aSize * 0.5f, 1, SpriteEffects.None, 0);
+            spriteBatch.DrawString(letterFont, "s", new Vector2(sPadLocation + (PAD_PIXEL_WIDTH / 2), PAD_HEIGHT_LOCATION + (PAD_PIXEL_HEIGHT / 2)), Color.Black, 0, sSize * 0.5f, 1, SpriteEffects.None, 0);
+            spriteBatch.DrawString(letterFont, "d", new Vector2(dPadLocation + (PAD_PIXEL_WIDTH / 2), PAD_HEIGHT_LOCATION + (PAD_PIXEL_HEIGHT / 2)), Color.Black, 0, dSize * 0.5f, 1, SpriteEffects.None, 0);
+            spriteBatch.DrawString(letterFont, "j", new Vector2(jPadLocation + (PAD_PIXEL_WIDTH / 2), PAD_HEIGHT_LOCATION + (PAD_PIXEL_HEIGHT / 2)), Color.Black, 0, jSize * 0.5f, 1, SpriteEffects.None, 0);
+            spriteBatch.DrawString(letterFont, "k", new Vector2(kPadLocation + (PAD_PIXEL_WIDTH / 2), PAD_HEIGHT_LOCATION + (PAD_PIXEL_HEIGHT / 2)), Color.Black, 0, kSize * 0.5f, 1, SpriteEffects.None, 0);
+            spriteBatch.DrawString(letterFont, "l", new Vector2(lPadLocation + (PAD_PIXEL_WIDTH / 2), PAD_HEIGHT_LOCATION + (PAD_PIXEL_HEIGHT / 2)), Color.Black, 0, lSize * 0.5f, 1, SpriteEffects.None, 0);
 
         }
 

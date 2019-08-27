@@ -31,13 +31,10 @@ C:\Users\u1273354\Desktop\Projects\Slapstick\Slapstick\bin\Windows\x86\Debug\Con
 C:\Users\u1273354\Desktop\Projects\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Images\theatre.xnb
 C:\Users\u1273354\Desktop\Projects\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Images\tree.xnb
 C:\Users\u1273354\Desktop\Projects\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Sounds\metronome_beat.xnb
-C:\Users\u1273354\Desktop\Projects\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Sounds\slap_sound.wma
-C:\Users\u1273354\Desktop\Projects\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Sounds\slap_sound.xnb
 C:\Users\u1273354\Desktop\Projects\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Sounds\slap_sound_wav.xnb
 C:\Users\u1273354\Desktop\Projects\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Fonts\Arial.xnb
 C:\Users\u1273354\Desktop\Projects\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Fonts\BigArial.xnb
 C:\Users\u1273354\Desktop\Projects\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Fonts\Score.xnb
-C:\Users\u1273354\Desktop\Projects\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Fonts\Timer.xnb
 C:\Users\u1273354\Desktop\Projects\Slapstick\Slapstick\bin\Windows\x86\Debug\Slapstick.exe
 C:\Users\u1273354\Desktop\Projects\Slapstick\Slapstick\bin\Windows\x86\Debug\Slapstick.pdb
 C:\Users\u1273354\Desktop\Projects\Slapstick\Slapstick\bin\Windows\x86\Debug\MonoGame.Framework.dll
@@ -60,6 +57,7 @@ C:\Users\u1273354\Desktop\Projects\Slapstick\Slapstick\obj\x86\Debug\Slapstick.c
 C:\Users\u1273354\Desktop\Projects\Slapstick\Slapstick\obj\x86\Debug\Slapstick.csproj.CopyComplete
 C:\Users\u1273354\Desktop\Projects\Slapstick\Slapstick\obj\x86\Debug\Slapstick.exe
 C:\Users\u1273354\Desktop\Projects\Slapstick\Slapstick\obj\x86\Debug\Slapstick.pdb
+<<<<<<< Updated upstream
 C:\Users\u1269344\Github\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Images\ball.xnb
 C:\Users\u1269344\Github\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Images\celebrityStatic.xnb
 C:\Users\u1269344\Github\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Images\celeb_static_sized.xnb
@@ -123,3 +121,10 @@ C:\Users\u1269344\Github\Slapstick\Slapstick\obj\x86\Debug\Slapstick.csproj.Core
 C:\Users\u1269344\Github\Slapstick\Slapstick\obj\x86\Debug\Slapstick.csproj.CopyComplete
 C:\Users\u1269344\Github\Slapstick\Slapstick\obj\x86\Debug\Slapstick.exe
 C:\Users\u1269344\Github\Slapstick\Slapstick\obj\x86\Debug\Slapstick.pdb
+=======
+C:\Users\u1273354\Desktop\Projects\Slapstick\Slapstick\obj\x86\Debug\Slapstick.csprojAssemblyReference.cache
+C:\Users\u1273354\Desktop\Projects\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Fonts\UI.xnb
+C:\Users\u1273354\Desktop\Projects\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Images\anger_symbol.xnb
+C:\Users\u1273354\Desktop\Projects\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Sounds\crowd_ambiance.wma
+C:\Users\u1273354\Desktop\Projects\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Sounds\crowd_ambiance.xnb
+>>>>>>> Stashed changes

@@ -34,6 +34,18 @@
 /processorParam:TextureFormat=Compressed
 /build:Fonts/Score.spritefont;Fonts/UI.spritefont
 
+#begin Images/anger_symbol.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Images/anger_symbol.png
+
 #begin Images/ball.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -418,6 +430,12 @@
 /processorParam:TextureFormat=Color
 /build:Images/tree.png
 
+#begin Sounds/crowd_ambiance.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Sounds/crowd_ambiance.mp3
+
 #begin Sounds/metronome_beat.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
@@ -429,10 +447,4 @@
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
 /build:Sounds/slap_sound_wav.wav
-
-#begin Sounds/Slap-SoundMaster13-49669815.mp3
-/importer:Mp3Importer
-/processor:SongProcessor
-/processorParam:Quality=Best
-/build:Sounds/Slap-SoundMaster13-49669815.mp3;Sounds/slap_sound.mp3
 

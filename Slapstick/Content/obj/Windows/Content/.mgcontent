@@ -8,6 +8,7 @@
     <File>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Fonts/Arial.spritefont</File>
     <File>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Fonts/BigArial.spritefont</File>
     <File>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Fonts/Score.spritefont</File>
+    <File>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Images/anger_symbol.png</File>
     <File>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Images/ball.png</File>
     <File>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Images/celeb_static_sized.png</File>
     <File>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Images/celebrityStatic.png</File>
@@ -40,8 +41,10 @@
     <File>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Images/stars.jpg</File>
     <File>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Images/theatre.jpg</File>
     <File>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Images/tree.png</File>
+    <File>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Sounds/crowd_ambiance.mp3</File>
     <File>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Sounds/metronome_beat.wav</File>
     <File>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Sounds/slap_sound_wav.wav</File>
+<<<<<<< Updated upstream
     <File>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Sounds/Slap-SoundMaster13-49669815.mp3</File>
 =======
     <File>C:/Users/u1269344/Github/Slapstick/Slapstick/Content/Fonts/Arial.spritefont</File>
@@ -84,6 +87,8 @@
     <File>C:/Users/u1269344/Github/Slapstick/Slapstick/Content/Sounds/slap_sound_wav.wav</File>
     <File>C:/Users/u1269344/Github/Slapstick/Slapstick/Content/Sounds/Slap-SoundMaster13-49669815.mp3</File>
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />
@@ -123,6 +128,7 @@
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
-    <File>Sounds/slap_sound.mp3</File>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
   </DestFiles>
 </SourceFileCollection>

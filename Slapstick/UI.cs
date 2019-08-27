@@ -14,7 +14,6 @@ namespace Slapstick
     {
 
         public string score;
-        public int beatsPerMinute = 140;
         private SpriteFont uiFont;
 
         public UI()
