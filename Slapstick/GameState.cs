@@ -41,7 +41,7 @@
         /// </summary>
         public static void AddBPM()
         {
-            if(BeatsPerMinute >= MAX_BEATS_PER_MINUTE)
+            if(BeatsPerMinute <= MAX_BEATS_PER_MINUTE)
             {
                 BeatsPerMinute += 20;
             }

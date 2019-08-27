@@ -3,6 +3,7 @@ Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Siz
 "C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Fonts/Arial.spritefont","C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/bin/Windows/Content/Fonts/Arial.xnb","FontDescriptionProcessor","SpriteFontContent",2008,70673,0.2677221
 "C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Fonts/BigArial.spritefont","C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/bin/Windows/Content/Fonts/BigArial.xnb","FontDescriptionProcessor","SpriteFontContent",2008,267281,0.0639341
 "C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Fonts/Score.spritefont","C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/bin/Windows/Content/Fonts/UI.xnb","FontDescriptionProcessor","SpriteFontContent",2068,70673,0.3021729
+"C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Images/anger_symbol.png","C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/bin/Windows/Content/Images/anger_symbol.xnb","TextureProcessor","Texture2DContent",1949,14485,0.2727071
 "C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Images/ball.png","C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/bin/Windows/Content/Images/ball.xnb","TextureProcessor","Texture2DContent",8368,16469,0.0209779
 "C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Images/celeb_static_sized.png","C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/bin/Windows/Content/Images/celeb_static_sized.xnb","TextureProcessor","Texture2DContent",7934,52585,0.0099848
 "C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Images/celebrityStatic.png","C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/bin/Windows/Content/Images/celebrityStatic.xnb","TextureProcessor","Texture2DContent",5667,45085,0.0089786
@@ -35,8 +36,10 @@ Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Siz
 "C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Images/stars.jpg","C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/bin/Windows/Content/Images/stars.xnb","TextureProcessor","Texture2DContent",150614,1920085,0.0589386
 "C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Images/theatre.jpg","C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/bin/Windows/Content/Images/theatre.xnb","TextureProcessor","Texture2DContent",182331,8294485,0.2137978
 "C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Images/tree.png","C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/bin/Windows/Content/Images/tree.xnb","TextureProcessor","Texture2DContent",40293,273325,0.0189812
+"C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Sounds/crowd_ambiance.mp3","C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/bin/Windows/Content/Sounds/crowd_ambiance.xnb","SongProcessor","SongContent",5136512,132,1.29645
 "C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Sounds/metronome_beat.wav","C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/bin/Windows/Content/Sounds/metronome_beat.xnb","SoundEffectProcessor","SoundEffectContent",106120,106181,0.1548448
 "C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Sounds/slap_sound_wav.wav","C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/bin/Windows/Content/Sounds/slap_sound_wav.xnb","SoundEffectProcessor","SoundEffectContent",126764,126825,0.1398262
+<<<<<<< Updated upstream
 "C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Sounds/Slap-SoundMaster13-49669815.mp3","C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/bin/Windows/Content/Sounds/slap_sound.xnb","SongProcessor","SongContent",10595,128,0.1577441
 =======
 "C:/Users/u1269344/Github/Slapstick/Slapstick/Content/Fonts/Arial.spritefont","C:/Users/u1269344/Github/Slapstick/Slapstick/Content/bin/Windows/Content/Fonts/Arial.xnb","FontDescriptionProcessor","SpriteFontContent",2068,70673,0.4635215
@@ -78,4 +81,6 @@ Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Siz
 "C:/Users/u1269344/Github/Slapstick/Slapstick/Content/Sounds/metronome_beat.wav","C:/Users/u1269344/Github/Slapstick/Slapstick/Content/bin/Windows/Content/Sounds/metronome_beat.xnb","SoundEffectProcessor","SoundEffectContent",106120,106181,0.1648425
 "C:/Users/u1269344/Github/Slapstick/Slapstick/Content/Sounds/slap_sound_wav.wav","C:/Users/u1269344/Github/Slapstick/Slapstick/Content/bin/Windows/Content/Sounds/slap_sound_wav.xnb","SoundEffectProcessor","SoundEffectContent",126764,126825,0.1351633
 "C:/Users/u1269344/Github/Slapstick/Slapstick/Content/Sounds/Slap-SoundMaster13-49669815.mp3","C:/Users/u1269344/Github/Slapstick/Slapstick/Content/bin/Windows/Content/Sounds/slap_sound.xnb","SongProcessor","SongContent",10595,128,0.1727264
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
