@@ -16,9 +16,6 @@ namespace Slapstick
         SpriteBatch spriteBatch;
 
         SpriteFont font;
-
-        private SpriteFont fontScore;
-        private SpriteFont fontTimer;
         private Texture2D celebTexture;
         
 
@@ -68,14 +65,13 @@ namespace Slapstick
             spriteBatch = new SpriteBatch(GraphicsDevice);
             
             font = Content.Load<SpriteFont>("Fonts/Arial");
-            fontScore = Content.Load<SpriteFont>("Fonts/Score");
-            fontTimer = Content.Load<SpriteFont>("Fonts/Timer");
             celebTexture = Content.Load<Texture2D>("Images/celeb_static_sized");
             celeb = new Celeb(celebTexture, graphics);
             pm.LoadContent(Content);
             sm.LoadContent(Content);
             backgroundManager.LoadContent(Content);
             playerInput.LoadContent(Content);
+            gameUI.LoadContent(Content);
         }
 
         /// <summary>
@@ -165,11 +161,7 @@ namespace Slapstick
                 spriteBatch.Draw(p.texture, p.position, p.currentFrame, Color.White, 0.0f, zeroVector, 1.0f, p.spriteEffects, 0.0f);
             }
 
-
-            string playTime = string.Format("Time {0:00}:{1:00}", gameTime.TotalGameTime.Minutes, gameTime.TotalGameTime.Seconds);
-
-            spriteBatch.DrawString(fontScore, "Score " + gameUI.score, new Vector2(32, 32), Color.Red);
-            spriteBatch.DrawString(fontTimer, playTime, new Vector2(32, 64), Color.Red);
+            gameUI.Draw(spriteBatch,gameTime);
             spriteBatch.End();
 
             base.Draw(gameTime);

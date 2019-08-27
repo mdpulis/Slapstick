@@ -114,3 +114,5 @@ C:\Users\u1274834\source\repos\Slapstick\Slapstick\obj\x86\Debug\Slapstick.pdb
 C:\Users\u1269344\Github\Slapstick\Slapstick\obj\x86\Debug\Slapstick.csprojAssemblyReference.cache
 C:\Users\u1269344\Github\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Images\celebrityStatic.xnb
 C:\Users\u1269344\Github\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Images\celeb_static_sized.xnb
+C:\Users\u1274834\source\repos\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Images\celebrityStatic.xnb
+C:\Users\u1274834\source\repos\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Images\celeb_static_sized.xnb
