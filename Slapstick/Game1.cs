@@ -17,9 +17,11 @@ namespace Slapstick
 
         SpriteFont font;
         private Texture2D celebTexture;
-        
+
 
         //Classes responsible for managing lots of content and functionality
+        private MainMenu mainMenu = new MainMenu();
+
         private PlayerInput playerInput = new PlayerInput();
         private BackgroundManager backgroundManager = new BackgroundManager();
         private UI gameUI = new UI();
@@ -61,6 +63,8 @@ namespace Slapstick
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            mainMenu.LoadContent(Content);
             
             font = Content.Load<SpriteFont>("Fonts/Arial");
             celebTexture = Content.Load<Texture2D>("Images/celeb_static_sized");
@@ -94,26 +98,36 @@ namespace Slapstick
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            backgroundManager.Update(gameTime);
-            bpmIncreaseTimer += gameTime.ElapsedGameTime.TotalSeconds;
-            
-            if(bpmIncreaseTimer >= 20)
+
+            switch(GameState.CurrentGameplayState)
             {
-                GameState.AddBPM();
-                bpmIncreaseTimer = 0;
+                case (GameplayState.MainMenu):
+                    mainMenu.Update(gameTime);
+                    break;
+                case (GameplayState.InGame):
+                    backgroundManager.Update(gameTime);
+                    bpmIncreaseTimer += gameTime.ElapsedGameTime.TotalSeconds;
+
+                    if (bpmIncreaseTimer >= 20)
+                    {
+                        GameState.AddBPM();
+                        bpmIncreaseTimer = 0;
+                    }
+
+                    sm.Update(gameTime, gameUI);
+                    playerInput.Update(gameTime, pm.people);
+                    pm.update(gameTime, graphics, gameUI, celeb);
+
+                    if (GameState.Lives == 0)
+                    {
+                        Exit();
+                    }
+                    break;
+                case (GameplayState.RetryScreen):
+
+                    break;
             }
-
-            
-
-            sm.Update(gameTime, gameUI);
-
-            playerInput.Update(gameTime, pm.people);
-
-            pm.update(gameTime, graphics, gameUI, celeb);
-            if(GameState.Lives == 0)
-            {
-                Exit();
-            }
+           
 
             base.Update(gameTime);
         }
@@ -128,10 +142,24 @@ namespace Slapstick
             spriteBatch.Begin();
 
             backgroundManager.Draw(spriteBatch, gameTime);
-            celeb.Draw(spriteBatch);
-            playerInput.Draw(spriteBatch, gameTime);
-            pm.draw(spriteBatch);
-            gameUI.Draw(spriteBatch, gameTime, celeb);
+
+            switch (GameState.CurrentGameplayState)
+            {
+                case (GameplayState.MainMenu):
+                    mainMenu.Draw(spriteBatch, gameTime);
+
+                    break;
+                case (GameplayState.InGame):
+                    celeb.Draw(spriteBatch);
+                    playerInput.Draw(spriteBatch, gameTime);
+                    pm.draw(spriteBatch);
+                    gameUI.Draw(spriteBatch, gameTime, celeb);
+
+                    break;
+                case (GameplayState.RetryScreen):
+
+                    break;
+            }
             
             spriteBatch.End();
 

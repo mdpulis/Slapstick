@@ -19,7 +19,7 @@ namespace Slapstick
 
         private const float SLAP_DISPLAY_TIME = 0.3f;
 
-        private const int SLAP_HEIGHT_LOCATION = 600;
+        private const int SLAP_HEIGHT_LOCATION = 675;
         private const int PAD_HEIGHT_LOCATION = 900;
 
         private const int PAD_PIXEL_WIDTH = 150;
@@ -101,9 +101,9 @@ namespace Slapstick
             graySquare = Content.Load<Texture2D>("Images/square_150x150");
             whiteSquare = Content.Load<Texture2D>("Images/square_150x150_white");
 
-            slapHand = Content.Load<Texture2D>("Images/slap_hand");
+            slapHand = Content.Load<Texture2D>("Images/slap_hand_orange");
             letterFont = Content.Load<SpriteFont>("Fonts/BigArial");
-            slapSFX = Content.Load<SoundEffect>("Sounds/slap_sound_wav");
+            slapSFX = Content.Load<SoundEffect>("Sounds/slap_sound");
 
             aSize = letterFont.MeasureString("a");
             sSize = letterFont.MeasureString("s");
