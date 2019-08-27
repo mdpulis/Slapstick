@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/Images/Crazy_SpriteSheet3.png</SourceFile>
-  <SourceTime>2019-08-25T11:50:07.1827463-06:00</SourceTime>
-  <DestFile>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/bin/Windows/Content/Images/Crazy_SpriteSheet3.xnb</DestFile>
-  <DestTime>2019-08-25T11:50:57.9862799-06:00</DestTime>
+  <SourceFile>C:/Users/u1269344/Github/Slapstick/Slapstick/Content/Images/Crazy_SpriteSheet3.png</SourceFile>
+  <SourceTime>2019-08-24T16:01:53.1115595-06:00</SourceTime>
+  <DestFile>C:/Users/u1269344/Github/Slapstick/Slapstick/Content/bin/Windows/Content/Images/Crazy_SpriteSheet3.xnb</DestFile>
+  <DestTime>2019-08-27T09:00:51.1413428-06:00</DestTime>
   <Importer>TextureImporter</Importer>
-  <ImporterTime>2019-08-22T06:59:50-06:00</ImporterTime>
+  <ImporterTime>2018-12-08T09:35:54-07:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
-  <ProcessorTime>2019-08-22T06:59:50-06:00</ProcessorTime>
+  <ProcessorTime>2018-12-08T09:35:54-07:00</ProcessorTime>
   <Parameters>
     <Key>ColorKeyColor</Key>
     <Value>255,0,255,255</Value>
