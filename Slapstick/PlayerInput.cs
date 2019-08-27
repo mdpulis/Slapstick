@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -12,9 +13,9 @@ namespace Slapstick
     /// </summary>
     public class PlayerInput
     {
-        private const float LONG_COOLDOWN_TIME = 3.0f;
-        private const float MEDIUM_COOLDOWN_TIME = 2.0f;
-        private const float SHORT_COOLDOWN_TIME = 1.0f;
+        private const float LONG_COOLDOWN_TIME = 2.4f;
+        private const float MEDIUM_COOLDOWN_TIME = 1.6f;
+        private const float SHORT_COOLDOWN_TIME = 0.8f;
 
         private const int PAD_HEIGHT_LOCATION = 900;
 
@@ -61,6 +62,8 @@ namespace Slapstick
 
         private SpriteFont font;
 
+        private SoundEffect slapSFX;
+
 
 
         public PlayerInput()
@@ -91,6 +94,8 @@ namespace Slapstick
             whiteSquare = Content.Load<Texture2D>("Images/square_150x150_white");
 
             font = Content.Load<SpriteFont>("Fonts/BigArial");
+            slapSFX = Content.Load<SoundEffect>("Sounds/slap_sound_wav");
+
 
             aSize = font.MeasureString("a");
             sSize = font.MeasureString("s");
@@ -168,7 +173,7 @@ namespace Slapstick
         {
             if(!aActive)
             {
-                aCooldownTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
+                aCooldownTime += (float)gameTime.ElapsedGameTime.TotalSeconds * GameState.BeatsPerMinute / 100;
                 float aTimePercentage = aCooldownTime / LONG_COOLDOWN_TIME;
                 aFill = (int)(aTimePercentage * PAD_PIXEL_HEIGHT);
 
@@ -182,7 +187,7 @@ namespace Slapstick
 
             if (!sActive)
             {
-                sCooldownTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
+                sCooldownTime += (float)gameTime.ElapsedGameTime.TotalSeconds * GameState.BeatsPerMinute / 100;
                 float sTimePercentage = sCooldownTime / MEDIUM_COOLDOWN_TIME;
                 sFill = (int)(sTimePercentage * PAD_PIXEL_HEIGHT);
 
@@ -196,7 +201,7 @@ namespace Slapstick
 
             if (!dActive)
             {
-                dCooldownTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
+                dCooldownTime += (float)gameTime.ElapsedGameTime.TotalSeconds * GameState.BeatsPerMinute / 100;
                 float dTimePercentage = dCooldownTime / SHORT_COOLDOWN_TIME;
                 dFill = (int)(dTimePercentage * PAD_PIXEL_HEIGHT);
 
@@ -210,7 +215,7 @@ namespace Slapstick
 
             if (!jActive)
             {
-                jCooldownTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
+                jCooldownTime += (float)gameTime.ElapsedGameTime.TotalSeconds * GameState.BeatsPerMinute / 100;
                 float jTimePercentage = jCooldownTime / SHORT_COOLDOWN_TIME;
                 jFill = (int)(jTimePercentage * PAD_PIXEL_HEIGHT);
 
@@ -224,7 +229,7 @@ namespace Slapstick
 
             if (!kActive)
             {
-                kCooldownTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
+                kCooldownTime += (float)gameTime.ElapsedGameTime.TotalSeconds * GameState.BeatsPerMinute / 100;
                 float kTimePercentage = kCooldownTime / MEDIUM_COOLDOWN_TIME;
                 kFill = (int)(kTimePercentage * PAD_PIXEL_HEIGHT);
 
@@ -238,7 +243,7 @@ namespace Slapstick
 
             if (!lActive)
             {
-                lCooldownTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
+                lCooldownTime += (float)gameTime.ElapsedGameTime.TotalSeconds * GameState.BeatsPerMinute / 100;
                 float lTimePercentage = lCooldownTime / LONG_COOLDOWN_TIME;
                 lFill = (int)(lTimePercentage * PAD_PIXEL_HEIGHT);
 
@@ -257,14 +262,31 @@ namespace Slapstick
         /// </summary>
         public void Slap(int xStartPosition, int xEndPosition, List<Person> people)
         {
+            bool slapped = false;
+
             Debug.WriteLine("test");
             for(int i = 0; i < people.Count; i++)
             {
                 if (people[i].getCenterX() > xStartPosition && people[i].getCenterX() < xEndPosition)
                 {
+                    if(people[i].isNoisy())
+                    {
+                        GameState.Score += 20;
+                    }
+                    else
+                    {
+                        GameState.Score -= 10;
+                    }
+
                     people.RemoveAt(i);
                     i--;
+                    slapped = true;
                 }
+            }
+
+            if(slapped)
+            {
+                slapSFX.Play();
             }
         }
 

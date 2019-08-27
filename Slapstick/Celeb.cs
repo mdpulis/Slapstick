@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Slapstick
 {
-    class Celeb
+    public class Celeb
     {
         public int lives = 3;
 
@@ -44,6 +44,11 @@ namespace Slapstick
         public float getCenterX()
         {
             return position.X + (150 / 2);
+        }
+
+        public int GetLives()
+        {
+            return lives;
         }
 
 

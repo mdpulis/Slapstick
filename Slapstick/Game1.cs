@@ -99,12 +99,12 @@ namespace Slapstick
             backgroundManager.Update(gameTime);
             personTimer += gameTime.ElapsedGameTime.TotalSeconds;
             bpmIncreaseTimer += gameTime.ElapsedGameTime.TotalSeconds;
-            if (personTimer >= 6 - gameUI.beatsPerMinute * 2.0 / 100)
+            if (personTimer >= 3 - gameUI.beatsPerMinute * 1.0 / 100)
             {
                 people.Add(pm.makePerson(graphics, gameUI.beatsPerMinute));
                 personTimer = 0;
             }
-            if(bpmIncreaseTimer >= 30)
+            if(bpmIncreaseTimer >= 20)
             {
                 gameUI.addBPM();
                 bpmIncreaseTimer = 0;
@@ -160,7 +160,8 @@ namespace Slapstick
                 spriteBatch.Draw(p.texture, p.position, p.currentFrame, Color.White, 0.0f, zeroVector, 1.0f, p.spriteEffects, 0.0f);
             }
 
-            gameUI.Draw(spriteBatch,gameTime);
+            gameUI.Draw(spriteBatch, gameTime, celeb);
+            
             spriteBatch.End();
 
             base.Draw(gameTime);

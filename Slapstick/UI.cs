@@ -46,13 +46,14 @@ namespace Slapstick
             beatsPerMinute = beatsPerMinute + 20;
         }
 
-        public void Draw(SpriteBatch spriteBatch, GameTime gameTime)
+        public void Draw(SpriteBatch spriteBatch, GameTime gameTime, Celeb celeb)
         {
             string playTime = string.Format("Time {0:00}:{1:00}", gameTime.TotalGameTime.Minutes, gameTime.TotalGameTime.Seconds);
+            string gameScore = string.Format("Score {0:00000}", GameState.Score);
 
-            spriteBatch.DrawString(fontScore, "Score " + score, new Vector2(32, 32), Color.Red);
+            spriteBatch.DrawString(fontScore, gameScore, new Vector2(32, 32), Color.Red);
             spriteBatch.DrawString(fontTimer, playTime, new Vector2(32, 64), Color.Red);
-            
+            spriteBatch.DrawString(fontTimer, "Lives: " + celeb.GetLives(), new Vector2(32, 96), Color.Red);
         }
 
     }

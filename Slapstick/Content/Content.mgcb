@@ -431,3 +431,15 @@
 /processorParam:Quality=Best
 /build:Sounds/metronome_beat.wav
 
+#begin Sounds/slap_sound_wav.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/slap_sound_wav.wav
+
+#begin Sounds/Slap-SoundMaster13-49669815.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Sounds/Slap-SoundMaster13-49669815.mp3;Sounds/slap_sound.mp3
+
