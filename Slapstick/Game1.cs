@@ -123,7 +123,7 @@ namespace Slapstick
                 {
                     peopleIndexToDelete = people.IndexOf(p);
                 }
-                if(( Math.Floor(p.position.X) == celeb.position.X - p.currentFrame.Width) || (Math.Floor(p.position.X) == celeb.position.X + celeb.texture.Width))
+                if((p.getCenterX() >= celeb.position.X) && (p.getCenterX() <= celeb.getCenterX() + celeb.texture.Width / 2))
                 {
                     peopleIndexToDelete = people.IndexOf(p);
                     celeb.collision(p.isNoisy());

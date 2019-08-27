@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,7 @@ namespace Slapstick
             texture = tex;
             position = new Vector2((gdm.PreferredBackBufferWidth - texture.Width)/2,
                700);
+            Debug.WriteLine("position: " + position.X);
         }
 
         
@@ -37,6 +39,11 @@ namespace Slapstick
             {
                 lives--;
             }
+        }
+
+        public float getCenterX()
+        {
+            return position.X + (150 / 2);
         }
 
 
