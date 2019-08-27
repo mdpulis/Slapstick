@@ -108,7 +108,7 @@ namespace Slapstick
                     backgroundManager.Update(gameTime);
                     bpmIncreaseTimer += gameTime.ElapsedGameTime.TotalSeconds;
 
-                    if (bpmIncreaseTimer >= 20)
+                    if (bpmIncreaseTimer >= 20 || (bpmIncreaseTimer >= 10 && GameState.BeatsPerMinute == 180))
                     {
                         GameState.AddBPM();
                         bpmIncreaseTimer = 0;

@@ -35,6 +35,9 @@ namespace Slapstick
             if (isNoisy)
             {
                 GameState.Lives--;
+            } else
+            {
+                GameState.Score += 50;
             }
         }
 
