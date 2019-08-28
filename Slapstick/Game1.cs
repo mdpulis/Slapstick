@@ -22,8 +22,9 @@ namespace Slapstick
         //Classes responsible for managing lots of content and functionality
         private MainMenu mainMenu = new MainMenu();
 
-        private PlayerInput playerInput = new PlayerInput();
         private BackgroundManager backgroundManager = new BackgroundManager();
+        private PlayerInput playerInput = new PlayerInput();
+        private BarrierManager barrierManager = new BarrierManager();
         private UI gameUI = new UI();
         private PersonManager pm = new PersonManager();
 
@@ -73,6 +74,8 @@ namespace Slapstick
             sm.LoadContent(Content);
             backgroundManager.LoadContent(Content);
             playerInput.LoadContent(Content);
+            if(GameState.BarrierOn)
+                barrierManager.LoadContent(Content);
             gameUI.LoadContent(Content);
         }
 
@@ -115,7 +118,9 @@ namespace Slapstick
                     }
 
                     sm.Update(gameTime, gameUI);
-                    playerInput.Update(gameTime, pm.people);
+                    if(GameState.BarrierOn)
+                        barrierManager.Update(gameTime);
+                    playerInput.Update(gameTime, pm.people, barrierManager);
                     pm.update(gameTime, graphics, gameUI, celeb);
 
                     if (GameState.Lives == 0)
@@ -152,6 +157,8 @@ namespace Slapstick
                 case (GameplayState.InGame):
                     celeb.Draw(spriteBatch);
                     playerInput.Draw(spriteBatch, gameTime);
+                    if(GameState.BarrierOn)
+                        barrierManager.Draw(spriteBatch, gameTime);
                     pm.draw(spriteBatch);
                     gameUI.Draw(spriteBatch, gameTime, celeb);
 

@@ -17,6 +17,8 @@ namespace Slapstick
         private const float MEDIUM_COOLDOWN_TIME = 1.6f;
         private const float SHORT_COOLDOWN_TIME = 0.8f;
 
+        private const float BARRIER_MOVE_COOLDOWN_TIME = 0.2f;
+
         private const float SLAP_DISPLAY_TIME = 0.3f;
 
         private const int SLAP_HEIGHT_LOCATION = 675;
@@ -73,6 +75,9 @@ namespace Slapstick
         private bool kActive = true;
         private bool lActive = true;
 
+        private bool barrierMoveOnCooldown = false;
+        private float barrierMoveCooldownTime = 0.0f;
+
 
         public PlayerInput()
         {
@@ -123,7 +128,7 @@ namespace Slapstick
         /// checking for collisions, gathering input, and playing audio.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
-        public void Update(GameTime gameTime, List<Person> people)
+        public void Update(GameTime gameTime, List<Person> people, BarrierManager barrierManager)
         {
 
             if (aActive && Keyboard.GetState().IsKeyDown(Keys.A))
@@ -168,6 +173,22 @@ namespace Slapstick
                 lFill = 0;
                 Slap(lPadLocation, lPadLocation + PAD_PIXEL_WIDTH, ref lSlapHandActive, people);
             }
+
+
+            if (!barrierMoveOnCooldown)
+            {
+                if (Keyboard.GetState().IsKeyDown(Keys.U))
+                {
+                    barrierManager.MoveBarrier(true); //move right
+                    barrierMoveOnCooldown = true;
+                }
+                else if (Keyboard.GetState().IsKeyDown(Keys.R))
+                {
+                    barrierManager.MoveBarrier(false); //move left
+                    barrierMoveOnCooldown = true;
+                }
+            }
+            
 
             CheckCooldownTimes(gameTime);
         }
@@ -290,6 +311,17 @@ namespace Slapstick
                     lActive = true;
                     lCooldownTime = 0.0f;
                     lFill = PAD_PIXEL_HEIGHT;
+                }
+            }
+
+            if (barrierMoveOnCooldown)
+            {
+                barrierMoveCooldownTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
+                
+                if (barrierMoveCooldownTime >= BARRIER_MOVE_COOLDOWN_TIME)
+                {
+                    barrierMoveOnCooldown = false;
+                    barrierMoveCooldownTime = 0.0f;
                 }
             }
 
