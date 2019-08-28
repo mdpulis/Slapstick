@@ -3,9 +3,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace Slapstick
 {
@@ -92,7 +90,7 @@ namespace Slapstick
         private void MakeCloud()
         {
             Cloud c = new Cloud();
-            c.Initialize(random.Next(5)+10 * 3, cloud);
+            c.Initialize(random.Next(5) + 10 * 3, cloud);
             clouds.Add(c);
         }
         
