@@ -44,8 +44,6 @@
     <Compile Include="BackgroundManager.cs" />
     <Compile Include="BarrierManager.cs" />
     <Compile Include="Celeb.cs" />
-    <Compile Include="DropManager.cs" />
-    <Compile Include="Drops.cs" />
     <Compile Include="GameplayManager.cs" />
     <Compile Include="GameState.cs" />
     <Compile Include="MainMenu.cs" />

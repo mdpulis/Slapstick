@@ -3,11 +3,7 @@
   <SourceFile>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/Images/Normie_SpriteSheet3.png</SourceFile>
   <SourceTime>2019-08-25T11:50:07.1977364-06:00</SourceTime>
   <DestFile>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/bin/Windows/Content/Images/Normie_SpriteSheet3.xnb</DestFile>
-<<<<<<< HEAD
-  <DestTime>2019-08-29T11:31:34.5323632-06:00</DestTime>
-=======
-  <DestTime>2019-08-29T08:30:55.8600674-06:00</DestTime>
->>>>>>> 59fdcd7... Changes for celebrity animation
+  <DestTime>2019-08-29T11:55:09.6342564-06:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2019-08-22T06:59:50-06:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

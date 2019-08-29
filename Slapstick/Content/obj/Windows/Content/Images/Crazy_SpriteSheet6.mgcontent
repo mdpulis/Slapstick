@@ -3,11 +3,7 @@
   <SourceFile>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/Images/Crazy_SpriteSheet6.png</SourceFile>
   <SourceTime>2019-08-25T11:50:07.1897421-06:00</SourceTime>
   <DestFile>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/bin/Windows/Content/Images/Crazy_SpriteSheet6.xnb</DestFile>
-<<<<<<< HEAD
-  <DestTime>2019-08-29T11:30:57.5378582-06:00</DestTime>
-=======
-  <DestTime>2019-08-29T08:30:55.3771398-06:00</DestTime>
->>>>>>> 59fdcd7... Changes for celebrity animation
+  <DestTime>2019-08-29T11:55:09.1116015-06:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2019-08-22T06:59:50-06:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
