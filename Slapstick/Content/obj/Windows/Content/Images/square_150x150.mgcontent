@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<<<<<<< HEAD
+  <SourceFile>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/Images/square_150x150.png</SourceFile>
+  <SourceTime>2019-08-22T12:47:50.7693504-06:00</SourceTime>
+  <DestFile>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/bin/Windows/Content/Images/square_150x150.xnb</DestFile>
+<<<<<<< HEAD
+  <DestTime>2019-08-29T11:30:59.4196029-06:00</DestTime>
+=======
+  <DestTime>2019-08-29T08:30:57.0628249-06:00</DestTime>
+>>>>>>> 59fdcd7... Changes for celebrity animation
+=======
   <SourceFile>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Images/square_150x150.png</SourceFile>
   <SourceTime>2019-08-22T12:12:39.8533168-06:00</SourceTime>
   <DestFile>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/bin/Windows/Content/Images/square_150x150.xnb</DestFile>
   <DestTime>2019-08-29T11:37:20.7992083-06:00</DestTime>
+>>>>>>> master
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T09:35:54-07:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
