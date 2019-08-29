@@ -560,7 +560,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Images/slapper_s.png
+/build:Images/slapper_s.png;Images/slapper_s2.png
 
 #begin Images/slapper_s-2.png
 /importer:TextureImporter
@@ -572,7 +572,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Images/slapper_s-2.png;Images/slapper_s2.png
+/build:Images/slapper_s-2.png;Images/slapper_s.png
 
 #begin Images/slapstick_logo.png
 /importer:TextureImporter
