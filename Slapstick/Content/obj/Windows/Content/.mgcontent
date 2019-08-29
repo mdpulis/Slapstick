@@ -4,7 +4,6 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-<<<<<<< HEAD
     <File>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/Fonts/Arial.spritefont</File>
     <File>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/Fonts/BigArial.spritefont</File>
     <File>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/Fonts/Score.spritefont</File>
@@ -69,72 +68,6 @@
     <File>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/Sounds/slap_sound.wav</File>
     <File>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/Sounds/tires_squealing.wav</File>
     <File>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/Sounds/whoosh.wav</File>
-=======
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Fonts/Arial.spritefont</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Fonts/BigArial.spritefont</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Fonts/Score.spritefont</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/anger.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/anger_symbol.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/ball.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/canvas.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/celeb_static_sized.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/celebrityStatic.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/chinese_theatre.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/chinese_theatre_canvas.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/Clapping_Hands_Emoji_grande.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/cloud.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/Crazy_SpriteSheet1.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/Crazy_SpriteSheet2.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/Crazy_SpriteSheet3.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/Crazy_SpriteSheet4.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/Crazy_SpriteSheet5.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/Crazy_SpriteSheet6.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/Crazy_SpriteSheet7.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/Crazy_SpriteSheet8.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/earth.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/heart.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/Normie_SpriteSheet1.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/Normie_SpriteSheet2.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/Normie_SpriteSheet3.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/Normie_SpriteSheet4.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/Normie_SpriteSheet5.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/Normie_SpriteSheet6.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/Normie_SpriteSheet7.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/Paparazzi_Spritesheet.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/shuttle.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/sky.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/slap_hand.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/slap_hand_orange.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/slap_hand_white.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/slapper_a-1.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/slapper_a-2.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/slapper_d.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/slapper_d-2.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/slapper_j.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/slapper_j-2.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/slapper_k.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/slapper_k-2.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/slapper_l.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/slapper_l-2.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/slapper_s.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/slapper_s-2.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/slapstick_logo.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/SmileyWalk.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/square_150x150.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/square_150x150_white.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/square_150x30.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/square_200x200.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/stars.jpg</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/theatre.jpg</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/tree.png</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Sounds/boing.wav</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Sounds/clear_throat.wav</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Sounds/crowd_ambiance.mp3</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Sounds/metronome_beat.wav</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Sounds/slap_sound.wav</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Sounds/tires_squealing.wav</File>
-    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Sounds/whoosh.wav</File>
->>>>>>> master
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

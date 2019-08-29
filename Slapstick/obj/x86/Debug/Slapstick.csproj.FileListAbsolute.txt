@@ -1,9 +1,5 @@
 <<<<<<< Updated upstream
 <<<<<<< HEAD
-<<<<<<< HEAD
-=======
-C:\Users\u1269344\Github\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Images\anger_symbol.xnb
->>>>>>> master
 =======
 C:\Users\u1269344\Github\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Images\anger_symbol.xnb
 >>>>>>> master
@@ -74,10 +70,6 @@ C:\Users\u1269344\Github\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Image
 C:\Users\u1269344\Github\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Sounds\slap_sound.xnb
 C:\Users\u1269344\Github\Slapstick\Slapstick\obj\x86\Debug\Slapstick.csprojAssemblyReference.cache
 C:\Users\u1269344\Github\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Images\Paparazzi_Spritesheet.xnb
-<<<<<<< HEAD
-=======
-=======
->>>>>>> master
 D:\Documents\GradSchool\RapidPrototyping\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Images\anger_symbol.xnb
 D:\Documents\GradSchool\RapidPrototyping\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Images\ball.xnb
 D:\Documents\GradSchool\RapidPrototyping\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Images\celebrityStatic.xnb
