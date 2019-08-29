@@ -6,13 +6,13 @@
   <SourceFiles>
     <File>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/Fonts/Arial.spritefont</File>
     <File>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/Fonts/BigArial.spritefont</File>
+    <File>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/Fonts/BigUI.spritefont</File>
     <File>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/Fonts/Score.spritefont</File>
     <File>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/Images/anger.png</File>
     <File>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/Images/anger_symbol.png</File>
     <File>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/Images/ball.png</File>
     <File>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/Images/canvas.png</File>
     <File>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/Images/celeb_static_sized.png</File>
-    <File>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/Images/Celeb_Wave_SpriteSheet.png</File>
     <File>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/Images/celebrityStatic.png</File>
     <File>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/Images/chinese_theatre.png</File>
     <File>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/Images/chinese_theatre_canvas.png</File>
@@ -73,8 +73,8 @@
   <DestFiles>
     <File xsi:nil="true" />
     <File xsi:nil="true" />
-    <File>Fonts/UI.spritefont</File>
     <File xsi:nil="true" />
+    <File>Fonts/UI.spritefont</File>
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

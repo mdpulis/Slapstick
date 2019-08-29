@@ -24,7 +24,7 @@ namespace Slapstick
         public void LoadContent(ContentManager Content)
         {
             gameLogo = Content.Load<Texture2D>("Images/slapstick_logo");
-            directionsFont = Content.Load<SpriteFont>("Fonts/BigArial");
+            directionsFont = Content.Load<SpriteFont>("Fonts/BigUI");
 
             startTextSize = directionsFont.MeasureString("Press Enter to Begin!");
         }
@@ -38,8 +38,8 @@ namespace Slapstick
         public void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
             int logoPosition = (1920 / 2) - (gameLogo.Width / 2);
-            spriteBatch.Draw(gameLogo, new Vector2(logoPosition, 300), Color.White);
-            spriteBatch.DrawString(directionsFont, "Press Enter to Begin!", new Vector2((1920 / 2) - (startTextSize.X / 2), 500), Color.White, 0, new Vector2(1, 1), 1, SpriteEffects.None, 0);
+            spriteBatch.Draw(gameLogo, new Vector2(logoPosition, 300), Color.Orange);
+            spriteBatch.DrawString(directionsFont, "Press Enter to Begin!", new Vector2((1920 / 2) - (startTextSize.X / 2), 500), Color.OrangeRed, 0, new Vector2(1, 1), 1, SpriteEffects.None, 0);
 
         }
 
