@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/Sounds/crowd_ambiance.mp3</SourceFile>
-  <SourceTime>2019-08-27T13:54:05.2778686-06:00</SourceTime>
-  <DestFile>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/bin/Windows/Content/Sounds/crowd_ambiance.xnb</DestFile>
-  <DestTime>2019-08-29T11:55:12.6263219-06:00</DestTime>
+  <SourceFile>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Sounds/crowd_ambiance.mp3</SourceFile>
+  <SourceTime>2019-08-27T13:49:51.6593657-06:00</SourceTime>
+  <DestFile>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/bin/Windows/Content/Sounds/crowd_ambiance.xnb</DestFile>
+  <DestTime>2019-08-29T13:26:43.4791405-06:00</DestTime>
   <Importer>Mp3Importer</Importer>
-  <ImporterTime>2019-08-22T06:59:50-06:00</ImporterTime>
+  <ImporterTime>2018-12-08T09:35:54-07:00</ImporterTime>
   <Processor>SongProcessor</Processor>
-  <ProcessorTime>2019-08-22T06:59:50-06:00</ProcessorTime>
+  <ProcessorTime>2018-12-08T09:35:54-07:00</ProcessorTime>
   <Parameters>
     <Key>Quality</Key>
     <Value>Best</Value>
@@ -15,6 +15,6 @@
   <Dependencies />
   <BuildAsset />
   <BuildOutput>
-    <string>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/bin/Windows/Content/Sounds/crowd_ambiance.wma</string>
+    <string>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/bin/Windows/Content/Sounds/crowd_ambiance.wma</string>
   </BuildOutput>
 </PipelineBuildEvent>

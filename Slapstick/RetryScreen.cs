@@ -20,6 +20,15 @@ namespace Slapstick
         private Vector2 ohNoTextSize;
         private Vector2 returnTextSize;
 
+        private Vector2 startTextSize;
+
+        private float textScale = 1.0f;
+
+        private const float MIN_TEXT_SCALE = 1.0f;
+        private const float MAX_TEXT_SCALE = 1.2f;
+
+        private bool textSizeIncreasing = true;
+
 
         public void LoadContent(ContentManager Content)
         {
@@ -33,12 +42,28 @@ namespace Slapstick
         {
             if (Keyboard.GetState().IsKeyDown(Keys.Back))
                 ReturnToMainMenu(people, gameplayManager);
+
+            if (textSizeIncreasing)
+                textScale += 0.01f;
+            else
+                textScale -= 0.01f;
+
+
+            if (textSizeIncreasing && textScale >= MAX_TEXT_SCALE)
+            {
+                textSizeIncreasing = false;
+            }
+            else if (!textSizeIncreasing && textScale <= MIN_TEXT_SCALE)
+            {
+                textSizeIncreasing = true;
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
             spriteBatch.DrawString(directionsFont, "Oh no! The celeb left!", new Vector2((1920 / 2) - (ohNoTextSize.X / 2), 300), Color.OrangeRed, 0, new Vector2(1, 1), 1, SpriteEffects.None, 0);
-            spriteBatch.DrawString(directionsFont, "Press Backspace to return to the main menu.", new Vector2((1920 / 2) - (returnTextSize.X / 2), 500), Color.OrangeRed, 0, new Vector2(1, 1), 1, SpriteEffects.None, 0);
+            spriteBatch.DrawString(directionsFont, "Press Backspace to return to the main menu.", new Vector2((1920 / 2) - (returnTextSize.X * textScale / 2), 500), Color.OrangeRed, 0, new Vector2(1, 1), textScale, SpriteEffects.None, 0);
+
         }
 
         private void ReturnToMainMenu(List<Person> people, GameplayManager gameplayManager)
