@@ -91,3 +91,4 @@ C:\Users\u1274834\source\repos\Slapstick\Slapstick\obj\x86\Debug\Slapstick.cspro
 C:\Users\u1274834\source\repos\Slapstick\Slapstick\obj\x86\Debug\Slapstick.csproj.CopyComplete
 C:\Users\u1274834\source\repos\Slapstick\Slapstick\obj\x86\Debug\Slapstick.exe
 C:\Users\u1274834\source\repos\Slapstick\Slapstick\obj\x86\Debug\Slapstick.pdb
+C:\Users\u1274834\source\repos\Slapstick\Slapstick\obj\x86\Debug\Slapstick.csprojAssemblyReference.cache
