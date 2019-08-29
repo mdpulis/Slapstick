@@ -92,6 +92,7 @@ C:\Users\u1274834\source\repos\Slapstick\Slapstick\obj\x86\Debug\Slapstick.cspro
 C:\Users\u1274834\source\repos\Slapstick\Slapstick\obj\x86\Debug\Slapstick.csproj.CopyComplete
 C:\Users\u1274834\source\repos\Slapstick\Slapstick\obj\x86\Debug\Slapstick.exe
 C:\Users\u1274834\source\repos\Slapstick\Slapstick\obj\x86\Debug\Slapstick.pdb
+<<<<<<< HEAD
 C:\Users\u1274834\source\repos\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Images\Celeb_Wave_SpriteSheet.xnb
 C:\Users\u1274834\source\repos\Slapstick\Slapstick\obj\x86\Debug\Slapstick.csprojAssemblyReference.cache
 =======
@@ -193,3 +194,6 @@ C:\Users\u1273354\Desktop\Projects\Slapstick\Slapstick\obj\x86\Debug\Slapstick.c
 C:\Users\u1273354\Desktop\Projects\Slapstick\Slapstick\obj\x86\Debug\Slapstick.exe
 C:\Users\u1273354\Desktop\Projects\Slapstick\Slapstick\obj\x86\Debug\Slapstick.pdb
 >>>>>>> master
+=======
+C:\Users\u1274834\source\repos\Slapstick\Slapstick\obj\x86\Debug\Slapstick.csprojAssemblyReference.cache
+>>>>>>> animationceleb
