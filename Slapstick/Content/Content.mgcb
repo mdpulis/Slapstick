@@ -104,18 +104,6 @@
 /processorParam:TextureFormat=Color
 /build:Images/celeb_static_sized.png
 
-#begin Images/Celeb_Wave_SpriteSheet.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Images/Celeb_Wave_SpriteSheet.png
-
 #begin Images/celebrityStatic.png
 /importer:TextureImporter
 /processor:TextureProcessor
