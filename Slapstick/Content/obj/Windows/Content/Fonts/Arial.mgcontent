@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/Fonts/Arial.spritefont</SourceFile>
-  <SourceTime>2019-08-22T11:11:05.0272385-06:00</SourceTime>
-  <DestFile>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/bin/Windows/Content/Fonts/Arial.xnb</DestFile>
-  <DestTime>2019-08-29T11:30:55.7520605-06:00</DestTime>
+  <SourceFile>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Fonts/Arial.spritefont</SourceFile>
+  <SourceTime>2019-08-22T10:56:54.1356208-06:00</SourceTime>
+  <DestFile>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/bin/Windows/Content/Fonts/Arial.xnb</DestFile>
+  <DestTime>2019-08-29T11:37:17.1210348-06:00</DestTime>
   <Importer>FontDescriptionImporter</Importer>
-  <ImporterTime>2019-08-22T06:59:50-06:00</ImporterTime>
+  <ImporterTime>2018-12-08T09:35:54-07:00</ImporterTime>
   <Processor>FontDescriptionProcessor</Processor>
-  <ProcessorTime>2019-08-22T06:59:50-06:00</ProcessorTime>
+  <ProcessorTime>2018-12-08T09:35:54-07:00</ProcessorTime>
   <Parameters>
     <Key>PremultiplyAlpha</Key>
     <Value>True</Value>
