@@ -17,17 +17,20 @@ namespace Slapstick
         public Rectangle currentFrame;
         private double animTimer;
         private int frameCounter = 0;
-        private bool noisy;
+        private bool noisy, giga;
         private int speed;
+        private float frameTime = .0333f;
         public Texture2D texture;
         public Vector2 position;
         public SpriteEffects spriteEffects;
-        public void Initialize(Direction dir, bool n, int spd, Texture2D tex, GraphicsDeviceManager gdm)
+        public void Initialize(Direction dir, bool n, bool g, int spd, Texture2D tex, GraphicsDeviceManager gdm)
         {
             direction = dir;
             noisy = n;
+            giga = g;
             speed = spd;
             texture = tex;
+          
             if (dir == Direction.left)
             {
                 position = new Vector2(gdm.PreferredBackBufferWidth,
@@ -41,7 +44,14 @@ namespace Slapstick
                 spriteEffects = SpriteEffects.FlipHorizontally;
             }
 
-            for(int i = 0; i < 30; i++)
+            if (giga)
+            {
+                position.Y -= 400;
+                speed /= 2;
+                frameTime *= 1.2f;
+            }
+
+            for (int i = 0; i < 30; i++)
             {
                 frames[i] = new Rectangle(150 * (i % 5), 200 * (i / 5), 150, 200);
             }
@@ -66,7 +76,7 @@ namespace Slapstick
             }
             
             animTimer += gameTime.ElapsedGameTime.TotalSeconds;
-            if(animTimer > .0333) //every 1/30 seconds
+            if(animTimer > frameTime) //every 1/30 seconds for normals, 1/60 for gigas
             {
                 frameCounter++;
                 if (!noisy)
@@ -105,6 +115,10 @@ namespace Slapstick
             return noisy;
         }
 
+        public bool isGiga()
+        {
+            return giga;
+        }
         public Direction getDirection()
         {
             return direction;

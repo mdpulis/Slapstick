@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<<<<<<< Updated upstream
   <SourceFile>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Images/Crazy_SpriteSheet6.png</SourceFile>
   <SourceTime>2019-08-26T11:39:59.7721862-06:00</SourceTime>
   <DestFile>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/bin/Windows/Content/Images/Crazy_SpriteSheet6.xnb</DestFile>
   <DestTime>2019-08-29T11:37:18.834253-06:00</DestTime>
+=======
+  <SourceFile>C:/Users/u1269344/Github/Slapstick/Slapstick/Content/Images/Crazy_SpriteSheet6.png</SourceFile>
+  <SourceTime>2019-08-24T16:01:53.1165539-06:00</SourceTime>
+  <DestFile>C:/Users/u1269344/Github/Slapstick/Slapstick/Content/bin/Windows/Content/Images/Crazy_SpriteSheet6.xnb</DestFile>
+  <DestTime>2019-08-29T11:06:27.496554-06:00</DestTime>
+>>>>>>> Stashed changes
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T09:35:54-07:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

@@ -19,7 +19,7 @@ namespace Slapstick
         double personTimer;
         Vector2 zeroVector = new Vector2(0, 0);
         Direction direction;
-        bool isNoisy;
+        bool isNoisy, isGiga;
         Texture2D tex, noisy1, normy1, noisy2, normy2, noisy3, normy3, noisy4, normy4, noisy5, normy5, noisy6, normy6, noisy7, normy7, papa;
         System.Random random = new System.Random();
         int texNum, peopleIndexToDelete;
@@ -31,7 +31,7 @@ namespace Slapstick
             Person p = new Person();
             direction = random.Next(2) == 1 ? Direction.right : Direction.left;
             isNoisy = random.Next(2) == 1 ? true : false;
-
+            isGiga = random.Next(20) == 1 && isNoisy ? true : false;
             if(isNoisy)
             {
                 if(direction == Direction.left)
@@ -45,6 +45,7 @@ namespace Slapstick
                         isNoisy = false;
                 }
             }
+            
 
             texNum = random.Next(7) + 1;
             switch (texNum)
@@ -71,7 +72,7 @@ namespace Slapstick
                     tex = isNoisy ? papa : normy7;
                     break;
             }
-            p.Initialize(direction, isNoisy, random.Next(5) * 5 + bpm, tex, gdm); //Third value is speed, increases as BPM increases. 4th value is unused but could be used for different characters
+            p.Initialize(direction, isNoisy, isGiga, random.Next(5) * 5 + bpm, tex, gdm); //Third value is speed, increases as BPM increases. 4th value is unused but could be used for different characters
             return p;
         }
         public void LoadContent(ContentManager Content)
@@ -126,7 +127,15 @@ namespace Slapstick
         {
             foreach (Person p in people)
             {
-                spriteBatch.Draw(p.texture, p.position, p.currentFrame, Color.White, 0.0f, zeroVector, 1.0f, p.spriteEffects, 0.0f);
+                if (!p.isGiga())
+                {
+                    spriteBatch.Draw(p.texture, p.position, p.currentFrame, Color.White, 0.0f, zeroVector, 1.0f, p.spriteEffects, 0.0f);
+                } else
+                {
+
+                    spriteBatch.Draw(p.texture, p.position, p.currentFrame, Color.White, 0.0f, zeroVector, 3.0f, p.spriteEffects, 0.0f);
+                }
+
             }
         }
     }
