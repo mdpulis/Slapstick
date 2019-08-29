@@ -106,6 +106,7 @@ namespace Slapstick
                 Exit();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
             backgroundManager.Update(gameTime);
             bpmIncreaseTimer += gameTime.ElapsedGameTime.TotalSeconds;
 <<<<<<< Updated upstream
@@ -129,6 +130,8 @@ namespace Slapstick
             sm.Update(gameTime, gameUI);
 
             playerInput.Update(gameTime, pm.people);
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 
