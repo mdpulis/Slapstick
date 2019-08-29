@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<<<<<<< HEAD
   <SourceFile>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/Images/SmileyWalk.png</SourceFile>
   <SourceTime>2019-08-22T11:11:05.0292376-06:00</SourceTime>
   <DestFile>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/bin/Windows/Content/Images/SmileyWalk.xnb</DestFile>
@@ -8,10 +9,16 @@
 =======
   <DestTime>2019-08-29T08:30:57.0518348-06:00</DestTime>
 >>>>>>> 59fdcd7... Changes for celebrity animation
+=======
+  <SourceFile>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Images/SmileyWalk.png</SourceFile>
+  <SourceTime>2019-08-20T12:08:07.5320025-06:00</SourceTime>
+  <DestFile>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/bin/Windows/Content/Images/SmileyWalk.xnb</DestFile>
+  <DestTime>2019-08-29T11:37:20.7862224-06:00</DestTime>
+>>>>>>> master
   <Importer>TextureImporter</Importer>
-  <ImporterTime>2019-08-22T06:59:50-06:00</ImporterTime>
+  <ImporterTime>2018-12-08T09:35:54-07:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
-  <ProcessorTime>2019-08-22T06:59:50-06:00</ProcessorTime>
+  <ProcessorTime>2018-12-08T09:35:54-07:00</ProcessorTime>
   <Parameters>
     <Key>ColorKeyColor</Key>
     <Value>255,0,255,255</Value>
