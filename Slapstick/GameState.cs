@@ -29,6 +29,7 @@
         private const int ADD_BEATS_PER_MINUTE = 10;
 
 
+
         /// <summary>
         /// Reset the game state to its default values
         /// </summary>

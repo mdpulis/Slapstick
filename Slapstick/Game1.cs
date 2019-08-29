@@ -21,15 +21,16 @@ namespace Slapstick
 
         //Classes responsible for managing lots of content and functionality
         private MainMenu mainMenu = new MainMenu();
+        private RetryScreen retryScreen = new RetryScreen();
 
         private BackgroundManager backgroundManager = new BackgroundManager();
         private PlayerInput playerInput = new PlayerInput();
         private BarrierManager barrierManager = new BarrierManager();
         private UI gameUI = new UI();
         private PersonManager pm = new PersonManager();
+        private GameplayManager gameplayManager = new GameplayManager();
 
         private Celeb celeb;
-        double bpmIncreaseTimer;
       
 
         SoundManager sm = new SoundManager();
@@ -66,6 +67,7 @@ namespace Slapstick
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             mainMenu.LoadContent(Content);
+            retryScreen.LoadContent(Content);
             
             font = Content.Load<SpriteFont>("Fonts/Arial");
             celebTexture = Content.Load<Texture2D>("Images/celeb_static_sized");
@@ -77,6 +79,7 @@ namespace Slapstick
             if(GameState.BarrierOn)
                 barrierManager.LoadContent(Content);
             gameUI.LoadContent(Content);
+            gameplayManager.LoadContent(Content);
         }
 
         /// <summary>
@@ -109,27 +112,15 @@ namespace Slapstick
                     break;
                 case (GameplayState.InGame):
                     backgroundManager.Update(gameTime);
-                    bpmIncreaseTimer += gameTime.ElapsedGameTime.TotalSeconds;
-
-                    if (bpmIncreaseTimer >= 20 || (bpmIncreaseTimer >= 10 && GameState.BeatsPerMinute == 180))
-                    {
-                        GameState.AddBPM();
-                        bpmIncreaseTimer = 0;
-                    }
-
                     sm.Update(gameTime, gameUI);
                     if(GameState.BarrierOn)
                         barrierManager.Update(gameTime);
                     playerInput.Update(gameTime, pm.people, barrierManager);
                     pm.update(gameTime, graphics, gameUI, celeb);
-
-                    if (GameState.Lives == 0)
-                    {
-                        Exit();
-                    }
+                    gameplayManager.Update(gameTime);
                     break;
                 case (GameplayState.RetryScreen):
-
+                    retryScreen.Update(gameTime, pm.people, gameplayManager);
                     break;
             }
            
@@ -152,7 +143,6 @@ namespace Slapstick
             {
                 case (GameplayState.MainMenu):
                     mainMenu.Draw(spriteBatch, gameTime);
-
                     break;
                 case (GameplayState.InGame):
                     celeb.Draw(spriteBatch);
@@ -160,11 +150,11 @@ namespace Slapstick
                     if(GameState.BarrierOn)
                         barrierManager.Draw(spriteBatch, gameTime);
                     pm.draw(spriteBatch);
-                    gameUI.Draw(spriteBatch, gameTime, celeb);
-
+                    gameplayManager.Draw(spriteBatch, gameTime);
+                    gameUI.Draw(spriteBatch, gameTime, celeb, gameplayManager);
                     break;
                 case (GameplayState.RetryScreen):
-
+                    retryScreen.Draw(spriteBatch, gameTime);
                     break;
             }
             
