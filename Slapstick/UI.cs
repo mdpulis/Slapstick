@@ -25,9 +25,12 @@ namespace Slapstick
             uiFont = Content.Load<SpriteFont>("Fonts/UI");
         }
 
-        public void Draw(SpriteBatch spriteBatch, GameTime gameTime, Celeb celeb)
+        public void Draw(SpriteBatch spriteBatch, GameTime gameTime, Celeb celeb, GameplayManager gameplayManager)
         {
-            string playTime = string.Format("Time {0:00}:{1:00}", gameTime.TotalGameTime.Minutes, gameTime.TotalGameTime.Seconds);
+            int minutes = (int)(gameplayManager.GetElapsedGameTime() / 60);
+            int seconds = (int)(gameplayManager.GetElapsedGameTime() % 60);
+
+            string playTime = string.Format("Time {0:00}:{1:00}", minutes, seconds);
             string gameScore = string.Format("Score {0:00000}", GameState.Score);
 
             spriteBatch.DrawString(uiFont, gameScore, new Vector2(32, 32), Color.White);

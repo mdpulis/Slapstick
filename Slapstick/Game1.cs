@@ -150,8 +150,8 @@ namespace Slapstick
                     if(GameState.BarrierOn)
                         barrierManager.Draw(spriteBatch, gameTime);
                     pm.draw(spriteBatch);
-                    gameUI.Draw(spriteBatch, gameTime, celeb);
                     gameplayManager.Draw(spriteBatch, gameTime);
+                    gameUI.Draw(spriteBatch, gameTime, celeb, gameplayManager);
                     break;
                 case (GameplayState.RetryScreen):
                     retryScreen.Draw(spriteBatch, gameTime);
