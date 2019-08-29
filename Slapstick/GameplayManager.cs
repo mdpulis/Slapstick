@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -19,9 +20,12 @@ namespace Slapstick
         private double elapsedGameTime = 0.0f;
         private double bpmIncreaseTimer = 0.0f;
 
+        private SoundEffect tiresSquealingSFX;
+
 
         public void LoadContent(ContentManager Content)
         {
+            tiresSquealingSFX = Content.Load<SoundEffect>("Sounds/tires_squealing");
         }
 
         public void Update(GameTime gameTime)
@@ -37,6 +41,7 @@ namespace Slapstick
 
             if (GameState.Lives == 0)
             {
+                tiresSquealingSFX.Play();
                 GameState.ProgressGameplayState();
             }
         }

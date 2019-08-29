@@ -17,7 +17,7 @@
     public static class GameState
     {
 
-        public static bool BarrierOn = true;
+        public static bool BarrierOn = false;
 
 
         public static int BeatsPerMinute = 180;

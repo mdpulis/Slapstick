@@ -32,6 +32,8 @@ namespace Slapstick
         private Texture2D slapHand;
         private SpriteFont letterFont;
         private SoundEffect slapSFX;
+        private SoundEffect whooshSFX;
+        private SoundEffect boingSFX;
 
         private bool aSlapHandActive;
         private bool sSlapHandActive;
@@ -109,6 +111,8 @@ namespace Slapstick
             slapHand = Content.Load<Texture2D>("Images/slap_hand_orange");
             letterFont = Content.Load<SpriteFont>("Fonts/BigArial");
             slapSFX = Content.Load<SoundEffect>("Sounds/slap_sound");
+            boingSFX = Content.Load<SoundEffect>("Sounds/boing");
+            whooshSFX = Content.Load<SoundEffect>("Sounds/whoosh");
 
             aSize = letterFont.MeasureString("a");
             sSize = letterFont.MeasureString("s");
@@ -332,23 +336,36 @@ namespace Slapstick
         /// </summary>
         public void Slap(int xStartPosition, int xEndPosition, ref bool slapHandActive, List<Person> people)
         {
-            bool slapped = false;
+            bool normieSlapped = false;
+            bool crazySlapped = false;
 
             for(int i = 0; i < people.Count; i++)
             {
                 if (people[i].getCenterX() > xStartPosition && people[i].getCenterX() < xEndPosition)
                 {
+                    if (people[i].isNoisy())
+                        crazySlapped = true;
+                    else
+                        normieSlapped = true;
+
                     people.RemoveAt(i);
                     i--;
-                    slapped = true;
                 }
             }
 
             slapHandActive = true;
 
-            if(slapped)
+            if(normieSlapped && !crazySlapped) //if only normies, no crazies, were slapped
+            {
+                boingSFX.Play();
+            }
+            else if (crazySlapped) //or if a crazy was slapped
             {
                 slapSFX.Play();
+            }
+            else //or you missed entirely
+            {
+                whooshSFX.Play();
             }
         }
 

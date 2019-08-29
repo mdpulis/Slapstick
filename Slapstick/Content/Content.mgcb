@@ -34,6 +34,18 @@
 /processorParam:TextureFormat=Compressed
 /build:Fonts/Score.spritefont;Fonts/UI.spritefont
 
+#begin Images/anger.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Images/anger.png
+
 #begin Images/anger_symbol.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -57,6 +69,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Images/ball.png
+
+#begin Images/canvas.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Images/canvas.png
 
 #begin Images/celeb_static_sized.png
 /importer:TextureImporter
@@ -93,6 +117,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Images/chinese_theatre.png
+
+#begin Images/chinese_theatre_canvas.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Images/chinese_theatre_canvas.png
 
 #begin Images/Clapping_Hands_Emoji_grande.png
 /importer:TextureImporter
@@ -225,6 +261,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Images/earth.png
+
+#begin Images/heart.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Images/heart.png
 
 #begin Images/Normie_SpriteSheet1.png
 /importer:TextureImporter
@@ -392,7 +440,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Images/slapper_a-1.png
+/build:Images/slapper_a-1.png;Images/slapper_a.png
 
 #begin Images/slapper_a-2.png
 /importer:TextureImporter
@@ -404,7 +452,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Images/slapper_a-2.png
+/build:Images/slapper_a-2.png;Images/slapper_a2.png
 
 #begin Images/slapper_d.png
 /importer:TextureImporter
@@ -428,7 +476,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Images/slapper_d-2.png
+/build:Images/slapper_d-2.png;Images/slapper_d2.png
 
 #begin Images/slapper_j.png
 /importer:TextureImporter
@@ -452,7 +500,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Images/slapper_j-2.png
+/build:Images/slapper_j-2.png;Images/slapper_j2.png
 
 #begin Images/slapper_k.png
 /importer:TextureImporter
@@ -476,7 +524,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Images/slapper_k-2.png
+/build:Images/slapper_k-2.png;Images/slapper_k2.png
 
 #begin Images/slapper_l.png
 /importer:TextureImporter
@@ -500,7 +548,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Images/slapper_l-2.png
+/build:Images/slapper_l-2.png;Images/slapper_l2.png
 
 #begin Images/slapper_s.png
 /importer:TextureImporter
@@ -524,7 +572,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Images/slapper_s-2.png
+/build:Images/slapper_s-2.png;Images/slapper_s2.png
 
 #begin Images/slapstick_logo.png
 /importer:TextureImporter
@@ -634,6 +682,18 @@
 /processorParam:TextureFormat=Color
 /build:Images/tree.png
 
+#begin Sounds/boing.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/boing.wav
+
+#begin Sounds/clear_throat.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/clear_throat.wav
+
 #begin Sounds/crowd_ambiance.mp3
 /importer:Mp3Importer
 /processor:SongProcessor
@@ -651,4 +711,16 @@
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
 /build:Sounds/slap_sound.wav
+
+#begin Sounds/tires_squealing.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/tires_squealing.wav
+
+#begin Sounds/whoosh.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/whoosh.wav
 

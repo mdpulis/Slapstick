@@ -7,11 +7,14 @@
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Fonts/Arial.spritefont</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Fonts/BigArial.spritefont</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Fonts/Score.spritefont</File>
+    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/anger.png</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/anger_symbol.png</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/ball.png</File>
+    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/canvas.png</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/celeb_static_sized.png</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/celebrityStatic.png</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/chinese_theatre.png</File>
+    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/chinese_theatre_canvas.png</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/Clapping_Hands_Emoji_grande.png</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/cloud.png</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/Crazy_SpriteSheet1.png</File>
@@ -23,6 +26,7 @@
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/Crazy_SpriteSheet7.png</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/Crazy_SpriteSheet8.png</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/earth.png</File>
+    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/heart.png</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/Normie_SpriteSheet1.png</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/Normie_SpriteSheet2.png</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/Normie_SpriteSheet3.png</File>
@@ -57,9 +61,13 @@
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/stars.jpg</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/theatre.jpg</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/tree.png</File>
+    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Sounds/boing.wav</File>
+    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Sounds/clear_throat.wav</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Sounds/crowd_ambiance.mp3</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Sounds/metronome_beat.wav</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Sounds/slap_sound.wav</File>
+    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Sounds/tires_squealing.wav</File>
+    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Sounds/whoosh.wav</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />
@@ -98,10 +106,18 @@
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
+    <File>Images/slapper_a.png</File>
+    <File>Images/slapper_a2.png</File>
     <File xsi:nil="true" />
+    <File>Images/slapper_d2.png</File>
     <File xsi:nil="true" />
+    <File>Images/slapper_j2.png</File>
     <File xsi:nil="true" />
+    <File>Images/slapper_k2.png</File>
     <File xsi:nil="true" />
+    <File>Images/slapper_l2.png</File>
+    <File xsi:nil="true" />
+    <File>Images/slapper_s2.png</File>
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

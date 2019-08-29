@@ -79,6 +79,7 @@ namespace Slapstick
             if(GameState.BarrierOn)
                 barrierManager.LoadContent(Content);
             gameUI.LoadContent(Content);
+            celeb.LoadContent(Content);
             gameplayManager.LoadContent(Content);
         }
 
