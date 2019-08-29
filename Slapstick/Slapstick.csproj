@@ -44,8 +44,10 @@
     <Compile Include="BackgroundManager.cs" />
     <Compile Include="BarrierManager.cs" />
     <Compile Include="Celeb.cs" />
+    <Compile Include="GameplayManager.cs" />
     <Compile Include="GameState.cs" />
     <Compile Include="MainMenu.cs" />
+    <Compile Include="RetryScreen.cs" />
     <Compile Include="SoundManager.cs" />
     <Compile Include="UI.cs" />
     <Compile Include="Game1.cs" />
