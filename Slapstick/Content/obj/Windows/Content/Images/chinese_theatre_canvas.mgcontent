@@ -3,7 +3,11 @@
   <SourceFile>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/Images/chinese_theatre_canvas.png</SourceFile>
   <SourceTime>2019-08-29T08:16:43.1552834-06:00</SourceTime>
   <DestFile>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/bin/Windows/Content/Images/chinese_theatre_canvas.xnb</DestFile>
+<<<<<<< HEAD
   <DestTime>2019-08-29T11:30:56.8063499-06:00</DestTime>
+=======
+  <DestTime>2019-08-29T08:30:54.7555491-06:00</DestTime>
+>>>>>>> 59fdcd7... Changes for celebrity animation
   <Importer>TextureImporter</Importer>
   <ImporterTime>2019-08-22T06:59:50-06:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
