@@ -13,6 +13,7 @@ namespace Slapstick
     {
         private Direction direction;
         private Rectangle[] frames = new Rectangle[30];
+        private Rectangle[] paparazziFrames = new Rectangle[144];
         public Rectangle currentFrame;
         private double animTimer;
         private int frameCounter = 0;
@@ -44,6 +45,10 @@ namespace Slapstick
             {
                 frames[i] = new Rectangle(150 * (i % 5), 200 * (i / 5), 150, 200);
             }
+            for (int i = 0; i < 144; i++)
+            {
+                paparazziFrames[i] = new Rectangle(200 * (i % 10), 200 * (i / 10), 150, 200);
+            }
             currentFrame = frames[frameCounter];
 
         }
@@ -64,11 +69,22 @@ namespace Slapstick
             if(animTimer > .0333) //every 1/30 seconds
             {
                 frameCounter++;
-                if(frameCounter >= 30)
+                if (!noisy)
                 {
-                    frameCounter = 0;
+                    if (frameCounter >= 30)
+                    {
+                        frameCounter = 0;
+                    }
+                    currentFrame = frames[frameCounter];
                 }
-                currentFrame = frames[frameCounter];
+                else
+                {
+                    if (frameCounter >= 144)
+                    {
+                        frameCounter = 0;
+                    }
+                    currentFrame = paparazziFrames[frameCounter];
+                }
                 animTimer = 0;
             }
         }

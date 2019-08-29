@@ -17,16 +17,20 @@ namespace Slapstick
 
         SpriteFont font;
         private Texture2D celebTexture;
-        
+
 
         //Classes responsible for managing lots of content and functionality
-        private PlayerInput playerInput = new PlayerInput();
+        private MainMenu mainMenu = new MainMenu();
+        private RetryScreen retryScreen = new RetryScreen();
+
         private BackgroundManager backgroundManager = new BackgroundManager();
+        private PlayerInput playerInput = new PlayerInput();
+        private BarrierManager barrierManager = new BarrierManager();
         private UI gameUI = new UI();
         private PersonManager pm = new PersonManager();
+        private GameplayManager gameplayManager = new GameplayManager();
 
         private Celeb celeb;
-        double bpmIncreaseTimer;
       
 
         SoundManager sm = new SoundManager();
@@ -61,6 +65,9 @@ namespace Slapstick
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            mainMenu.LoadContent(Content);
+            retryScreen.LoadContent(Content);
             
             font = Content.Load<SpriteFont>("Fonts/Arial");
             celebTexture = Content.Load<Texture2D>("Images/celeb_static_sized");
@@ -69,7 +76,11 @@ namespace Slapstick
             sm.LoadContent(Content);
             backgroundManager.LoadContent(Content);
             playerInput.LoadContent(Content);
+            if(GameState.BarrierOn)
+                barrierManager.LoadContent(Content);
             gameUI.LoadContent(Content);
+            celeb.LoadContent(Content);
+            gameplayManager.LoadContent(Content);
         }
 
         /// <summary>
@@ -94,6 +105,7 @@ namespace Slapstick
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
+<<<<<<< HEAD
             backgroundManager.Update(gameTime);
             bpmIncreaseTimer += gameTime.ElapsedGameTime.TotalSeconds;
 <<<<<<< Updated upstream
@@ -117,12 +129,28 @@ namespace Slapstick
             sm.Update(gameTime, gameUI);
 
             playerInput.Update(gameTime, pm.people);
+=======
+>>>>>>> master
 
-            pm.update(gameTime, graphics, gameUI, celeb);
-            if(GameState.Lives == 0)
+            switch(GameState.CurrentGameplayState)
             {
-                Exit();
+                case (GameplayState.MainMenu):
+                    mainMenu.Update(gameTime);
+                    break;
+                case (GameplayState.InGame):
+                    backgroundManager.Update(gameTime);
+                    sm.Update(gameTime, gameUI);
+                    if(GameState.BarrierOn)
+                        barrierManager.Update(gameTime);
+                    playerInput.Update(gameTime, pm.people, barrierManager);
+                    pm.update(gameTime, graphics, gameUI, celeb);
+                    gameplayManager.Update(gameTime);
+                    break;
+                case (GameplayState.RetryScreen):
+                    retryScreen.Update(gameTime, pm.people, gameplayManager);
+                    break;
             }
+           
 
             base.Update(gameTime);
         }
@@ -137,10 +165,25 @@ namespace Slapstick
             spriteBatch.Begin();
 
             backgroundManager.Draw(spriteBatch, gameTime);
-            celeb.Draw(spriteBatch);
-            playerInput.Draw(spriteBatch, gameTime);
-            pm.draw(spriteBatch);
-            gameUI.Draw(spriteBatch, gameTime, celeb);
+
+            switch (GameState.CurrentGameplayState)
+            {
+                case (GameplayState.MainMenu):
+                    mainMenu.Draw(spriteBatch, gameTime);
+                    break;
+                case (GameplayState.InGame):
+                    celeb.Draw(spriteBatch);
+                    playerInput.Draw(spriteBatch, gameTime);
+                    if(GameState.BarrierOn)
+                        barrierManager.Draw(spriteBatch, gameTime);
+                    pm.draw(spriteBatch);
+                    gameplayManager.Draw(spriteBatch, gameTime);
+                    gameUI.Draw(spriteBatch, gameTime, celeb, gameplayManager);
+                    break;
+                case (GameplayState.RetryScreen):
+                    retryScreen.Draw(spriteBatch, gameTime);
+                    break;
+            }
             
             spriteBatch.End();
 

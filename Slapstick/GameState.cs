@@ -4,7 +4,7 @@
     /// <summary>
     /// Represents the current state of the gameplay (menu, in game, retry screen, etc.)
     /// </summary>
-    public enum GamePlayState
+    public enum GameplayState
     {
         MainMenu = 0,
         InGame = 1,
@@ -17,12 +17,17 @@
     public static class GameState
     {
 
-        public static int BeatsPerMinute = 140;
+        public static bool BarrierOn = false;
+
+
+        public static int BeatsPerMinute = 180;
         public static int Score = 0;
         public static int Lives = 3;
-        public static GamePlayState CurrentGamePlayState = GamePlayState.InGame;
+        public static GameplayState CurrentGameplayState = GameplayState.MainMenu;
 
-        private const int MAX_BEATS_PER_MINUTE = 240;
+        private const int MAX_BEATS_PER_MINUTE = 250;
+        private const int ADD_BEATS_PER_MINUTE = 10;
+
 
 
         /// <summary>
@@ -30,10 +35,10 @@
         /// </summary>
         public static void ResetGameState()
         {
-            BeatsPerMinute = 80;
+            BeatsPerMinute = 180;
             Score = 0;
             Lives = 3;
-            CurrentGamePlayState = GamePlayState.MainMenu;
+            CurrentGameplayState = GameplayState.MainMenu;
         }
 
         /// <summary>
@@ -41,9 +46,28 @@
         /// </summary>
         public static void AddBPM()
         {
-            if(BeatsPerMinute <= MAX_BEATS_PER_MINUTE)
+            if(BeatsPerMinute < MAX_BEATS_PER_MINUTE)
             {
-                BeatsPerMinute += 20;
+                BeatsPerMinute += ADD_BEATS_PER_MINUTE;
+            }
+        }
+
+        /// <summary>
+        /// Progress to the next gameplay state
+        /// </summary>
+        public static void ProgressGameplayState()
+        {
+            switch (CurrentGameplayState)
+            {
+                case (GameplayState.MainMenu):
+                    CurrentGameplayState = GameplayState.InGame;
+                    break;
+                case (GameplayState.InGame):
+                    CurrentGameplayState = GameplayState.RetryScreen;
+                    break;
+                case (GameplayState.RetryScreen):
+                    CurrentGameplayState = GameplayState.MainMenu;
+                    break;
             }
         }
 

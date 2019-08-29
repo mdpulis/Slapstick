@@ -1,23 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-<<<<<<< Updated upstream:Slapstick/Content/obj/Windows/Content/Sounds/crowd_ambiance.mgcontent
-<<<<<<< Updated upstream:Slapstick/Content/obj/Windows/Content/Sounds/slap_sound.mgcontent
-  <SourceFile>C:/Users/u1269344/Github/Slapstick/Slapstick/Content/Sounds/Slap-SoundMaster13-49669815.mp3</SourceFile>
-  <SourceTime>2019-08-27T10:18:53.2681288-06:00</SourceTime>
-  <DestFile>C:/Users/u1269344/Github/Slapstick/Slapstick/Content/bin/Windows/Content/Sounds/slap_sound.xnb</DestFile>
-  <DestTime>2019-08-27T10:19:24.0977093-06:00</DestTime>
-=======
-  <SourceFile>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Sounds/crowd_ambiance.mp3</SourceFile>
-  <SourceTime>2019-08-27T13:17:16.3973624-06:00</SourceTime>
-  <DestFile>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/bin/Windows/Content/Sounds/crowd_ambiance.xnb</DestFile>
-  <DestTime>2019-08-27T13:33:17.3475554-06:00</DestTime>
->>>>>>> Stashed changes:Slapstick/Content/obj/Windows/Content/Sounds/crowd_ambiance.mgcontent
-=======
-  <SourceFile>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/Sounds/Slap-SoundMaster13-49669815.mp3</SourceFile>
-  <SourceTime>2019-08-27T10:21:13.6810918-06:00</SourceTime>
-  <DestFile>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/bin/Windows/Content/Sounds/slap_sound.xnb</DestFile>
-  <DestTime>2019-08-27T13:31:10.5422673-06:00</DestTime>
->>>>>>> Stashed changes:Slapstick/Content/obj/Windows/Content/Sounds/slap_sound.mgcontent
+  <SourceFile>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/Sounds/crowd_ambiance.mp3</SourceFile>
+  <SourceTime>2019-08-27T13:54:05.2778686-06:00</SourceTime>
+  <DestFile>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/bin/Windows/Content/Sounds/crowd_ambiance.xnb</DestFile>
+  <DestTime>2019-08-29T08:17:21.3208414-06:00</DestTime>
   <Importer>Mp3Importer</Importer>
   <ImporterTime>2019-08-22T06:59:50-06:00</ImporterTime>
   <Processor>SongProcessor</Processor>
@@ -29,14 +15,6 @@
   <Dependencies />
   <BuildAsset />
   <BuildOutput>
-<<<<<<< Updated upstream:Slapstick/Content/obj/Windows/Content/Sounds/crowd_ambiance.mgcontent
-<<<<<<< Updated upstream:Slapstick/Content/obj/Windows/Content/Sounds/slap_sound.mgcontent
-    <string>C:/Users/u1269344/Github/Slapstick/Slapstick/Content/bin/Windows/Content/Sounds/slap_sound.wma</string>
-=======
-    <string>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/bin/Windows/Content/Sounds/crowd_ambiance.wma</string>
->>>>>>> Stashed changes:Slapstick/Content/obj/Windows/Content/Sounds/crowd_ambiance.mgcontent
-=======
-    <string>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/bin/Windows/Content/Sounds/slap_sound.wma</string>
->>>>>>> Stashed changes:Slapstick/Content/obj/Windows/Content/Sounds/slap_sound.mgcontent
+    <string>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/bin/Windows/Content/Sounds/crowd_ambiance.wma</string>
   </BuildOutput>
 </PipelineBuildEvent>

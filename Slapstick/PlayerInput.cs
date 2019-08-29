@@ -14,12 +14,16 @@ namespace Slapstick
     public class PlayerInput
     {
         private const float LONG_COOLDOWN_TIME = 2.4f;
-        private const float MEDIUM_COOLDOWN_TIME = 1.6f;
-        private const float SHORT_COOLDOWN_TIME = 0.8f;
+        private const float MEDIUM_COOLDOWN_TIME = 1.8f;
+        private const float SHORT_COOLDOWN_TIME = 1.2f;
+
+        private const float PENALTY_MODIFIER = 2.0f;
+
+        private const float BARRIER_MOVE_COOLDOWN_TIME = 0.2f;
 
         private const float SLAP_DISPLAY_TIME = 0.3f;
 
-        private const int SLAP_HEIGHT_LOCATION = 600;
+        private const int SLAP_HEIGHT_LOCATION = 675;
         private const int PAD_HEIGHT_LOCATION = 900;
 
         private const int PAD_PIXEL_WIDTH = 150;
@@ -30,6 +34,22 @@ namespace Slapstick
         private Texture2D slapHand;
         private SpriteFont letterFont;
         private SoundEffect slapSFX;
+        private SoundEffect whooshSFX;
+        private SoundEffect boingSFX;
+
+        private Texture2D aSlapper;
+        private Texture2D aSlapper2;
+        private Texture2D sSlapper;
+        private Texture2D sSlapper2;
+        private Texture2D dSlapper;
+        private Texture2D dSlapper2;
+        private Texture2D jSlapper;
+        private Texture2D jSlapper2;
+        private Texture2D kSlapper;
+        private Texture2D kSlapper2;
+        private Texture2D lSlapper;
+        private Texture2D lSlapper2;
+
 
         private bool aSlapHandActive;
         private bool sSlapHandActive;
@@ -73,6 +93,16 @@ namespace Slapstick
         private bool kActive = true;
         private bool lActive = true;
 
+        private bool aPenalty = true;
+        private bool sPenalty = true;
+        private bool dPenalty = true;
+        private bool jPenalty = true;
+        private bool kPenalty = true;
+        private bool lPenalty = true;
+
+        private bool barrierMoveOnCooldown = false;
+        private float barrierMoveCooldownTime = 0.0f;
+
 
         public PlayerInput()
         {
@@ -101,9 +131,24 @@ namespace Slapstick
             graySquare = Content.Load<Texture2D>("Images/square_150x150");
             whiteSquare = Content.Load<Texture2D>("Images/square_150x150_white");
 
-            slapHand = Content.Load<Texture2D>("Images/slap_hand");
+            slapHand = Content.Load<Texture2D>("Images/slap_hand_orange");
             letterFont = Content.Load<SpriteFont>("Fonts/BigArial");
-            slapSFX = Content.Load<SoundEffect>("Sounds/slap_sound_wav");
+            slapSFX = Content.Load<SoundEffect>("Sounds/slap_sound");
+            boingSFX = Content.Load<SoundEffect>("Sounds/boing");
+            whooshSFX = Content.Load<SoundEffect>("Sounds/whoosh");
+
+            aSlapper = Content.Load<Texture2D>("Images/slapper_a");
+            aSlapper2 = Content.Load<Texture2D>("Images/slapper_a2");
+            sSlapper = Content.Load<Texture2D>("Images/slapper_s");
+            sSlapper2 = Content.Load<Texture2D>("Images/slapper_s2");
+            dSlapper = Content.Load<Texture2D>("Images/slapper_d");
+            dSlapper2 = Content.Load<Texture2D>("Images/slapper_d2");
+            jSlapper = Content.Load<Texture2D>("Images/slapper_j");
+            jSlapper2 = Content.Load<Texture2D>("Images/slapper_j2");
+            kSlapper = Content.Load<Texture2D>("Images/slapper_k");
+            kSlapper2 = Content.Load<Texture2D>("Images/slapper_k2");
+            lSlapper = Content.Load<Texture2D>("Images/slapper_l");
+            lSlapper2 = Content.Load<Texture2D>("Images/slapper_l2");
 
             aSize = letterFont.MeasureString("a");
             sSize = letterFont.MeasureString("s");
@@ -123,7 +168,7 @@ namespace Slapstick
         /// checking for collisions, gathering input, and playing audio.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
-        public void Update(GameTime gameTime, List<Person> people)
+        public void Update(GameTime gameTime, List<Person> people, BarrierManager barrierManager)
         {
 
             if (aActive && Keyboard.GetState().IsKeyDown(Keys.A))
@@ -131,43 +176,59 @@ namespace Slapstick
                 aActive = false;
                 aCooldownTime = 0.0f;
                 aFill = 0;
-                Slap(aPadLocation, aPadLocation + PAD_PIXEL_WIDTH, ref aSlapHandActive, people);
+                Slap(aPadLocation, aPadLocation + PAD_PIXEL_WIDTH, ref aSlapHandActive, ref aPenalty, people);
             }
             if (sActive && Keyboard.GetState().IsKeyDown(Keys.S))
             {
                 sActive = false;
                 sCooldownTime = 0.0f;
                 sFill = 0;
-                Slap(sPadLocation, sPadLocation + PAD_PIXEL_WIDTH, ref sSlapHandActive, people);
+                Slap(sPadLocation, sPadLocation + PAD_PIXEL_WIDTH, ref sSlapHandActive, ref sPenalty, people);
             }
             if (dActive && Keyboard.GetState().IsKeyDown(Keys.D))
             {
                 dActive = false;
                 dCooldownTime = 0.0f;
                 dFill = 0;
-                Slap(dPadLocation, dPadLocation + PAD_PIXEL_WIDTH, ref dSlapHandActive, people);
+                Slap(dPadLocation, dPadLocation + PAD_PIXEL_WIDTH, ref dSlapHandActive, ref dPenalty, people);
             }
             if (jActive && Keyboard.GetState().IsKeyDown(Keys.J))
             {
                 jActive = false;
                 jCooldownTime = 0.0f;
                 jFill = 0;
-                Slap(jPadLocation, jPadLocation + PAD_PIXEL_WIDTH, ref jSlapHandActive, people);
+                Slap(jPadLocation, jPadLocation + PAD_PIXEL_WIDTH, ref jSlapHandActive, ref jPenalty, people);
             }
             if (kActive && Keyboard.GetState().IsKeyDown(Keys.K))
             {
                 kActive = false;
                 kCooldownTime = 0.0f;
                 kFill = 0;
-                Slap(kPadLocation, kPadLocation + PAD_PIXEL_WIDTH, ref kSlapHandActive, people);
+                Slap(kPadLocation, kPadLocation + PAD_PIXEL_WIDTH, ref kSlapHandActive, ref kPenalty, people);
             }
             if (lActive && Keyboard.GetState().IsKeyDown(Keys.L))
             {
                 lActive = false;
                 lCooldownTime = 0.0f;
                 lFill = 0;
-                Slap(lPadLocation, lPadLocation + PAD_PIXEL_WIDTH, ref lSlapHandActive, people);
+                Slap(lPadLocation, lPadLocation + PAD_PIXEL_WIDTH, ref lSlapHandActive, ref lPenalty, people);
             }
+
+
+            if (!barrierMoveOnCooldown)
+            {
+                if (Keyboard.GetState().IsKeyDown(Keys.U))
+                {
+                    barrierManager.MoveBarrier(true); //move right
+                    barrierMoveOnCooldown = true;
+                }
+                else if (Keyboard.GetState().IsKeyDown(Keys.R))
+                {
+                    barrierManager.MoveBarrier(false); //move left
+                    barrierMoveOnCooldown = true;
+                }
+            }
+            
 
             CheckCooldownTimes(gameTime);
         }
@@ -179,9 +240,13 @@ namespace Slapstick
         /// <param name="gameTime"></param>
         private void CheckCooldownTimes(GameTime gameTime)
         {
-            if(!aActive)
+            if (!aActive)
             {
-                aCooldownTime += (float)gameTime.ElapsedGameTime.TotalSeconds * GameState.BeatsPerMinute / 100;
+                if (!aPenalty)
+                    aCooldownTime += (float)gameTime.ElapsedGameTime.TotalSeconds * GameState.BeatsPerMinute / 100;
+                else
+                    aCooldownTime += ((float)gameTime.ElapsedGameTime.TotalSeconds * GameState.BeatsPerMinute / 100 ) / PENALTY_MODIFIER;
+
                 float aTimePercentage = aCooldownTime / LONG_COOLDOWN_TIME;
                 aFill = (int)(aTimePercentage * PAD_PIXEL_HEIGHT);
 
@@ -193,6 +258,7 @@ namespace Slapstick
                 if (aCooldownTime >= LONG_COOLDOWN_TIME)
                 {
                     aActive = true;
+                    aPenalty = false;
                     aCooldownTime = 0.0f;
                     aFill = PAD_PIXEL_HEIGHT;
                 }
@@ -200,7 +266,11 @@ namespace Slapstick
 
             if (!sActive)
             {
-                sCooldownTime += (float)gameTime.ElapsedGameTime.TotalSeconds * GameState.BeatsPerMinute / 100;
+                if (!sPenalty)
+                    sCooldownTime += (float)gameTime.ElapsedGameTime.TotalSeconds * GameState.BeatsPerMinute / 100;
+                else
+                    sCooldownTime += ((float)gameTime.ElapsedGameTime.TotalSeconds * GameState.BeatsPerMinute / 100) / PENALTY_MODIFIER;
+
                 float sTimePercentage = sCooldownTime / MEDIUM_COOLDOWN_TIME;
                 sFill = (int)(sTimePercentage * PAD_PIXEL_HEIGHT);
 
@@ -212,6 +282,7 @@ namespace Slapstick
                 if (sCooldownTime >= MEDIUM_COOLDOWN_TIME)
                 {
                     sActive = true;
+                    sPenalty = false;
                     sCooldownTime = 0.0f;
                     sFill = PAD_PIXEL_HEIGHT;
                 }
@@ -219,7 +290,11 @@ namespace Slapstick
 
             if (!dActive)
             {
-                dCooldownTime += (float)gameTime.ElapsedGameTime.TotalSeconds * GameState.BeatsPerMinute / 100;
+                if (!dPenalty)
+                    dCooldownTime += (float)gameTime.ElapsedGameTime.TotalSeconds * GameState.BeatsPerMinute / 100;
+                else
+                    dCooldownTime += ((float)gameTime.ElapsedGameTime.TotalSeconds * GameState.BeatsPerMinute / 100) / PENALTY_MODIFIER;
+
                 float dTimePercentage = dCooldownTime / SHORT_COOLDOWN_TIME;
                 dFill = (int)(dTimePercentage * PAD_PIXEL_HEIGHT);
 
@@ -231,6 +306,7 @@ namespace Slapstick
                 if (dCooldownTime >= SHORT_COOLDOWN_TIME)
                 {
                     dActive = true;
+                    dPenalty = false;
                     dCooldownTime = 0.0f;
                     dFill = PAD_PIXEL_HEIGHT;
                 }
@@ -238,7 +314,11 @@ namespace Slapstick
 
             if (!jActive)
             {
-                jCooldownTime += (float)gameTime.ElapsedGameTime.TotalSeconds * GameState.BeatsPerMinute / 100;
+                if (!jPenalty)
+                    jCooldownTime += (float)gameTime.ElapsedGameTime.TotalSeconds * GameState.BeatsPerMinute / 100;
+                else
+                    jCooldownTime += ((float)gameTime.ElapsedGameTime.TotalSeconds * GameState.BeatsPerMinute / 100) / PENALTY_MODIFIER;
+
                 float jTimePercentage = jCooldownTime / SHORT_COOLDOWN_TIME;
                 jFill = (int)(jTimePercentage * PAD_PIXEL_HEIGHT);
 
@@ -250,6 +330,7 @@ namespace Slapstick
                 if (jCooldownTime >= SHORT_COOLDOWN_TIME)
                 {
                     jActive = true;
+                    jPenalty = false;
                     jCooldownTime = 0.0f;
                     jFill = PAD_PIXEL_HEIGHT;
                 }
@@ -257,7 +338,11 @@ namespace Slapstick
 
             if (!kActive)
             {
-                kCooldownTime += (float)gameTime.ElapsedGameTime.TotalSeconds * GameState.BeatsPerMinute / 100;
+                if (!kPenalty)
+                    kCooldownTime += (float)gameTime.ElapsedGameTime.TotalSeconds * GameState.BeatsPerMinute / 100;
+                else
+                    kCooldownTime += ((float)gameTime.ElapsedGameTime.TotalSeconds * GameState.BeatsPerMinute / 100) / PENALTY_MODIFIER;
+
                 float kTimePercentage = kCooldownTime / MEDIUM_COOLDOWN_TIME;
                 kFill = (int)(kTimePercentage * PAD_PIXEL_HEIGHT);
 
@@ -269,6 +354,7 @@ namespace Slapstick
                 if (kCooldownTime >= MEDIUM_COOLDOWN_TIME)
                 {
                     kActive = true;
+                    kPenalty = false;
                     kCooldownTime = 0.0f;
                     kFill = PAD_PIXEL_HEIGHT;
                 }
@@ -276,7 +362,11 @@ namespace Slapstick
 
             if (!lActive)
             {
-                lCooldownTime += (float)gameTime.ElapsedGameTime.TotalSeconds * GameState.BeatsPerMinute / 100;
+                if (!lPenalty)
+                    lCooldownTime += (float)gameTime.ElapsedGameTime.TotalSeconds * GameState.BeatsPerMinute / 100;
+                else
+                    lCooldownTime += ((float)gameTime.ElapsedGameTime.TotalSeconds * GameState.BeatsPerMinute / 100) / PENALTY_MODIFIER;
+
                 float lTimePercentage = lCooldownTime / LONG_COOLDOWN_TIME;
                 lFill = (int)(lTimePercentage * PAD_PIXEL_HEIGHT);
 
@@ -288,8 +378,20 @@ namespace Slapstick
                 if (lCooldownTime >= LONG_COOLDOWN_TIME)
                 {
                     lActive = true;
+                    lPenalty = false;
                     lCooldownTime = 0.0f;
                     lFill = PAD_PIXEL_HEIGHT;
+                }
+            }
+
+            if (barrierMoveOnCooldown)
+            {
+                barrierMoveCooldownTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
+                
+                if (barrierMoveCooldownTime >= BARRIER_MOVE_COOLDOWN_TIME)
+                {
+                    barrierMoveOnCooldown = false;
+                    barrierMoveCooldownTime = 0.0f;
                 }
             }
 
@@ -298,35 +400,39 @@ namespace Slapstick
         /// <summary>
         /// Checks all people to slap!
         /// </summary>
-        public void Slap(int xStartPosition, int xEndPosition, ref bool slapHandActive, List<Person> people)
+        public void Slap(int xStartPosition, int xEndPosition, ref bool slapHandActive, ref bool penalty, List<Person> people)
         {
-            bool slapped = false;
+            bool normieSlapped = false;
+            bool crazySlapped = false;
 
-            Debug.WriteLine("test");
             for(int i = 0; i < people.Count; i++)
             {
                 if (people[i].getCenterX() > xStartPosition && people[i].getCenterX() < xEndPosition)
                 {
-                    if(people[i].isNoisy())
-                    {
-                        GameState.Score += 20;
-                    }
+                    if (people[i].isNoisy())
+                        crazySlapped = true;
                     else
-                    {
-                        GameState.Score -= 10;
-                    }
+                        normieSlapped = true;
 
                     people.RemoveAt(i);
                     i--;
-                    slapped = true;
                 }
             }
 
             slapHandActive = true;
 
-            if(slapped)
+            if(normieSlapped && !crazySlapped) //if only normies, no crazies, were slapped
+            {
+                boingSFX.Play();
+                penalty = true;
+            }
+            else if (crazySlapped) //or if a crazy was slapped
             {
                 slapSFX.Play();
+            }
+            else //or you missed entirely
+            {
+                whooshSFX.Play();
             }
         }
 
@@ -338,19 +444,50 @@ namespace Slapstick
         /// <param name="gameTime"></param>
         public void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
-            spriteBatch.Draw(graySquare, new Vector2(aPadLocation, PAD_HEIGHT_LOCATION), Color.White);
-            spriteBatch.Draw(graySquare, new Vector2(sPadLocation, PAD_HEIGHT_LOCATION), Color.White);
-            spriteBatch.Draw(graySquare, new Vector2(dPadLocation, PAD_HEIGHT_LOCATION), Color.White);
-            spriteBatch.Draw(graySquare, new Vector2(jPadLocation, PAD_HEIGHT_LOCATION), Color.White);
-            spriteBatch.Draw(graySquare, new Vector2(kPadLocation, PAD_HEIGHT_LOCATION), Color.White);
-            spriteBatch.Draw(graySquare, new Vector2(lPadLocation, PAD_HEIGHT_LOCATION), Color.White);
+            //spriteBatch.Draw(graySquare, new Vector2(aPadLocation, PAD_HEIGHT_LOCATION), Color.White);
+            //spriteBatch.Draw(graySquare, new Vector2(sPadLocation, PAD_HEIGHT_LOCATION), Color.White);
+            //spriteBatch.Draw(graySquare, new Vector2(dPadLocation, PAD_HEIGHT_LOCATION), Color.White);
+            //spriteBatch.Draw(graySquare, new Vector2(jPadLocation, PAD_HEIGHT_LOCATION), Color.White);
+            //spriteBatch.Draw(graySquare, new Vector2(kPadLocation, PAD_HEIGHT_LOCATION), Color.White);
+            //spriteBatch.Draw(graySquare, new Vector2(lPadLocation, PAD_HEIGHT_LOCATION), Color.White);
 
-            spriteBatch.Draw(whiteSquare, new Rectangle(aPadLocation + PAD_PIXEL_WIDTH, PAD_HEIGHT_LOCATION + PAD_PIXEL_HEIGHT, PAD_PIXEL_WIDTH, aFill), null, Color.White, MathHelper.Pi, new Vector2(0,0), SpriteEffects.None, 1);
-            spriteBatch.Draw(whiteSquare, new Rectangle(sPadLocation + PAD_PIXEL_WIDTH, PAD_HEIGHT_LOCATION + PAD_PIXEL_HEIGHT, PAD_PIXEL_WIDTH, sFill), null, Color.White, MathHelper.Pi, new Vector2(0,0), SpriteEffects.None, 1);
-            spriteBatch.Draw(whiteSquare, new Rectangle(dPadLocation + PAD_PIXEL_WIDTH, PAD_HEIGHT_LOCATION + PAD_PIXEL_HEIGHT, PAD_PIXEL_WIDTH, dFill), null, Color.White, MathHelper.Pi, new Vector2(0,0), SpriteEffects.None, 1);
-            spriteBatch.Draw(whiteSquare, new Rectangle(jPadLocation + PAD_PIXEL_WIDTH, PAD_HEIGHT_LOCATION + PAD_PIXEL_HEIGHT, PAD_PIXEL_WIDTH, jFill), null, Color.White, MathHelper.Pi, new Vector2(0,0), SpriteEffects.None, 1);
-            spriteBatch.Draw(whiteSquare, new Rectangle(kPadLocation + PAD_PIXEL_WIDTH, PAD_HEIGHT_LOCATION + PAD_PIXEL_HEIGHT, PAD_PIXEL_WIDTH, kFill), null, Color.White, MathHelper.Pi, new Vector2(0,0), SpriteEffects.None, 1);
-            spriteBatch.Draw(whiteSquare, new Rectangle(lPadLocation + PAD_PIXEL_WIDTH, PAD_HEIGHT_LOCATION + PAD_PIXEL_HEIGHT, PAD_PIXEL_WIDTH, lFill), null, Color.White, MathHelper.Pi, new Vector2(0,0), SpriteEffects.None, 1);
+            //spriteBatch.Draw(whiteSquare, new Rectangle(aPadLocation + PAD_PIXEL_WIDTH, PAD_HEIGHT_LOCATION + PAD_PIXEL_HEIGHT, PAD_PIXEL_WIDTH, aFill), null, Color.White, MathHelper.Pi, new Vector2(0,0), SpriteEffects.None, 1);
+            //spriteBatch.Draw(whiteSquare, new Rectangle(sPadLocation + PAD_PIXEL_WIDTH, PAD_HEIGHT_LOCATION + PAD_PIXEL_HEIGHT, PAD_PIXEL_WIDTH, sFill), null, Color.White, MathHelper.Pi, new Vector2(0,0), SpriteEffects.None, 1);
+            //spriteBatch.Draw(whiteSquare, new Rectangle(dPadLocation + PAD_PIXEL_WIDTH, PAD_HEIGHT_LOCATION + PAD_PIXEL_HEIGHT, PAD_PIXEL_WIDTH, dFill), null, Color.White, MathHelper.Pi, new Vector2(0,0), SpriteEffects.None, 1);
+            //spriteBatch.Draw(whiteSquare, new Rectangle(jPadLocation + PAD_PIXEL_WIDTH, PAD_HEIGHT_LOCATION + PAD_PIXEL_HEIGHT, PAD_PIXEL_WIDTH, jFill), null, Color.White, MathHelper.Pi, new Vector2(0,0), SpriteEffects.None, 1);
+            //spriteBatch.Draw(whiteSquare, new Rectangle(kPadLocation + PAD_PIXEL_WIDTH, PAD_HEIGHT_LOCATION + PAD_PIXEL_HEIGHT, PAD_PIXEL_WIDTH, kFill), null, Color.White, MathHelper.Pi, new Vector2(0,0), SpriteEffects.None, 1);
+            //spriteBatch.Draw(whiteSquare, new Rectangle(lPadLocation + PAD_PIXEL_WIDTH, PAD_HEIGHT_LOCATION + PAD_PIXEL_HEIGHT, PAD_PIXEL_WIDTH, lFill), null, Color.White, MathHelper.Pi, new Vector2(0,0), SpriteEffects.None, 1);
+
+            if (aActive)
+                spriteBatch.Draw(aSlapper, new Vector2(aPadLocation, PAD_HEIGHT_LOCATION), Color.White);
+            else
+                spriteBatch.Draw(aSlapper2, new Vector2(aPadLocation, PAD_HEIGHT_LOCATION), Color.White);
+
+            if (sActive)
+                spriteBatch.Draw(sSlapper, new Vector2(sPadLocation, PAD_HEIGHT_LOCATION), Color.White);
+            else
+                spriteBatch.Draw(sSlapper2, new Vector2(sPadLocation, PAD_HEIGHT_LOCATION), Color.White);
+
+            if (dActive)
+                spriteBatch.Draw(dSlapper, new Vector2(dPadLocation, PAD_HEIGHT_LOCATION), Color.White);
+            else
+                spriteBatch.Draw(dSlapper2, new Vector2(dPadLocation, PAD_HEIGHT_LOCATION), Color.White);
+
+            if (jActive)
+                spriteBatch.Draw(jSlapper, new Vector2(jPadLocation, PAD_HEIGHT_LOCATION), Color.White);
+            else
+                spriteBatch.Draw(jSlapper2, new Vector2(jPadLocation, PAD_HEIGHT_LOCATION), Color.White);
+
+            if (kActive)
+                spriteBatch.Draw(kSlapper, new Vector2(kPadLocation, PAD_HEIGHT_LOCATION), Color.White);
+            else
+                spriteBatch.Draw(kSlapper2, new Vector2(kPadLocation, PAD_HEIGHT_LOCATION), Color.White);
+
+            if (lActive)
+                spriteBatch.Draw(lSlapper, new Vector2(lPadLocation, PAD_HEIGHT_LOCATION), Color.White);
+            else
+                spriteBatch.Draw(lSlapper2, new Vector2(lPadLocation, PAD_HEIGHT_LOCATION), Color.White);
+
 
             if (aSlapHandActive)
                 spriteBatch.Draw(slapHand, new Vector2(aPadLocation, SLAP_HEIGHT_LOCATION), Color.White);
@@ -366,12 +503,12 @@ namespace Slapstick
                 spriteBatch.Draw(slapHand, new Vector2(lPadLocation, SLAP_HEIGHT_LOCATION), Color.White);
 
 
-            spriteBatch.DrawString(letterFont, "a", new Vector2(aPadLocation + (PAD_PIXEL_WIDTH / 2), PAD_HEIGHT_LOCATION + (PAD_PIXEL_HEIGHT / 2)), Color.Black, 0, aSize * 0.5f, 1, SpriteEffects.None, 0);
-            spriteBatch.DrawString(letterFont, "s", new Vector2(sPadLocation + (PAD_PIXEL_WIDTH / 2), PAD_HEIGHT_LOCATION + (PAD_PIXEL_HEIGHT / 2)), Color.Black, 0, sSize * 0.5f, 1, SpriteEffects.None, 0);
-            spriteBatch.DrawString(letterFont, "d", new Vector2(dPadLocation + (PAD_PIXEL_WIDTH / 2), PAD_HEIGHT_LOCATION + (PAD_PIXEL_HEIGHT / 2)), Color.Black, 0, dSize * 0.5f, 1, SpriteEffects.None, 0);
-            spriteBatch.DrawString(letterFont, "j", new Vector2(jPadLocation + (PAD_PIXEL_WIDTH / 2), PAD_HEIGHT_LOCATION + (PAD_PIXEL_HEIGHT / 2)), Color.Black, 0, jSize * 0.5f, 1, SpriteEffects.None, 0);
-            spriteBatch.DrawString(letterFont, "k", new Vector2(kPadLocation + (PAD_PIXEL_WIDTH / 2), PAD_HEIGHT_LOCATION + (PAD_PIXEL_HEIGHT / 2)), Color.Black, 0, kSize * 0.5f, 1, SpriteEffects.None, 0);
-            spriteBatch.DrawString(letterFont, "l", new Vector2(lPadLocation + (PAD_PIXEL_WIDTH / 2), PAD_HEIGHT_LOCATION + (PAD_PIXEL_HEIGHT / 2)), Color.Black, 0, lSize * 0.5f, 1, SpriteEffects.None, 0);
+            //spriteBatch.DrawString(letterFont, "a", new Vector2(aPadLocation + (PAD_PIXEL_WIDTH / 2), PAD_HEIGHT_LOCATION + (PAD_PIXEL_HEIGHT / 2)), Color.Black, 0, aSize * 0.5f, 1, SpriteEffects.None, 0);
+            //spriteBatch.DrawString(letterFont, "s", new Vector2(sPadLocation + (PAD_PIXEL_WIDTH / 2), PAD_HEIGHT_LOCATION + (PAD_PIXEL_HEIGHT / 2)), Color.Black, 0, sSize * 0.5f, 1, SpriteEffects.None, 0);
+            //spriteBatch.DrawString(letterFont, "d", new Vector2(dPadLocation + (PAD_PIXEL_WIDTH / 2), PAD_HEIGHT_LOCATION + (PAD_PIXEL_HEIGHT / 2)), Color.Black, 0, dSize * 0.5f, 1, SpriteEffects.None, 0);
+            //spriteBatch.DrawString(letterFont, "j", new Vector2(jPadLocation + (PAD_PIXEL_WIDTH / 2), PAD_HEIGHT_LOCATION + (PAD_PIXEL_HEIGHT / 2)), Color.Black, 0, jSize * 0.5f, 1, SpriteEffects.None, 0);
+            //spriteBatch.DrawString(letterFont, "k", new Vector2(kPadLocation + (PAD_PIXEL_WIDTH / 2), PAD_HEIGHT_LOCATION + (PAD_PIXEL_HEIGHT / 2)), Color.Black, 0, kSize * 0.5f, 1, SpriteEffects.None, 0);
+            //spriteBatch.DrawString(letterFont, "l", new Vector2(lPadLocation + (PAD_PIXEL_WIDTH / 2), PAD_HEIGHT_LOCATION + (PAD_PIXEL_HEIGHT / 2)), Color.Black, 0, lSize * 0.5f, 1, SpriteEffects.None, 0);
 
         }
 

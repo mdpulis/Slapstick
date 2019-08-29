@@ -17,7 +17,7 @@ namespace Slapstick
         Vector2 zeroVector = new Vector2(0, 0);
         Direction direction;
         bool isNoisy;
-        Texture2D tex, noisy1, normy1, noisy2, normy2, noisy3, normy3, noisy4, normy4, noisy5, normy5, noisy6, normy6, noisy7, normy7;
+        Texture2D tex, noisy1, normy1, noisy2, normy2, noisy3, normy3, noisy4, normy4, noisy5, normy5, noisy6, normy6, noisy7, normy7, papa;
         System.Random random = new System.Random();
         int texNum, peopleIndexToDelete;
         public Person makePerson(GraphicsDeviceManager gdm, int bpm)
@@ -29,25 +29,25 @@ namespace Slapstick
             switch (texNum)
             {
                 case 1:
-                    tex = isNoisy ? noisy1 : normy1;
+                    tex = isNoisy ? papa : normy1;
                     break;
                 case 2:
-                    tex = isNoisy ? noisy2 : normy2;
+                    tex = isNoisy ? papa : normy2;
                     break;
                 case 3:
-                    tex = isNoisy ? noisy3 : normy3;
+                    tex = isNoisy ? papa : normy3;
                     break;
                 case 4:
-                    tex = isNoisy ? noisy4 : normy4;
+                    tex = isNoisy ? papa : normy4;
                     break;
                 case 5:
-                    tex = isNoisy ? noisy5 : normy5;
+                    tex = isNoisy ? papa : normy5;
                     break;
                 case 6:
-                    tex = isNoisy ? noisy6 : normy6;
+                    tex = isNoisy ? papa : normy6;
                     break;
                 case 7:
-                    tex = isNoisy ? noisy7 : normy7;
+                    tex = isNoisy ? papa : normy7;
                     break;
             }
             p.Initialize(direction, isNoisy, random.Next(5) * 5 + bpm, tex, gdm); //Third value is speed, increases as BPM increases. 4th value is unused but could be used for different characters
@@ -69,6 +69,7 @@ namespace Slapstick
             noisy6 = Content.Load<Texture2D>("Images/Crazy_SpriteSheet6");
             normy7 = Content.Load<Texture2D>("Images/Normie_SpriteSheet7");
             noisy7 = Content.Load<Texture2D>("Images/Crazy_SpriteSheet7");
+            papa = Content.Load<Texture2D>("Images/Paparazzi_SpriteSheet");
         }
 
         public void update(GameTime gameTime, GraphicsDeviceManager graphics, UI gameUI, Celeb celeb) {

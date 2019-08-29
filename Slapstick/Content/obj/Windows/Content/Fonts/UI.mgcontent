@@ -1,23 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream:Slapstick/Content/obj/Windows/Content/Fonts/UI.mgcontent
-  <SourceFile>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Fonts/Score.spritefont</SourceFile>
-  <SourceTime>2019-08-27T12:56:32.5820586-06:00</SourceTime>
-  <DestFile>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/bin/Windows/Content/Fonts/UI.xnb</DestFile>
-  <DestTime>2019-08-27T12:57:05.394978-06:00</DestTime>
-=======
-  <SourceFile>C:/Users/u1269344/Github/Slapstick/Slapstick/Content/Fonts/Timer.spritefont</SourceFile>
-  <SourceTime>2019-08-26T13:24:16.5829447-06:00</SourceTime>
-  <DestFile>C:/Users/u1269344/Github/Slapstick/Slapstick/Content/bin/Windows/Content/Fonts/Timer.xnb</DestFile>
-  <DestTime>2019-08-27T10:19:21.1970079-06:00</DestTime>
->>>>>>> Stashed changes:Slapstick/Content/obj/Windows/Content/Fonts/Timer.mgcontent
-=======
   <SourceFile>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/Fonts/Score.spritefont</SourceFile>
   <SourceTime>2019-08-27T13:26:35.1634212-06:00</SourceTime>
   <DestFile>C:/Users/u1274834/source/repos/Slapstick/Slapstick/Content/bin/Windows/Content/Fonts/UI.xnb</DestFile>
-  <DestTime>2019-08-27T13:31:07.7221744-06:00</DestTime>
->>>>>>> Stashed changes
+  <DestTime>2019-08-29T08:17:16.1432163-06:00</DestTime>
   <Importer>FontDescriptionImporter</Importer>
   <ImporterTime>2019-08-22T06:59:50-06:00</ImporterTime>
   <Processor>FontDescriptionProcessor</Processor>
