@@ -104,6 +104,11 @@ namespace Slapstick
         {
             return noisy;
         }
+
+        public Direction getDirection()
+        {
+            return direction;
+        }
     
     }
 }

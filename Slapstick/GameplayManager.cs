@@ -33,7 +33,7 @@ namespace Slapstick
             elapsedGameTime += gameTime.ElapsedGameTime.TotalSeconds;
             bpmIncreaseTimer += gameTime.ElapsedGameTime.TotalSeconds;
 
-            if (bpmIncreaseTimer >= 20 || (bpmIncreaseTimer >= 10 && GameState.BeatsPerMinute == 180))
+            if (bpmIncreaseTimer >= 20)
             {
                 GameState.AddBPM();
                 bpmIncreaseTimer = 0;

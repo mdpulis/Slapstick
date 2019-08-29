@@ -12,7 +12,10 @@ namespace Slapstick
     public enum Direction { right, left };
     public class PersonManager
     {
+        private const int MAX_NOISIES_PER_SIDE = 5;
+
         public List<Person> people = new List<Person>();
+
         double personTimer;
         Vector2 zeroVector = new Vector2(0, 0);
         Direction direction;
@@ -22,9 +25,27 @@ namespace Slapstick
         int texNum, peopleIndexToDelete;
         public Person makePerson(GraphicsDeviceManager gdm, int bpm)
         {
+            int leftNoisies = people.Where(x => x.isNoisy() && x.getDirection() == Direction.left).Count();
+            int rightNoisies = people.Where(x => x.isNoisy() && x.getDirection() == Direction.right).Count();
+
             Person p = new Person();
             direction = random.Next(2) == 1 ? Direction.right : Direction.left;
             isNoisy = random.Next(2) == 1 ? true : false;
+
+            if(isNoisy)
+            {
+                if(direction == Direction.left)
+                {
+                    if (people.Where(x => x.isNoisy() && x.getDirection() == Direction.left).Count() > MAX_NOISIES_PER_SIDE)
+                        isNoisy = false;
+                }
+                else if (direction == Direction.right)
+                {
+                    if (people.Where(x => x.isNoisy() && x.getDirection() == Direction.right).Count() > MAX_NOISIES_PER_SIDE)
+                        isNoisy = false;
+                }
+            }
+
             texNum = random.Next(7) + 1;
             switch (texNum)
             {
@@ -74,8 +95,9 @@ namespace Slapstick
 
         public void update(GameTime gameTime, GraphicsDeviceManager graphics, UI gameUI, Celeb celeb) {
             personTimer += gameTime.ElapsedGameTime.TotalSeconds;
-            if (personTimer >= 3 - GameState.BeatsPerMinute * 1.0 / 100)
+            if ((GameState.BeatsPerMinute >= 260 && personTimer >= 0.4f) || (GameState.BeatsPerMinute < 260 && personTimer >= 3 - GameState.BeatsPerMinute * 1.0 / 100))
             {
+                Person newPerson = makePerson(graphics, GameState.BeatsPerMinute);
                 people.Add(makePerson(graphics, GameState.BeatsPerMinute));
                 personTimer = 0;
             }

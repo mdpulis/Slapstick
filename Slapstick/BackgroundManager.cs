@@ -60,7 +60,7 @@ namespace Slapstick
 
         public void LoadContent(ContentManager Content)
         {
-            background = Content.Load<Texture2D>("Images/chinese_theatre");
+            background = Content.Load<Texture2D>("Images/chinese_theatre_canvas");
             tree = Content.Load<Texture2D>("Images/tree");
             sky = Content.Load<Texture2D>("Images/sky");
             cloud = Content.Load<Texture2D>("Images/cloud");

@@ -13,9 +13,9 @@ namespace Slapstick
     /// </summary>
     public class PlayerInput
     {
-        private const float LONG_COOLDOWN_TIME = 2.4f;
-        private const float MEDIUM_COOLDOWN_TIME = 1.8f;
-        private const float SHORT_COOLDOWN_TIME = 1.2f;
+        private const float LONG_COOLDOWN_TIME = 3.2f;
+        private const float MEDIUM_COOLDOWN_TIME = 2.4f;
+        private const float SHORT_COOLDOWN_TIME = 1.6f;
 
         private const float PENALTY_MODIFIER = 2.0f;
 

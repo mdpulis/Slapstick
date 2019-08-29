@@ -105,36 +105,6 @@ namespace Slapstick
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-            backgroundManager.Update(gameTime);
-            bpmIncreaseTimer += gameTime.ElapsedGameTime.TotalSeconds;
-<<<<<<< Updated upstream
-            
-            if(bpmIncreaseTimer >= 20)
-=======
-            if (personTimer >= 3 - gameUI.beatsPerMinute * 1.0 / 100)
-            {
-                people.Add(pm.makePerson(graphics, gameUI.beatsPerMinute));
-                personTimer = 0;
-            }
-            if(bpmIncreaseTimer >= 10)
->>>>>>> Stashed changes
-            {
-                GameState.AddBPM();
-                bpmIncreaseTimer = 0;
-            }
-
-            
-
-            sm.Update(gameTime, gameUI);
-
-            playerInput.Update(gameTime, pm.people);
-=======
->>>>>>> master
-=======
->>>>>>> master
-
             switch(GameState.CurrentGameplayState)
             {
                 case (GameplayState.MainMenu):

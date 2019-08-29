@@ -20,13 +20,13 @@
         public static bool BarrierOn = false;
 
 
-        public static int BeatsPerMinute = 180;
+        public static int BeatsPerMinute = 220;
         public static int Score = 0;
         public static int Lives = 3;
         public static GameplayState CurrentGameplayState = GameplayState.MainMenu;
 
-        private const int MAX_BEATS_PER_MINUTE = 250;
-        private const int ADD_BEATS_PER_MINUTE = 10;
+        private const int MAX_BEATS_PER_MINUTE = 360;
+        private const int ADD_BEATS_PER_MINUTE = 20;
 
 
 
@@ -35,7 +35,7 @@
         /// </summary>
         public static void ResetGameState()
         {
-            BeatsPerMinute = 180;
+            BeatsPerMinute = 220;
             Score = 0;
             Lives = 3;
             CurrentGameplayState = GameplayState.MainMenu;
