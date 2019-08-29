@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/u1269344/Github/Slapstick/Slapstick/Content/Fonts/Score.spritefont</SourceFile>
-  <SourceTime>2019-08-27T13:36:40.9503998-06:00</SourceTime>
-  <DestFile>C:/Users/u1269344/Github/Slapstick/Slapstick/Content/bin/Windows/Content/Fonts/UI.xnb</DestFile>
-  <DestTime>2019-08-27T14:39:33.1450819-06:00</DestTime>
+  <SourceFile>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Fonts/Score.spritefont</SourceFile>
+  <SourceTime>2019-08-27T22:53:15.5807269-06:00</SourceTime>
+  <DestFile>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/bin/Windows/Content/Fonts/UI.xnb</DestFile>
+  <DestTime>2019-08-27T22:54:19.9121312-06:00</DestTime>
   <Importer>FontDescriptionImporter</Importer>
   <ImporterTime>2018-12-08T09:35:54-07:00</ImporterTime>
   <Processor>FontDescriptionProcessor</Processor>

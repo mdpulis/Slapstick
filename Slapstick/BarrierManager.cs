@@ -28,15 +28,16 @@ namespace Slapstick
         private Texture2D barrier;
 
         private const int BARRIER_HEIGHT = 30;
+        private const int BARRIER_WIDTH = 150;
 
-        private const int BARRIER_HEIGHT_LOCATION = 500;
+        private const int BARRIER_HEIGHT_LOCATION = 550;
         private const int BARRIER_X_POSITION_OFFSET = 50;
-        private const int BARRIER_Y_POSITION_OFFSET = 30;
+        private const int BARRIER_Y_POSITION_OFFSET = 25;
 
 
         public void LoadContent(ContentManager Content)
         {
-            barrier = Content.Load<Texture2D>("Images/square_150x150_white");
+            barrier = Content.Load<Texture2D>("Images/square_150x30");
         }
 
 
@@ -45,45 +46,49 @@ namespace Slapstick
 
         }
 
+
         public void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
-            int screenCenter = (1920 / 2) - (barrier.Width / 2);
 
-            float leftRotation = BARRIER_HEIGHT * (MathHelper.Pi * -0.2f);
-            float leftMidRotation = BARRIER_HEIGHT * (MathHelper.Pi * -0.1f);
-            float midRotation = BARRIER_HEIGHT * (MathHelper.Pi * 0.0f);
-            float rightMidRotation = BARRIER_HEIGHT * (MathHelper.Pi * 0.1f);
-            float rightRotation = BARRIER_HEIGHT * (MathHelper.Pi * 0.2f);
+            int screenCenter = (1920 / 2);
 
             switch (barrierPosition)
             {
                 case (BarrierPositions.Left):
-                    spriteBatch.Draw(barrier, new Rectangle(screenCenter, BARRIER_HEIGHT_LOCATION + (int)rightRotation, barrier.Width, BARRIER_HEIGHT), null, Color.White, MathHelper.Pi * -0.2f, new Vector2(0, 0), SpriteEffects.None, 1);
-                    //spriteBatch.Draw(barrier, new Rectangle(screenCenter - BARRIER_X_POSITION_OFFSET * 2, BARRIER_HEIGHT_LOCATION + Math.Abs((int)leftRotation), barrier.Width, BARRIER_HEIGHT), null, Color.White, MathHelper.Pi * -0.2f, new Vector2(0, 0), SpriteEffects.None, 1);
+                    spriteBatch.Draw(barrier, new Rectangle(screenCenter - BARRIER_X_POSITION_OFFSET * 2, BARRIER_HEIGHT_LOCATION + BARRIER_Y_POSITION_OFFSET * 2, barrier.Width, BARRIER_HEIGHT), null, Color.White, MathHelper.Pi * -0.3f, new Vector2(barrier.Width / 2, barrier.Height / 2), SpriteEffects.None, 1);
                     break;
                 case (BarrierPositions.LeftMid):
-                    spriteBatch.Draw(barrier, new Rectangle(screenCenter, BARRIER_HEIGHT_LOCATION + (int)rightMidRotation, barrier.Width, BARRIER_HEIGHT), null, Color.White, MathHelper.Pi * -0.1f, new Vector2(0, 0), SpriteEffects.None, 1);
+                    spriteBatch.Draw(barrier, new Rectangle(screenCenter - BARRIER_X_POSITION_OFFSET, BARRIER_HEIGHT_LOCATION + BARRIER_Y_POSITION_OFFSET, barrier.Width, BARRIER_HEIGHT), null, Color.White, MathHelper.Pi * -0.15f, new Vector2(barrier.Width / 2, barrier.Height / 2), SpriteEffects.None, 1);
                     break;
                 case (BarrierPositions.Mid):
-                    spriteBatch.Draw(barrier, new Rectangle(screenCenter, BARRIER_HEIGHT_LOCATION, barrier.Width, BARRIER_HEIGHT), null, Color.White, 0, new Vector2(0, 0), SpriteEffects.None, 1);
+                    spriteBatch.Draw(barrier, new Rectangle(screenCenter, BARRIER_HEIGHT_LOCATION, barrier.Width, BARRIER_HEIGHT), null, Color.White, 0, new Vector2(barrier.Width / 2, barrier.Height / 2), SpriteEffects.None, 1);
                     break;
                 case (BarrierPositions.RightMid):
-                    spriteBatch.Draw(barrier, new Rectangle(screenCenter + (int)rightMidRotation, BARRIER_HEIGHT_LOCATION - (int)rightMidRotation, barrier.Width, BARRIER_HEIGHT), null, Color.White, MathHelper.Pi * 0.1f, new Vector2(0, 0), SpriteEffects.None, 1);
+                    spriteBatch.Draw(barrier, new Rectangle(screenCenter + BARRIER_X_POSITION_OFFSET, BARRIER_HEIGHT_LOCATION + BARRIER_Y_POSITION_OFFSET, barrier.Width, BARRIER_HEIGHT), null, Color.White, MathHelper.Pi * 0.15f, new Vector2(barrier.Width / 2, barrier.Height / 2), SpriteEffects.None, 1);
                     break;
                 case (BarrierPositions.Right):
-                    spriteBatch.Draw(barrier, new Rectangle(screenCenter + (int)rightRotation, BARRIER_HEIGHT_LOCATION - (int)rightRotation, barrier.Width, BARRIER_HEIGHT), null, Color.White, MathHelper.Pi * 0.2f, new Vector2(0, 0), SpriteEffects.None, 1);
+                    spriteBatch.Draw(barrier, new Rectangle(screenCenter + BARRIER_X_POSITION_OFFSET * 2, BARRIER_HEIGHT_LOCATION + BARRIER_Y_POSITION_OFFSET * 2, barrier.Width, BARRIER_HEIGHT), null, Color.White, MathHelper.Pi * 0.3f, new Vector2(barrier.Width / 2, barrier.Height / 2), SpriteEffects.None, 1);
                     break;
             }
 
-
-
-
-
-            //spriteBatch.Draw(barrier, new Rectangle(screenCenter, 300, barrier.Width, barrier.Height), null, Color.White, MathHelper.Pi, new Vector2(0, 0), SpriteEffects.None, 1);
-
-            //spriteBatch.Draw(barrier, new Vector2(aPadLocation, PAD_HEIGHT_LOCATION), Color.White);
-
         }
+
+
+        public Vector2 RotatePoint(float x, float y, float turnAngle)
+	    {
+            Vector2 result = new Vector2();
+            result.X = x * (float) Math.Cos(turnAngle) - y * (float) Math.Sin(turnAngle);
+            result.Y = y * (float) Math.Sin(turnAngle) + y * (float) Math.Cos(turnAngle);
+	        return result;
+	    }
+
+	    public Vector2 RotatePoint(Vector2 vectorToRotate, float turnAngle)
+	    {
+            Vector2 result = new Vector2();
+            result.X = vectorToRotate.X* (float) Math.Cos(turnAngle) - vectorToRotate.Y * (float) Math.Sin(turnAngle);
+            result.Y = vectorToRotate.X* (float) Math.Sin(turnAngle) + vectorToRotate.Y * (float) Math.Cos(turnAngle);
+	        return result;
+	    }
 
         public void MoveBarrier(bool isRight)
         {
