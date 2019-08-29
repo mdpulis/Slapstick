@@ -65,3 +65,4 @@ C:\Users\u1269344\Github\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Image
 C:\Users\u1269344\Github\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Images\slap_hand_white.xnb
 C:\Users\u1269344\Github\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Sounds\slap_sound.xnb
 C:\Users\u1269344\Github\Slapstick\Slapstick\obj\x86\Debug\Slapstick.csprojAssemblyReference.cache
+C:\Users\u1269344\Github\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Images\Paparazzi_Spritesheet.xnb

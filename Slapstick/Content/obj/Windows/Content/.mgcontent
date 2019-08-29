@@ -30,6 +30,7 @@
     <File>C:/Users/u1269344/Github/Slapstick/Slapstick/Content/Images/Normie_SpriteSheet5.png</File>
     <File>C:/Users/u1269344/Github/Slapstick/Slapstick/Content/Images/Normie_SpriteSheet6.png</File>
     <File>C:/Users/u1269344/Github/Slapstick/Slapstick/Content/Images/Normie_SpriteSheet7.png</File>
+    <File>C:/Users/u1269344/Github/Slapstick/Slapstick/Content/Images/Paparazzi_Spritesheet.png</File>
     <File>C:/Users/u1269344/Github/Slapstick/Slapstick/Content/Images/shuttle.png</File>
     <File>C:/Users/u1269344/Github/Slapstick/Slapstick/Content/Images/sky.png</File>
     <File>C:/Users/u1269344/Github/Slapstick/Slapstick/Content/Images/slap_hand.png</File>
@@ -51,6 +52,7 @@
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File>Fonts/UI.spritefont</File>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
