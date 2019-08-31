@@ -18,7 +18,8 @@ namespace Slapstick
         private double animTimer;
         private int frameCounter = 0;
         private bool noisy, giga;
-        private int speed;
+        private double speed;
+        public int lives = 1, scale = 1;
         private float frameTime = .0333f;
         public Texture2D texture;
         public Vector2 position;
@@ -47,8 +48,10 @@ namespace Slapstick
             if (giga)
             {
                 position.Y -= 400;
-                speed /= 2;
-                frameTime *= 1.2f;
+                speed /= 1.5;
+                frameTime *= 1.3f;
+                lives = 2;
+                scale = 3;
             }
 
             for (int i = 0; i < 30; i++)
@@ -68,11 +71,11 @@ namespace Slapstick
         {
             if (direction == Direction.left)
             {
-                position.X -= speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                position.X -= (float)speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
             }
             else
             {
-                position.X += speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                position.X += (float)speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
             }
             
             animTimer += gameTime.ElapsedGameTime.TotalSeconds;
@@ -107,7 +110,7 @@ namespace Slapstick
 
         public float getCenterX()
         {
-            return position.X + (150 / 2);
+            return position.X + (150 * scale / 2);
         }
 
         public bool isNoisy()

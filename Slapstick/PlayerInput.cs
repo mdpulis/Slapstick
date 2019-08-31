@@ -414,8 +414,16 @@ namespace Slapstick
                     else
                         normieSlapped = true;
 
-                    people.RemoveAt(i);
-                    i--;
+                    if (--people[i].lives == 0)
+                    {
+                        people.RemoveAt(i);
+                        i--;
+                    } else
+                    {
+                        people[i].scale--;
+                        people[i].position.Y += 200;
+                    }
+                   
                 }
             }
 

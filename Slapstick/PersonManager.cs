@@ -13,7 +13,7 @@ namespace Slapstick
     public class PersonManager
     {
         private const int MAX_NOISIES_PER_SIDE = 5;
-
+        private const int MAX_GIGAS = 1;
         public List<Person> people = new List<Person>();
 
         double personTimer;
@@ -44,6 +44,11 @@ namespace Slapstick
                     if (people.Where(x => x.isNoisy() && x.getDirection() == Direction.right).Count() > MAX_NOISIES_PER_SIDE)
                         isNoisy = false;
                 }
+            }
+            if (isGiga)
+            {
+                if (people.Where(x => x.isGiga()).Count() > MAX_GIGAS)
+                    isGiga = false;
             }
             
 
@@ -127,15 +132,7 @@ namespace Slapstick
         {
             foreach (Person p in people)
             {
-                if (!p.isGiga())
-                {
-                    spriteBatch.Draw(p.texture, p.position, p.currentFrame, Color.White, 0.0f, zeroVector, 1.0f, p.spriteEffects, 0.0f);
-                } else
-                {
-
-                    spriteBatch.Draw(p.texture, p.position, p.currentFrame, Color.White, 0.0f, zeroVector, 3.0f, p.spriteEffects, 0.0f);
-                }
-
+                    spriteBatch.Draw(p.texture, p.position, p.currentFrame, Color.White, 0.0f, zeroVector, p.scale, p.spriteEffects, 0.0f);
             }
         }
     }
