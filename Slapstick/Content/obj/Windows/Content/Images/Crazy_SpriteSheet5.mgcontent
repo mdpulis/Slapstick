@@ -4,6 +4,7 @@
   <SourceFile>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Images/Crazy_SpriteSheet5.png</SourceFile>
   <SourceTime>2019-08-26T11:39:59.7701884-06:00</SourceTime>
   <DestFile>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/bin/Windows/Content/Images/Crazy_SpriteSheet5.xnb</DestFile>
+<<<<<<< HEAD
   <DestTime>2019-08-29T11:37:18.7293791-06:00</DestTime>
 =======
   <SourceFile>C:/Users/u1269344/Github/Slapstick/Slapstick/Content/Images/Crazy_SpriteSheet5.png</SourceFile>
@@ -11,6 +12,9 @@
   <DestFile>C:/Users/u1269344/Github/Slapstick/Slapstick/Content/bin/Windows/Content/Images/Crazy_SpriteSheet5.xnb</DestFile>
   <DestTime>2019-08-29T11:06:27.3956415-06:00</DestTime>
 >>>>>>> Stashed changes
+=======
+  <DestTime>2019-08-29T13:26:39.5032308-06:00</DestTime>
+>>>>>>> master
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T09:35:54-07:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

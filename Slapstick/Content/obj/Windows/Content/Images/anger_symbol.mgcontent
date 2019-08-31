@@ -4,6 +4,7 @@
   <SourceFile>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Images/anger_symbol.png</SourceFile>
   <SourceTime>2019-08-27T13:49:51.5924172-06:00</SourceTime>
   <DestFile>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/bin/Windows/Content/Images/anger_symbol.xnb</DestFile>
+<<<<<<< HEAD
   <DestTime>2019-08-29T11:37:17.3188291-06:00</DestTime>
 =======
   <SourceFile>C:/Users/u1269344/Github/Slapstick/Slapstick/Content/Images/anger_symbol.png</SourceFile>
@@ -11,6 +12,9 @@
   <DestFile>C:/Users/u1269344/Github/Slapstick/Slapstick/Content/bin/Windows/Content/Images/anger_symbol.xnb</DestFile>
   <DestTime>2019-08-29T11:06:26.0919953-06:00</DestTime>
 >>>>>>> Stashed changes
+=======
+  <DestTime>2019-08-29T13:26:38.159619-06:00</DestTime>
+>>>>>>> master
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T09:35:54-07:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

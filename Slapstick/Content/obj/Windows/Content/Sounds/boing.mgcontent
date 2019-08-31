@@ -4,6 +4,7 @@
   <SourceFile>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Sounds/boing.wav</SourceFile>
   <SourceTime>2019-08-29T08:46:12.3650612-06:00</SourceTime>
   <DestFile>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/bin/Windows/Content/Sounds/boing.xnb</DestFile>
+<<<<<<< HEAD
   <DestTime>2019-08-29T11:37:21.4545398-06:00</DestTime>
 =======
   <SourceFile>C:/Users/u1269344/Github/Slapstick/Slapstick/Content/Sounds/boing.wav</SourceFile>
@@ -11,6 +12,9 @@
   <DestFile>C:/Users/u1269344/Github/Slapstick/Slapstick/Content/bin/Windows/Content/Sounds/boing.xnb</DestFile>
   <DestTime>2019-08-29T11:06:29.9064833-06:00</DestTime>
 >>>>>>> Stashed changes
+=======
+  <DestTime>2019-08-29T13:26:42.1035444-06:00</DestTime>
+>>>>>>> master
   <Importer>WavImporter</Importer>
   <ImporterTime>2018-12-08T09:35:54-07:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>
