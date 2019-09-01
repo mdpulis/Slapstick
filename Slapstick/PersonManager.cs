@@ -23,6 +23,7 @@ namespace Slapstick
         Texture2D tex, noisy1, normy1, noisy2, normy2, noisy3, normy3, noisy4, normy4, noisy5, normy5, noisy6, normy6, noisy7, normy7, papa;
         System.Random random = new System.Random();
         int texNum, peopleIndexToDelete;
+
         public Person makePerson(GraphicsDeviceManager gdm, int bpm)
         {
             int leftNoisies = people.Where(x => x.isNoisy() && x.getDirection() == Direction.left).Count();
@@ -47,7 +48,7 @@ namespace Slapstick
             }
             if (isGiga)
             {
-                if (people.Where(x => x.isGiga()).Count() > MAX_GIGAS)
+                if (people.Where(x => x.isGiga()).Count() >= MAX_GIGAS)
                     isGiga = false;
             }
             

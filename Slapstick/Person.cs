@@ -48,9 +48,9 @@ namespace Slapstick
             if (giga)
             {
                 position.Y -= 400;
-                speed /= 1.5;
+                speed /= 3;
                 frameTime *= 1.3f;
-                lives = 2;
+                lives = 3;
                 scale = 3;
             }
 

@@ -422,6 +422,7 @@ namespace Slapstick
                     {
                         people[i].scale--;
                         people[i].position.Y += 200;
+                        people[i].position.X += 50;
                     }
                    
                 }

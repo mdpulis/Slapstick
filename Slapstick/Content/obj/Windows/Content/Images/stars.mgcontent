@@ -1,27 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  <SourceFile>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Images/stars.jpg</SourceFile>
-  <SourceTime>2019-08-20T11:47:37.2907546-06:00</SourceTime>
-  <DestFile>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/bin/Windows/Content/Images/stars.xnb</DestFile>
-<<<<<<< HEAD
-  <DestTime>2019-08-29T11:37:20.926078-06:00</DestTime>
-=======
   <SourceFile>C:/Users/u1269344/Github/Slapstick/Slapstick/Content/Images/stars.jpg</SourceFile>
   <SourceTime>2019-08-22T11:06:43.0142679-06:00</SourceTime>
   <DestFile>C:/Users/u1269344/Github/Slapstick/Slapstick/Content/bin/Windows/Content/Images/stars.xnb</DestFile>
-  <DestTime>2019-08-29T11:06:29.4495252-06:00</DestTime>
->>>>>>> Stashed changes
-=======
-  <DestTime>2019-08-29T13:26:41.6050607-06:00</DestTime>
->>>>>>> master
-=======
-  <SourceFile>C:/Users/u1269344/Github/Slapstick/Slapstick/Content/Images/stars.jpg</SourceFile>
-  <SourceTime>2019-08-22T11:06:43.0142679-06:00</SourceTime>
-  <DestFile>C:/Users/u1269344/Github/Slapstick/Slapstick/Content/bin/Windows/Content/Images/stars.xnb</DestFile>
-  <DestTime>2019-08-29T11:47:42.1049807-06:00</DestTime>
->>>>>>> Stashed changes
+  <DestTime>2019-08-31T17:43:04.0089985-06:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T09:35:54-07:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
