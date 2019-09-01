@@ -29,7 +29,7 @@ namespace Slapstick
         private UI gameUI = new UI();
         private PersonManager pm = new PersonManager();
         private GameplayManager gameplayManager = new GameplayManager();
-
+        private PresentManager presentManager = new PresentManager();
         private Celeb celeb;
       
 
@@ -81,6 +81,7 @@ namespace Slapstick
             gameUI.LoadContent(Content);
             celeb.LoadContent(Content);
             gameplayManager.LoadContent(Content);
+            presentManager.LoadContent(Content);
         }
 
         /// <summary>
@@ -118,6 +119,7 @@ namespace Slapstick
                     playerInput.Update(gameTime, pm.people, barrierManager);
                     pm.update(gameTime, graphics, gameUI, celeb);
                     gameplayManager.Update(gameTime);
+                    presentManager.Update(gameTime);
                     break;
                 case (GameplayState.RetryScreen):
                     retryScreen.Update(gameTime, pm.people, gameplayManager);
@@ -149,9 +151,11 @@ namespace Slapstick
                     playerInput.Draw(spriteBatch, gameTime);
                     if(GameState.BarrierOn)
                         barrierManager.Draw(spriteBatch, gameTime);
+                    presentManager.Draw(spriteBatch);
                     pm.draw(spriteBatch);
                     gameplayManager.Draw(spriteBatch, gameTime);
                     gameUI.Draw(spriteBatch, gameTime, celeb, gameplayManager);
+
                     break;
                 case (GameplayState.RetryScreen):
                     retryScreen.Draw(spriteBatch, gameTime);

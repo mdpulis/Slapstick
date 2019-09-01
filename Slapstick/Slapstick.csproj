@@ -47,6 +47,8 @@
     <Compile Include="GameplayManager.cs" />
     <Compile Include="GameState.cs" />
     <Compile Include="MainMenu.cs" />
+    <Compile Include="Present.cs" />
+    <Compile Include="PresentManager.cs" />
     <Compile Include="RetryScreen.cs" />
     <Compile Include="SoundManager.cs" />
     <Compile Include="UI.cs" />

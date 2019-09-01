@@ -96,3 +96,4 @@ C:\Users\u1269344\Github\Slapstick\Slapstick\obj\x86\Debug\Slapstick.csproj.Copy
 C:\Users\u1269344\Github\Slapstick\Slapstick\obj\x86\Debug\Slapstick.exe
 C:\Users\u1269344\Github\Slapstick\Slapstick\obj\x86\Debug\Slapstick.pdb
 C:\Users\u1269344\Github\Slapstick\Slapstick\obj\x86\Debug\Slapstick.csprojAssemblyReference.cache
+C:\Users\u1269344\Github\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Images\Balloon_Present.xnb
