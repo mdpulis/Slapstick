@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Images/sparkles_fx.png</SourceFile>
-  <SourceTime>2019-09-03T08:56:14.040552-06:00</SourceTime>
-  <DestFile>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/bin/Windows/Content/Images/sparkles_fx.xnb</DestFile>
-  <DestTime>2019-09-03T08:56:48.7665111-06:00</DestTime>
+  <SourceFile>C:/Users/u1269344/Github/Slapstick/Slapstick/Content/Images/sparkles_fx.png</SourceFile>
+  <SourceTime>2019-09-03T09:00:35.7331375-06:00</SourceTime>
+  <DestFile>C:/Users/u1269344/Github/Slapstick/Slapstick/Content/bin/Windows/Content/Images/sparkles_fx.xnb</DestFile>
+  <DestTime>2019-09-03T09:09:07.620649-06:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T09:35:54-07:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

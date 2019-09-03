@@ -14,6 +14,8 @@ namespace Slapstick
     {
         private const int MAX_NOISIES_PER_SIDE = 5;
         private const int MAX_GIGAS = 1;
+        private const int TIME_UNTIL_FIRST_GIGA = 10;
+        private double firstGigaTimer = 0;
         public List<Person> people = new List<Person>();
 
         double personTimer;
@@ -33,7 +35,7 @@ namespace Slapstick
             Person p = new Person();
             direction = random.Next(2) == 1 ? Direction.right : Direction.left;
             isNoisy = random.Next(2) == 1 ? true : false;
-            isGiga = random.Next(20) == 1 && isNoisy ? true : false;
+            isGiga = random.Next(20) == 1 && firstGigaTimer > 10 && isNoisy ? true : false;
             if(isNoisy)
             {
                 if(direction == Direction.left)
@@ -131,6 +133,7 @@ namespace Slapstick
 
         public void update(GameTime gameTime, GraphicsDeviceManager graphics, UI gameUI, Celeb celeb) {
             personTimer += gameTime.ElapsedGameTime.TotalSeconds;
+            firstGigaTimer += gameTime.ElapsedGameTime.TotalSeconds;
             if ((GameState.BeatsPerMinute >= 260 && personTimer >= 0.4f) || (GameState.BeatsPerMinute < 260 && personTimer >= 3 - GameState.BeatsPerMinute * 1.0 / 100))
             {
                 Person newPerson = makePerson(graphics, GameState.BeatsPerMinute);
