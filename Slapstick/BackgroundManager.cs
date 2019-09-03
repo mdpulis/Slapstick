@@ -19,12 +19,22 @@ namespace Slapstick
         {
             speed = spd;
             texture = tex;
-            position = new Vector2(0, 50 + random.Next(100));
+            position = new Vector2(0 - texture.Width, 50 + random.Next(100));
         }
 
         public void Update(GameTime gameTime)
         {
             position.X += speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+
+
+        }
+
+        public bool IsOutOfBounds()
+        {
+            if (position.X > 1920 + texture.Width)
+                return true;
+            else
+                return false;
         }
 
     }
@@ -78,6 +88,15 @@ namespace Slapstick
             {
                 MakeCloud();
                 cloudTimer = 0.0f;
+            }
+
+            for(int i = 0; i < clouds.Count; i++)
+            {
+                if(clouds[i].IsOutOfBounds())
+                {
+                    clouds.RemoveAt(i);
+                    i--;
+                }
             }
 
             foreach (Cloud c in clouds)

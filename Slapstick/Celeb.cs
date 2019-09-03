@@ -24,7 +24,6 @@ namespace Slapstick
 
         private int textureWidthDifference = 0;
 
-        private const int HEALTH_HEIGHT_ABOVE_CELEB = 100;
         private double animTimer;
         private Rectangle currentFrame;
         private Rectangle[] frames = new Rectangle[180];
@@ -33,7 +32,9 @@ namespace Slapstick
         private Vector2 zeroVector = new Vector2(0,0);
         public int scale = 1;
 
-
+        private const int HEALTH_HEIGHT_ABOVE_CELEB = 100;
+        private const int CELEB_FRAME_WIDTH = 175;
+        private const int CELEB_FRAME_HEIGHT = 175;
 
         public Celeb()
         {
@@ -42,13 +43,23 @@ namespace Slapstick
 
         public void Initialize(GraphicsDeviceManager gdm)
         {
-            position = new Vector2((gdm.PreferredBackBufferWidth- 150) / 2,
+            position = new Vector2((gdm.PreferredBackBufferWidth - 150) / 2,
                            700);
-            for (int i = 0; i < 180; i++)
-            {
-                frames[i] = new Rectangle(175 * (i % 11), 175 * (i / 14), 175, 175);
 
+            int count = 0;
+            for(int i = 0; i < 12; i++)
+            {
+                for (int j = 0; j < 15; j++)
+                {
+                    frames[count] = new Rectangle(CELEB_FRAME_WIDTH * i, CELEB_FRAME_HEIGHT * j, CELEB_FRAME_WIDTH, CELEB_FRAME_HEIGHT);
+                    count++;
+                }
             }
+
+            //for (int i = 0; i < 180; i++)
+            //{
+            //    frames[i] = new Rectangle(CELEB_FRAME_WIDTH * (i % 11), CELEB_FRAME_HEIGHT * (i / 14), CELEB_FRAME_WIDTH, CELEB_FRAME_HEIGHT);
+            //}
             currentFrame = frames[frameCounter];
         }
 
@@ -125,7 +136,7 @@ namespace Slapstick
 
         public float getCenterX()
         {
-            return position.X + (175 / 2);
+            return position.X + (CELEB_FRAME_WIDTH / 2);
         }
 
 
