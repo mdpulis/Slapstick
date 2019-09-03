@@ -14,6 +14,7 @@
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/anger_symbol.png</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/ball.png</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/Balloon_Present.png</File>
+    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/Balloon_Present_Gold.png</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/canvas.png</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/celeb_static_sized.png</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/celebrityStatic.png</File>
@@ -35,6 +36,8 @@
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/heart_outline.png</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/hearts_fx.png</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/newspaper.png</File>
+    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/newspaper2.png</File>
+    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/newspaper3.png</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/Normie_SpriteSheet_New1.png</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/Normie_SpriteSheet_New2.png</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/Normie_SpriteSheet_New3.png</File>
@@ -93,6 +96,9 @@
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File>Fonts/UI.spritefont</File>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

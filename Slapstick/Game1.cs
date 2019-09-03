@@ -152,9 +152,9 @@ namespace Slapstick
                     pm.draw(spriteBatch);
                     gameplayManager.Draw(spriteBatch, gameTime);
                     gameUI.Draw(spriteBatch, gameTime, celeb, gameplayManager);
-
                     break;
                 case (GameplayState.RetryScreen):
+                    gameUI.Draw(spriteBatch, gameTime, celeb, gameplayManager);
                     retryScreen.Draw(spriteBatch, gameTime);
                     break;
             }

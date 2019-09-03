@@ -15,7 +15,8 @@ namespace Slapstick
     public class PresentManager
     {
         public List<Present> presents = new List<Present>();
-        Texture2D tex;
+        Texture2D presentTexture;
+        Texture2D goldPresentTexture;
         double presentTimer = 0;
         int presentIndexToDelete = -1;
         Random random = new Random();
@@ -26,11 +27,19 @@ namespace Slapstick
         private const float FONT_SCALE = 1.5f;
         private const float FONT_DOWN_HEIGHT = 360.0f;
 
+        private const int PRESENT_BASE_SCORE = 400;
+
 
         public void makePresent()
         {
             Present p = new Present();
-            p.Initialize(tex);
+
+            int goldRandomizer = random.Next(0, 5);
+            if (goldRandomizer == 0)
+                p.Initialize(goldPresentTexture, true);
+            else
+                p.Initialize(presentTexture, false);
+
             p.position.Y = -400;
             p.position.X = random.Next(934);
             presents.Add(p);
@@ -48,7 +57,8 @@ namespace Slapstick
 
         public void LoadContent(ContentManager Content)
         {
-            tex = Content.Load<Texture2D>("Images/Balloon_Present");
+            presentTexture = Content.Load<Texture2D>("Images/Balloon_Present");
+            goldPresentTexture = Content.Load<Texture2D>("Images/Balloon_Present_Gold");
             balloonFont = Content.Load<SpriteFont>("Fonts/UI");
             balloonPopSFX = Content.Load<SoundEffect>("Sounds/balloon_pop");
         }
@@ -77,22 +87,37 @@ namespace Slapstick
                         presentIndexToDelete = presents.IndexOf(p);
                         balloonPopSFX.Play();
 
-                        if (p.position.Y <= 100)
+                        if(p.IsGold()) //is gold balloon
                         {
-                            GameState.Score += 100;   
+                            if(GameState.Lives >= 3) //add points if at max lives
+                            {
+                                GameState.Score += (int)(PRESENT_BASE_SCORE * 1.5f);
+                            }
+                            else
+                            {
+                                GameState.Lives++; //add lives to game state for gold balloon
+                            }
                         }
-                        else if (p.position.Y > 100 && (p.position.Y < 200))
+                        else //is normal balloon
                         {
-                            GameState.Score += 80;
+                            if (p.position.Y <= 100)
+                            {
+                                GameState.Score += (int)(PRESENT_BASE_SCORE * 1.0f);
+                            }
+                            else if (p.position.Y > 100 && (p.position.Y < 200))
+                            {
+                                GameState.Score += (int)(PRESENT_BASE_SCORE * 0.8f);
+                            }
+                            else if (p.position.Y > 200 && (p.position.Y < 300))
+                            {
+                                GameState.Score += (int)(PRESENT_BASE_SCORE * 0.6f);
+                            }
+                            else
+                            {
+                                GameState.Score += (int)(PRESENT_BASE_SCORE * 0.4f);
+                            }
                         }
-                        else if (p.position.Y > 200 && (p.position.Y < 300))
-                        {
-                            GameState.Score += 60;
-                        }
-                        else
-                        {
-                            GameState.Score += 40;
-                        }
+                        
                     }
                 }
             }

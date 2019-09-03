@@ -109,3 +109,11 @@ D:\Documents\GradSchool\RapidPrototyping\Slapstick\Slapstick\bin\Windows\x86\Deb
 D:\Documents\GradSchool\RapidPrototyping\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Images\spot_light.xnb
 D:\Documents\GradSchool\RapidPrototyping\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Images\stage.xnb
 D:\Documents\GradSchool\RapidPrototyping\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Images\newspaper.xnb
+D:\Documents\GradSchool\RapidPrototyping\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Sounds\balloon_pop.xnb
+D:\Documents\GradSchool\RapidPrototyping\Slapstick\Slapstick\obj\x86\Debug\Slapstick.csprojAssemblyReference.cache
+D:\Documents\GradSchool\RapidPrototyping\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Images\anger_outline.xnb
+D:\Documents\GradSchool\RapidPrototyping\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Images\heart_outline.xnb
+D:\Documents\GradSchool\RapidPrototyping\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Sounds\camera.xnb
+D:\Documents\GradSchool\RapidPrototyping\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Images\newspaper2.xnb
+D:\Documents\GradSchool\RapidPrototyping\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Images\newspaper3.xnb
+D:\Documents\GradSchool\RapidPrototyping\Slapstick\Slapstick\bin\Windows\x86\Debug\Content\Images\Balloon_Present_Gold.xnb

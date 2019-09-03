@@ -34,8 +34,8 @@ namespace Slapstick
             string playTime = string.Format("Time {0:00}:{1:00}", minutes, seconds);
             string gameScore = string.Format("Score: {0:00000000}", GameState.Score);
 
-            spriteBatch.DrawString(uiFont, playTime, new Vector2(32, 64), Color.OrangeRed);
-            spriteBatch.DrawString(uiFont, gameScore, new Vector2((1920 / 2) - (uiFontSize.X / 2), 64), Color.OrangeRed);
+            spriteBatch.DrawString(uiFont, playTime, new Vector2(32, 32), Color.OrangeRed);
+            spriteBatch.DrawString(uiFont, gameScore, new Vector2((1920 / 2) - (uiFontSize.X / 2), 32), Color.OrangeRed);
             //spriteBatch.DrawString(uiFont, "Lives: " + GameState.Lives, new Vector2(32, 64), Color.White);
         }
 

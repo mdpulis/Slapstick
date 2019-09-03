@@ -15,6 +15,7 @@ namespace Slapstick
     /// </summary>
     public class RetryScreen
     {
+        private Texture2D newspaper;
         private SpriteFont directionsFont;
 
         private Vector2 ohNoTextSize;
@@ -29,9 +30,14 @@ namespace Slapstick
 
         private bool textSizeIncreasing = true;
 
+        private bool newspaperIntro = true;
+        private float newspaperRotation = 0.0f;
+        private float newspaperScale = 0.0f;
+
 
         public void LoadContent(ContentManager Content)
         {
+            newspaper = Content.Load<Texture2D>("Images/newspaper3");
             directionsFont = Content.Load<SpriteFont>("Fonts/BigUI");
 
             ohNoTextSize = directionsFont.MeasureString("Oh no! The celeb left!");
@@ -57,10 +63,26 @@ namespace Slapstick
             {
                 textSizeIncreasing = true;
             }
+
+
+            if (newspaperIntro)
+            {
+                newspaperScale += 0.01f * 4;
+                newspaperRotation += 0.019f * 4;
+
+                if(newspaperRotation >= 1.9f)
+                {
+                    newspaperScale = 1.0f;
+                    newspaperRotation = 1.9f;
+                    newspaperIntro = false;
+                }
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
+            spriteBatch.Draw(newspaper, new Rectangle(1920 / 2, 1080 / 2, (int)(newspaper.Width * newspaperScale), (int)(newspaper.Height * newspaperScale)), null, Color.White, MathHelper.Pi * newspaperRotation, new Vector2(newspaper.Width * newspaperScale / 2, newspaper.Height * newspaperScale / 2), SpriteEffects.None, 1);
+
             spriteBatch.DrawString(directionsFont, "Oh no! The celeb left!", new Vector2((1920 / 2) - (ohNoTextSize.X / 2), 300), Color.OrangeRed, 0, new Vector2(1, 1), 1, SpriteEffects.None, 0);
             spriteBatch.DrawString(directionsFont, "Press Backspace to return to the main menu.", new Vector2((1920 / 2) - (returnTextSize.X * textScale / 2), 500), Color.OrangeRed, 0, new Vector2(1, 1), textScale, SpriteEffects.None, 0);
 
@@ -68,6 +90,10 @@ namespace Slapstick
 
         private void ReturnToMainMenu(List<Person> people, GameplayManager gameplayManager, PlayerInput playerInput, PresentManager presentManager)
         {
+            newspaperIntro = true;
+            newspaperScale = 0.0f;
+            newspaperRotation = 0.0f;
+
             people.Clear(); //destroy all people
             gameplayManager.ResetGameplayVariables();
             playerInput.ResetSlappers();
