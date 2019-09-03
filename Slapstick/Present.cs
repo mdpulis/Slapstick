@@ -13,9 +13,12 @@ namespace Slapstick
         public Texture2D texture;
         public Vector2 position;
         public double speed = 50;
+        public int letterNumber = 0;
+        static Random random = new Random();
         public void Initialize(Texture2D tex)
         {
             texture = tex;
+            letterNumber = random.Next(0, 25);
         }
         public void Update(GameTime gameTime)
         {

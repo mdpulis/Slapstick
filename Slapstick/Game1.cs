@@ -16,7 +16,6 @@ namespace Slapstick
         SpriteBatch spriteBatch;
 
         SpriteFont font;
-        private Texture2D celebTexture;
 
 
         //Classes responsible for managing lots of content and functionality
@@ -30,7 +29,7 @@ namespace Slapstick
         private PersonManager pm = new PersonManager();
         private GameplayManager gameplayManager = new GameplayManager();
         private PresentManager presentManager = new PresentManager();
-        private Celeb celeb;
+        private Celeb celeb = new Celeb();
       
 
         SoundManager sm = new SoundManager();
@@ -55,6 +54,7 @@ namespace Slapstick
         {
             // TODO: Add your initialization logic here
             base.Initialize();
+            celeb.Initialize(graphics);
         }
 
         /// <summary>
@@ -70,8 +70,6 @@ namespace Slapstick
             retryScreen.LoadContent(Content);
             
             font = Content.Load<SpriteFont>("Fonts/Arial");
-            celebTexture = Content.Load<Texture2D>("Images/celeb_static_sized");
-            celeb = new Celeb(celebTexture, graphics);
             pm.LoadContent(Content);
             sm.LoadContent(Content);
             backgroundManager.LoadContent(Content);
@@ -119,14 +117,13 @@ namespace Slapstick
                     playerInput.Update(gameTime, pm.people, barrierManager);
                     pm.update(gameTime, graphics, gameUI, celeb);
                     gameplayManager.Update(gameTime);
+                    celeb.celebUpdate(gameTime);
                     presentManager.Update(gameTime);
                     break;
                 case (GameplayState.RetryScreen):
                     retryScreen.Update(gameTime, pm.people, gameplayManager);
                     break;
             }
-           
-
             base.Update(gameTime);
         }
 
@@ -151,7 +148,7 @@ namespace Slapstick
                     playerInput.Draw(spriteBatch, gameTime);
                     if(GameState.BarrierOn)
                         barrierManager.Draw(spriteBatch, gameTime);
-                    presentManager.Draw(spriteBatch);
+                    presentManager.Draw(spriteBatch,font);
                     pm.draw(spriteBatch);
                     gameplayManager.Draw(spriteBatch, gameTime);
                     gameUI.Draw(spriteBatch, gameTime, celeb, gameplayManager);

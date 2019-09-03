@@ -1,7 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 using System;
+using System.Diagnostics;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,6 +18,7 @@ namespace Slapstick
         double presentTimer = 0;
         int presentIndexToDelete = -1;
         Random random = new Random();
+        string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         public void makePresent()
         {
             Present p = new Present();
@@ -24,11 +27,13 @@ namespace Slapstick
             p.position.X = random.Next(934);
             presents.Add(p);
         }
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch,SpriteFont font)
         {
             foreach (Present p in presents)
             {
                 spriteBatch.Draw(p.texture, p.position, Color.White);
+                spriteBatch.DrawString(font, chars[p.letterNumber].ToString(),new Vector2(p.position.X+35, p.position.Y + 280),Color.Red,0.0f,new Vector2(0,0),4,SpriteEffects.None,1f);
+                
             }
         }
 
@@ -53,6 +58,29 @@ namespace Slapstick
                 if (p.position.Y > 400)
                 {
                     presentIndexToDelete = presents.IndexOf(p);
+                }
+                foreach(Keys K in Keyboard.GetState().GetPressedKeys())
+                {
+                    if (chars[p.letterNumber].ToString() == K.ToString())
+                    {
+                        presentIndexToDelete = presents.IndexOf(p);
+                        if (p.position.Y <= 100)
+                        {
+                            GameState.Score += 100;   
+                        }
+                        else if (p.position.Y > 100 && (p.position.Y < 200))
+                        {
+                            GameState.Score += 80;
+                        }
+                        else if (p.position.Y > 200 && (p.position.Y < 300))
+                        {
+                            GameState.Score += 60;
+                        }
+                        else
+                        {
+                            GameState.Score += 40;
+                        }
+                    }
                 }
             }
             if (presentIndexToDelete != -1)
