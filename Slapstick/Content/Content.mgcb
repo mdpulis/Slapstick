@@ -938,6 +938,12 @@
 /processorParam:Quality=Best
 /build:Sounds/camera.wav
 
+#begin Sounds/camera_loud.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/camera_loud.wav
+
 #begin Sounds/clear_throat.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor

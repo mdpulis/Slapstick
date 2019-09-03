@@ -137,11 +137,11 @@ namespace Slapstick
         public void LoadContent(ContentManager Content)
         {
             clearThroatSFX = Content.Load<SoundEffect>("Sounds/clear_throat");
-            cameraSFX = Content.Load<SoundEffect>("Sounds/camera");
+            cameraSFX = Content.Load<SoundEffect>("Sounds/camera_loud");
 
             texture = Content.Load<Texture2D>("Images/CelebWave");
-            heart = Content.Load<Texture2D>("Images/heart");
-            anger = Content.Load<Texture2D>("Images/anger");
+            heart = Content.Load<Texture2D>("Images/heart_outline");
+            anger = Content.Load<Texture2D>("Images/anger_outline");
 
             heartsFX = Content.Load<Texture2D>("Images/hearts_fx");
             angerFX = Content.Load<Texture2D>("Images/anger_fx");
@@ -151,15 +151,25 @@ namespace Slapstick
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            Texture2D life1Texture = GameState.Lives >= 1 ? heartsFX : angerFX;
-            Texture2D life2Texture = GameState.Lives >= 2 ? heartsFX : angerFX;
-            Texture2D life3Texture = GameState.Lives >= 3 ? heartsFX : angerFX;
+            //Texture2D life1Texture = GameState.Lives >= 1 ? heartsFX : angerFX;
+            //Texture2D life2Texture = GameState.Lives >= 2 ? heartsFX : angerFX;
+            //Texture2D life3Texture = GameState.Lives >= 3 ? heartsFX : angerFX;
+
+            Texture2D life1Texture = GameState.Lives >= 1 ? heart : anger;
+            Texture2D life2Texture = GameState.Lives >= 2 ? heart : anger;
+            Texture2D life3Texture = GameState.Lives >= 3 ? heart : anger;
 
             spriteBatch.Draw(texture, position, celebCurrentFrame, Color.White, 0.0f, zeroVector, scale, SpriteEffects.None, 0.0f);
 
-            spriteBatch.Draw(life3Texture, new Vector2(position.X + (CELEB_FRAME_WIDTH / 2) - (EMOTE_FRAME_WIDTH * emoteScale / 2) - 100, position.Y - HEALTH_HEIGHT_ABOVE_CELEB), heartsCurrentFrame, Color.White, 0.0f, zeroVector, emoteScale, SpriteEffects.None, 0.0f);
-            spriteBatch.Draw(life2Texture, new Vector2(position.X + (CELEB_FRAME_WIDTH / 2) - (EMOTE_FRAME_WIDTH * emoteScale / 2), position.Y - HEALTH_HEIGHT_ABOVE_CELEB), heartsCurrentFrame, Color.White, 0.0f, zeroVector, emoteScale, SpriteEffects.None, 0.0f);
-            spriteBatch.Draw(life1Texture, new Vector2(position.X + (CELEB_FRAME_WIDTH / 2) - (EMOTE_FRAME_WIDTH * emoteScale / 2) + 100, position.Y - HEALTH_HEIGHT_ABOVE_CELEB), heartsCurrentFrame, Color.White, 0.0f, zeroVector, emoteScale, SpriteEffects.None, 0.0f);
+            //spriteBatch.Draw(life3Texture, new Vector2(position.X + (CELEB_FRAME_WIDTH / 2) - (EMOTE_FRAME_WIDTH * emoteScale / 2) - 100, position.Y - HEALTH_HEIGHT_ABOVE_CELEB), heartsCurrentFrame, Color.White, 0.0f, zeroVector, emoteScale, SpriteEffects.None, 0.0f);
+            //spriteBatch.Draw(life2Texture, new Vector2(position.X + (CELEB_FRAME_WIDTH / 2) - (EMOTE_FRAME_WIDTH * emoteScale / 2), position.Y - HEALTH_HEIGHT_ABOVE_CELEB), heartsCurrentFrame, Color.White, 0.0f, zeroVector, emoteScale, SpriteEffects.None, 0.0f);
+            //spriteBatch.Draw(life1Texture, new Vector2(position.X + (CELEB_FRAME_WIDTH / 2) - (EMOTE_FRAME_WIDTH * emoteScale / 2) + 100, position.Y - HEALTH_HEIGHT_ABOVE_CELEB), heartsCurrentFrame, Color.White, 0.0f, zeroVector, emoteScale, SpriteEffects.None, 0.0f);
+
+            spriteBatch.Draw(life3Texture, new Vector2(position.X + (CELEB_FRAME_WIDTH / 2) - life3Texture.Width / 2 - 100, position.Y - HEALTH_HEIGHT_ABOVE_CELEB), Color.White);
+            spriteBatch.Draw(life2Texture, new Vector2(position.X + (CELEB_FRAME_WIDTH / 2) - life3Texture.Width / 2, position.Y - HEALTH_HEIGHT_ABOVE_CELEB), Color.White);
+            spriteBatch.Draw(life1Texture, new Vector2(position.X + (CELEB_FRAME_WIDTH / 2) - life3Texture.Width / 2 + 100, position.Y - HEALTH_HEIGHT_ABOVE_CELEB), Color.White);
+
+
         }
 
         public void collision(bool isNoisy)

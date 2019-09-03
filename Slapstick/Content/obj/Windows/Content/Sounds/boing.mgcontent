@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Sounds/boing.wav</SourceFile>
-  <SourceTime>2019-08-28T21:58:05.7301281-06:00</SourceTime>
-  <DestFile>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/bin/Windows/Content/Sounds/boing.xnb</DestFile>
-  <DestTime>2019-09-02T20:51:26.9455661-06:00</DestTime>
+  <SourceFile>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Sounds/boing.wav</SourceFile>
+  <SourceTime>2019-08-29T08:46:12.3650612-06:00</SourceTime>
+  <DestFile>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/bin/Windows/Content/Sounds/boing.xnb</DestFile>
+  <DestTime>2019-09-03T08:56:50.0008748-06:00</DestTime>
   <Importer>WavImporter</Importer>
   <ImporterTime>2018-12-08T09:35:54-07:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>
