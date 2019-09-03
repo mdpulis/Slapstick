@@ -19,6 +19,12 @@ namespace Slapstick
         int presentIndexToDelete = -1;
         Random random = new Random();
         string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+        private SpriteFont balloonFont;
+        private const float FONT_SCALE = 1.5f;
+        private const float FONT_DOWN_HEIGHT = 360.0f;
+
+
         public void makePresent()
         {
             Present p = new Present();
@@ -27,19 +33,21 @@ namespace Slapstick
             p.position.X = random.Next(934);
             presents.Add(p);
         }
-        public void Draw(SpriteBatch spriteBatch,SpriteFont font)
+
+        public void Draw(SpriteBatch spriteBatch)
         {
             foreach (Present p in presents)
             {
+                Vector2 balloonFontSize = balloonFont.MeasureString(chars[p.letterNumber].ToString());
                 spriteBatch.Draw(p.texture, p.position, Color.White);
-                spriteBatch.DrawString(font, chars[p.letterNumber].ToString(),new Vector2(p.position.X+35, p.position.Y + 280),Color.Red,0.0f,new Vector2(0,0),4,SpriteEffects.None,1f);
-                
+                spriteBatch.DrawString(balloonFont, chars[p.letterNumber].ToString(), new Vector2(p.position.X + (p.texture.Width / 2) - (balloonFontSize.X * FONT_SCALE / 2), p.position.Y + FONT_DOWN_HEIGHT - (balloonFontSize.Y * FONT_SCALE/ 2)), Color.Red, 0.0f, new Vector2(0,0), FONT_SCALE, SpriteEffects.None, 1f);
             }
         }
 
         public void LoadContent(ContentManager Content)
         {
             tex = Content.Load<Texture2D>("Images/Balloon_Present");
+            balloonFont = Content.Load<SpriteFont>("Fonts/UI");
         }
 
         public void Update(GameTime gameTime)

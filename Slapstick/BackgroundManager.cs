@@ -60,9 +60,8 @@ namespace Slapstick
 
         public void LoadContent(ContentManager Content)
         {
-            background = Content.Load<Texture2D>("Images/chinese_theatre_canvas");
-            tree = Content.Load<Texture2D>("Images/tree");
-            sky = Content.Load<Texture2D>("Images/sky");
+            background = Content.Load<Texture2D>("Images/stage");
+            sky = Content.Load<Texture2D>("Images/sky2");
             cloud = Content.Load<Texture2D>("Images/cloud");
         }
 
@@ -105,8 +104,7 @@ namespace Slapstick
             }
 
             spriteBatch.Draw(background, new Rectangle(0, 0, 1920, 1080), Color.White);
-            
-            spriteBatch.Draw(tree, new Vector2(300, 900), Color.White);
         }
+
     }
 }

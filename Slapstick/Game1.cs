@@ -148,7 +148,7 @@ namespace Slapstick
                     playerInput.Draw(spriteBatch, gameTime);
                     if(GameState.BarrierOn)
                         barrierManager.Draw(spriteBatch, gameTime);
-                    presentManager.Draw(spriteBatch,font);
+                    presentManager.Draw(spriteBatch);
                     pm.draw(spriteBatch);
                     gameplayManager.Draw(spriteBatch, gameTime);
                     gameUI.Draw(spriteBatch, gameTime, celeb, gameplayManager);
