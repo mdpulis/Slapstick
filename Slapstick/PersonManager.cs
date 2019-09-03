@@ -20,7 +20,8 @@ namespace Slapstick
         Vector2 zeroVector = new Vector2(0, 0);
         Direction direction;
         bool isNoisy, isGiga;
-        Texture2D tex, noisy1, normy1, noisy2, normy2, noisy3, normy3, noisy4, normy4, noisy5, normy5, noisy6, normy6, noisy7, normy7, papa;
+        Texture2D tex, noisy1, normy1, noisy2, normy2, noisy3, normy3, noisy4, normy4, noisy5, normy5, noisy6, normy6, noisy7, normy7, 
+            normy_n1, normy_n2, normy_n3, normy_n4, normy_n5, papa;
         System.Random random = new System.Random();
         int texNum, peopleIndexToDelete;
 
@@ -37,12 +38,12 @@ namespace Slapstick
             {
                 if(direction == Direction.left)
                 {
-                    if (people.Where(x => x.isNoisy() && x.getDirection() == Direction.left).Count() > MAX_NOISIES_PER_SIDE)
+                    if (people.Where(x => x.isNoisy() && x.getDirection() == Direction.left).Sum(x => x.GetPersonSpawnWeight()) > MAX_NOISIES_PER_SIDE)
                         isNoisy = false;
                 }
                 else if (direction == Direction.right)
                 {
-                    if (people.Where(x => x.isNoisy() && x.getDirection() == Direction.right).Count() > MAX_NOISIES_PER_SIDE)
+                    if (people.Where(x => x.isNoisy() && x.getDirection() == Direction.right).Sum(x => x.GetPersonSpawnWeight()) > MAX_NOISIES_PER_SIDE)
                         isNoisy = false;
                 }
             }
@@ -51,33 +52,54 @@ namespace Slapstick
                 if (people.Where(x => x.isGiga()).Count() >= MAX_GIGAS)
                     isGiga = false;
             }
-            
 
-            texNum = random.Next(7) + 1;
+
+            //texNum = random.Next(7) + 1;
+            //switch (texNum)
+            //{
+            //    case 1:
+            //        tex = isNoisy ? papa : normy1;
+            //        break;
+            //    case 2:
+            //        tex = isNoisy ? papa : normy2;
+            //        break;
+            //    case 3:
+            //        tex = isNoisy ? papa : normy3;
+            //        break;
+            //    case 4:
+            //        tex = isNoisy ? papa : normy4;
+            //        break;
+            //    case 5:
+            //        tex = isNoisy ? papa : normy5;
+            //        break;
+            //    case 6:
+            //        tex = isNoisy ? papa : normy6;
+            //        break;
+            //    case 7:
+            //        tex = isNoisy ? papa : normy7;
+            //        break;
+            //}
+
+            texNum = random.Next(5) + 1;
             switch (texNum)
             {
                 case 1:
-                    tex = isNoisy ? papa : normy1;
+                    tex = isNoisy ? papa : normy_n1;
                     break;
                 case 2:
-                    tex = isNoisy ? papa : normy2;
+                    tex = isNoisy ? papa : normy_n2;
                     break;
                 case 3:
-                    tex = isNoisy ? papa : normy3;
+                    tex = isNoisy ? papa : normy_n3;
                     break;
                 case 4:
-                    tex = isNoisy ? papa : normy4;
+                    tex = isNoisy ? papa : normy_n4;
                     break;
                 case 5:
-                    tex = isNoisy ? papa : normy5;
-                    break;
-                case 6:
-                    tex = isNoisy ? papa : normy6;
-                    break;
-                case 7:
-                    tex = isNoisy ? papa : normy7;
+                    tex = isNoisy ? papa : normy_n5;
                     break;
             }
+
             p.Initialize(direction, isNoisy, isGiga, random.Next(5) * 5 + bpm, tex, gdm); //Third value is speed, increases as BPM increases. 4th value is unused but could be used for different characters
             return p;
         }
@@ -97,6 +119,13 @@ namespace Slapstick
             noisy6 = Content.Load<Texture2D>("Images/Crazy_SpriteSheet6");
             normy7 = Content.Load<Texture2D>("Images/Normie_SpriteSheet7");
             noisy7 = Content.Load<Texture2D>("Images/Crazy_SpriteSheet7");
+
+            normy_n1 = Content.Load<Texture2D>("Images/Normie_SpriteSheet_New1");
+            normy_n2 = Content.Load<Texture2D>("Images/Normie_SpriteSheet_New2");
+            normy_n3 = Content.Load<Texture2D>("Images/Normie_SpriteSheet_New3");
+            normy_n4 = Content.Load<Texture2D>("Images/Normie_SpriteSheet_New4");
+            normy_n5 = Content.Load<Texture2D>("Images/Normie_SpriteSheet_New5");
+
             papa = Content.Load<Texture2D>("Images/Paparazzi_SpriteSheet");
         }
 

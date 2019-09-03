@@ -860,6 +860,12 @@
 /processorParam:TextureFormat=Color
 /build:Images/tree.png
 
+#begin Sounds/balloon_pop.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/balloon_pop.wav
+
 #begin Sounds/boing.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor

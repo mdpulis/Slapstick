@@ -24,6 +24,10 @@ namespace Slapstick
         public Texture2D texture;
         public Vector2 position;
         public SpriteEffects spriteEffects;
+
+        private const int NORMIE_SPRITE_FRAME_WIDTH = 200;
+        private const int PAPARAZZI_SPRITE_FRAME_WIDTH = 200;
+
         public void Initialize(Direction dir, bool n, bool g, int spd, Texture2D tex, GraphicsDeviceManager gdm)
         {
             direction = dir;
@@ -56,11 +60,11 @@ namespace Slapstick
 
             for (int i = 0; i < 30; i++)
             {
-                frames[i] = new Rectangle(150 * (i % 5), 200 * (i / 5), 150, 200);
+                frames[i] = new Rectangle(NORMIE_SPRITE_FRAME_WIDTH * (i % 5), 200 * (i / 5), NORMIE_SPRITE_FRAME_WIDTH, 200);
             }
             for (int i = 0; i < 144; i++)
             {
-                paparazziFrames[i] = new Rectangle(200 * (i % 10), 200 * (i / 10), 150, 200);
+                paparazziFrames[i] = new Rectangle(200 * (i % 10), 200 * (i / 10), PAPARAZZI_SPRITE_FRAME_WIDTH, 200);
             }
             currentFrame = frames[frameCounter];
 
@@ -110,7 +114,14 @@ namespace Slapstick
 
         public float getCenterX()
         {
-            return position.X + (150 * scale / 2);
+            if(noisy)
+            {
+                return position.X + (PAPARAZZI_SPRITE_FRAME_WIDTH * scale / 2);
+            }
+            else
+            {
+                return position.X + (NORMIE_SPRITE_FRAME_WIDTH * scale / 2);
+            }
         }
 
         public bool isNoisy()
@@ -122,9 +133,25 @@ namespace Slapstick
         {
             return giga;
         }
+
         public Direction getDirection()
         {
             return direction;
+        }
+
+        /// <summary>
+        /// Gets the weight of the character
+        /// </summary>
+        public int GetPersonSpawnWeight()
+        {
+            if (scale == 1)
+                return 1;
+            else if (scale == 2)
+                return 2;
+            else if (scale >= 3)
+                return 3;
+            else
+                return 1;
         }
     
     }

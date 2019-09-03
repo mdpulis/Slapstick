@@ -76,6 +76,7 @@
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/stars.jpg</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/theatre.jpg</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/tree.png</File>
+    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Sounds/balloon_pop.wav</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Sounds/boing.wav</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Sounds/clear_throat.wav</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Sounds/crowd_ambiance.mp3</File>
@@ -145,6 +146,7 @@
     <File>Images/slapper_l2.png</File>
     <File>Images/slapper_s2.png</File>
     <File>Images/slapper_s.png</File>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

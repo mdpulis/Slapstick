@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Xna.Framework.Audio;
 
 namespace Slapstick
 {
@@ -21,6 +22,7 @@ namespace Slapstick
         string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
         private SpriteFont balloonFont;
+        private SoundEffect balloonPopSFX;
         private const float FONT_SCALE = 1.5f;
         private const float FONT_DOWN_HEIGHT = 360.0f;
 
@@ -48,6 +50,7 @@ namespace Slapstick
         {
             tex = Content.Load<Texture2D>("Images/Balloon_Present");
             balloonFont = Content.Load<SpriteFont>("Fonts/UI");
+            balloonPopSFX = Content.Load<SoundEffect>("Sounds/balloon_pop");
         }
 
         public void Update(GameTime gameTime)
@@ -72,6 +75,8 @@ namespace Slapstick
                     if (chars[p.letterNumber].ToString() == K.ToString())
                     {
                         presentIndexToDelete = presents.IndexOf(p);
+                        balloonPopSFX.Play();
+
                         if (p.position.Y <= 100)
                         {
                             GameState.Score += 100;   
