@@ -121,7 +121,7 @@ namespace Slapstick
                     presentManager.Update(gameTime);
                     break;
                 case (GameplayState.RetryScreen):
-                    retryScreen.Update(gameTime, pm.people, gameplayManager);
+                    retryScreen.Update(gameTime, pm.people, gameplayManager, playerInput, presentManager);
                     break;
             }
             base.Update(gameTime);

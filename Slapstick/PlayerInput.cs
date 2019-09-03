@@ -521,7 +521,34 @@ namespace Slapstick
 
         }
 
-    }
 
+        /// <summary>
+        /// Reset all slappers back to default values
+        /// </summary>
+        public void ResetSlappers()
+        {
+            aCooldownTime = 0.0f;
+            sCooldownTime = 0.0f;
+            dCooldownTime = 0.0f;
+            jCooldownTime = 0.0f;
+            kCooldownTime = 0.0f;
+            lCooldownTime = 0.0f;
+
+            aActive = true;
+            sActive = true;
+            dActive = true;
+            jActive = true;
+            kActive = true;
+            lActive = true;
+
+            aPenalty = true;
+            sPenalty = true;
+            dPenalty = true;
+            jPenalty = true;
+            kPenalty = true;
+            lPenalty = true;
+        }
+
+    }
 
 }

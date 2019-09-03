@@ -38,10 +38,10 @@ namespace Slapstick
             returnTextSize = directionsFont.MeasureString("Press Backspace to return to the main menu.");
         }
 
-        public void Update(GameTime gameTime, List<Person> people, GameplayManager gameplayManager)
+        public void Update(GameTime gameTime, List<Person> people, GameplayManager gameplayManager, PlayerInput playerInput, PresentManager presentManager)
         {
             if (Keyboard.GetState().IsKeyDown(Keys.Back))
-                ReturnToMainMenu(people, gameplayManager);
+                ReturnToMainMenu(people, gameplayManager, playerInput, presentManager);
 
             if (textSizeIncreasing)
                 textScale += 0.01f;
@@ -66,10 +66,12 @@ namespace Slapstick
 
         }
 
-        private void ReturnToMainMenu(List<Person> people, GameplayManager gameplayManager)
+        private void ReturnToMainMenu(List<Person> people, GameplayManager gameplayManager, PlayerInput playerInput, PresentManager presentManager)
         {
             people.Clear(); //destroy all people
             gameplayManager.ResetGameplayVariables();
+            playerInput.ResetSlappers();
+            presentManager.ResetPresents();
             GameState.ResetGameState();
             //GameState.ProgressGameplayState();
         }

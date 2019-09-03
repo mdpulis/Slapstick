@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework.Audio;
 
 namespace Slapstick
 {
-    class PresentManager
+    public class PresentManager
     {
         public List<Present> presents = new List<Present>();
         Texture2D tex;
@@ -101,5 +101,16 @@ namespace Slapstick
                 presents.RemoveAt(presentIndexToDelete);
             }
         }
+
+
+        /// <summary>
+        /// Clears out all the presents and resets parameters
+        /// </summary>
+        public void ResetPresents()
+        {
+            presentTimer = 0;
+            presents.Clear();
+        }
+
     }
 }
