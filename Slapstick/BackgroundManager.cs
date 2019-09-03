@@ -115,7 +115,7 @@ namespace Slapstick
 
         public void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
-            spriteBatch.Draw(sky, new Rectangle(0, 0, 1920, 442), Color.White);
+            spriteBatch.Draw(sky, new Rectangle(0, 0, 1920, 900), Color.White);
 
             foreach (Cloud c in clouds)
             {

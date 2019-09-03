@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/u1269344/Github/Slapstick/Slapstick/Content/Sounds/crowd_ambiance.mp3</SourceFile>
-  <SourceTime>2019-08-28T18:51:11.6564718-06:00</SourceTime>
-  <DestFile>C:/Users/u1269344/Github/Slapstick/Slapstick/Content/bin/Windows/Content/Sounds/crowd_ambiance.xnb</DestFile>
-  <DestTime>2019-09-03T09:09:10.3068753-06:00</DestTime>
+  <SourceFile>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Sounds/crowd_ambiance.mp3</SourceFile>
+  <SourceTime>2019-08-27T13:49:51.6593657-06:00</SourceTime>
+  <DestFile>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/bin/Windows/Content/Sounds/crowd_ambiance.xnb</DestFile>
+  <DestTime>2019-09-03T09:14:21.1989583-06:00</DestTime>
   <Importer>Mp3Importer</Importer>
   <ImporterTime>2018-12-08T09:35:54-07:00</ImporterTime>
   <Processor>SongProcessor</Processor>
@@ -15,6 +15,6 @@
   <Dependencies />
   <BuildAsset />
   <BuildOutput>
-    <string>C:/Users/u1269344/Github/Slapstick/Slapstick/Content/bin/Windows/Content/Sounds/crowd_ambiance.wma</string>
+    <string>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/bin/Windows/Content/Sounds/crowd_ambiance.wma</string>
   </BuildOutput>
 </PipelineBuildEvent>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/u1269344/Github/Slapstick/Slapstick/Content/Images/anger_symbol.png</SourceFile>
-  <SourceTime>2019-08-28T18:51:11.5925191-06:00</SourceTime>
-  <DestFile>C:/Users/u1269344/Github/Slapstick/Slapstick/Content/bin/Windows/Content/Images/anger_symbol.xnb</DestFile>
-  <DestTime>2019-09-03T09:09:00.1243852-06:00</DestTime>
+  <SourceFile>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/Images/anger_symbol.png</SourceFile>
+  <SourceTime>2019-08-27T13:49:51.5924172-06:00</SourceTime>
+  <DestFile>C:/Users/u1273354/Desktop/Projects/Slapstick/Slapstick/Content/bin/Windows/Content/Images/anger_symbol.xnb</DestFile>
+  <DestTime>2019-09-03T09:14:10.9485784-06:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T09:35:54-07:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

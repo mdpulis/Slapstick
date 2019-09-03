@@ -40,7 +40,7 @@ namespace Slapstick
             newspaper = Content.Load<Texture2D>("Images/newspaper3");
             directionsFont = Content.Load<SpriteFont>("Fonts/BigUI");
 
-            ohNoTextSize = directionsFont.MeasureString("Oh no! The celeb left!");
+            ohNoTextSize = directionsFont.MeasureString("GAME OVER");
             returnTextSize = directionsFont.MeasureString("Press Backspace to return to the main menu.");
         }
 
@@ -83,7 +83,7 @@ namespace Slapstick
         {
             spriteBatch.Draw(newspaper, new Rectangle(1920 / 2, 1080 / 2, (int)(newspaper.Width * newspaperScale), (int)(newspaper.Height * newspaperScale)), null, Color.White, MathHelper.Pi * newspaperRotation, new Vector2(newspaper.Width * newspaperScale / 2, newspaper.Height * newspaperScale / 2), SpriteEffects.None, 1);
 
-            spriteBatch.DrawString(directionsFont, "Oh no! The celeb left!", new Vector2((1920 / 2) - (ohNoTextSize.X / 2), 300), Color.OrangeRed, 0, new Vector2(1, 1), 1, SpriteEffects.None, 0);
+            spriteBatch.DrawString(directionsFont, "GAME OVER", new Vector2((1920 / 2) - (ohNoTextSize.X / 2), 300), Color.OrangeRed, 0, new Vector2(1, 1), 1, SpriteEffects.None, 0);
             spriteBatch.DrawString(directionsFont, "Press Backspace to return to the main menu.", new Vector2((1920 / 2) - (returnTextSize.X * textScale / 2), 500), Color.OrangeRed, 0, new Vector2(1, 1), textScale, SpriteEffects.None, 0);
 
         }

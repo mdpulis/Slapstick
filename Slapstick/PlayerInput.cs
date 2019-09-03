@@ -137,18 +137,31 @@ namespace Slapstick
             boingSFX = Content.Load<SoundEffect>("Sounds/boing");
             whooshSFX = Content.Load<SoundEffect>("Sounds/whoosh");
 
-            aSlapper = Content.Load<Texture2D>("Images/slapper_a");
-            aSlapper2 = Content.Load<Texture2D>("Images/slapper_a2");
-            sSlapper = Content.Load<Texture2D>("Images/slapper_s");
-            sSlapper2 = Content.Load<Texture2D>("Images/slapper_s2");
-            dSlapper = Content.Load<Texture2D>("Images/slapper_d");
-            dSlapper2 = Content.Load<Texture2D>("Images/slapper_d2");
-            jSlapper = Content.Load<Texture2D>("Images/slapper_j");
-            jSlapper2 = Content.Load<Texture2D>("Images/slapper_j2");
-            kSlapper = Content.Load<Texture2D>("Images/slapper_k");
-            kSlapper2 = Content.Load<Texture2D>("Images/slapper_k2");
-            lSlapper = Content.Load<Texture2D>("Images/slapper_l");
-            lSlapper2 = Content.Load<Texture2D>("Images/slapper_l2");
+            //aSlapper = Content.Load<Texture2D>("Images/slapper_a");
+            //aSlapper2 = Content.Load<Texture2D>("Images/slapper_a2");
+            //sSlapper = Content.Load<Texture2D>("Images/slapper_s");
+            //sSlapper2 = Content.Load<Texture2D>("Images/slapper_s2");
+            //dSlapper = Content.Load<Texture2D>("Images/slapper_d");
+            //dSlapper2 = Content.Load<Texture2D>("Images/slapper_d2");
+            //jSlapper = Content.Load<Texture2D>("Images/slapper_j");
+            //jSlapper2 = Content.Load<Texture2D>("Images/slapper_j2");
+            //kSlapper = Content.Load<Texture2D>("Images/slapper_k");
+            //kSlapper2 = Content.Load<Texture2D>("Images/slapper_k2");
+            //lSlapper = Content.Load<Texture2D>("Images/slapper_l");
+            //lSlapper2 = Content.Load<Texture2D>("Images/slapper_l2");
+
+            aSlapper = Content.Load<Texture2D>("Images/a-1");
+            aSlapper2 = Content.Load<Texture2D>("Images/a-2");
+            sSlapper = Content.Load<Texture2D>("Images/s-1");
+            sSlapper2 = Content.Load<Texture2D>("Images/s-2");
+            dSlapper = Content.Load<Texture2D>("Images/d-1");
+            dSlapper2 = Content.Load<Texture2D>("Images/d-2");
+            jSlapper = Content.Load<Texture2D>("Images/j-1");
+            jSlapper2 = Content.Load<Texture2D>("Images/j-2");
+            kSlapper = Content.Load<Texture2D>("Images/k-1");
+            kSlapper2 = Content.Load<Texture2D>("Images/k-2");
+            lSlapper = Content.Load<Texture2D>("Images/l-1");
+            lSlapper2 = Content.Load<Texture2D>("Images/l-2");
 
             aSize = letterFont.MeasureString("a");
             sSize = letterFont.MeasureString("s");
