@@ -68,6 +68,18 @@
 /processorParam:TextureFormat=Color
 /build:Images/anger_fx.png
 
+#begin Images/anger_outline.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Images/anger_outline.png
+
 #begin Images/anger_symbol.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -319,6 +331,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Images/heart.png
+
+#begin Images/heart_outline.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Images/heart_outline.png
 
 #begin Images/hearts_fx.png
 /importer:TextureImporter
@@ -871,6 +895,12 @@
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
 /build:Sounds/boing.wav
+
+#begin Sounds/camera.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/camera.wav
 
 #begin Sounds/clear_throat.wav
 /importer:WavImporter

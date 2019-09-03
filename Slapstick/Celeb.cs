@@ -18,23 +18,42 @@ namespace Slapstick
         public Vector2 position;
 
         private SoundEffect clearThroatSFX;
+        private SoundEffect cameraSFX;
 
         private Texture2D heart;
         private Texture2D anger;
 
-        private int textureWidthDifference = 0;
+        private Texture2D heartsFX;
+        private Texture2D angerFX;
+
+        private int emoteWidthDifference = 0;
 
         private double animTimer;
-        private Rectangle currentFrame;
-        private Rectangle[] frames = new Rectangle[180];
-        private int frameCounter = 0;
+
+        private Rectangle celebCurrentFrame;
+        private Rectangle[] celebFrames = new Rectangle[180];
+        private int celebFrameCounter = 0;
+
+        private Rectangle heartsCurrentFrame;
+        private Rectangle[] heartsFrames = new Rectangle[30];
+        private int heartsFrameCounter = 0;
+
+        private Rectangle angerCurrentFrame;
+        private Rectangle[] angerFrames = new Rectangle[30];
+        private int angerFrameCounter = 0;
+
         private float frameTime = .05f;
         private Vector2 zeroVector = new Vector2(0,0);
         public int scale = 1;
 
+        private int emoteScale = 2;
+
         private const int HEALTH_HEIGHT_ABOVE_CELEB = 100;
         private const int CELEB_FRAME_WIDTH = 175;
         private const int CELEB_FRAME_HEIGHT = 175;
+
+        private const int EMOTE_FRAME_WIDTH = 175;
+        private const int EMOTE_FRAME_HEIGHT = 175;
 
         public Celeb()
         {
@@ -47,33 +66,69 @@ namespace Slapstick
                            700);
 
             int count = 0;
+
+            count = 0;
             for(int i = 0; i < 12; i++)
             {
                 for (int j = 0; j < 15; j++)
                 {
-                    frames[count] = new Rectangle(CELEB_FRAME_WIDTH * i, CELEB_FRAME_HEIGHT * j, CELEB_FRAME_WIDTH, CELEB_FRAME_HEIGHT);
+                    celebFrames[count] = new Rectangle(CELEB_FRAME_WIDTH * i, CELEB_FRAME_HEIGHT * j, CELEB_FRAME_WIDTH, CELEB_FRAME_HEIGHT);
                     count++;
                 }
             }
+            celebCurrentFrame = celebFrames[celebFrameCounter];
 
-            //for (int i = 0; i < 180; i++)
-            //{
-            //    frames[i] = new Rectangle(CELEB_FRAME_WIDTH * (i % 11), CELEB_FRAME_HEIGHT * (i / 14), CELEB_FRAME_WIDTH, CELEB_FRAME_HEIGHT);
-            //}
-            currentFrame = frames[frameCounter];
+            count = 0;
+            for (int i = 0; i < 6; i++)
+            {
+                for (int j = 0; j < 5; j++)
+                {
+                    heartsFrames[count] = new Rectangle(EMOTE_FRAME_WIDTH * i, EMOTE_FRAME_HEIGHT * j, EMOTE_FRAME_WIDTH, EMOTE_FRAME_HEIGHT);
+                    count++;
+                }
+            }
+            heartsCurrentFrame = heartsFrames[heartsFrameCounter];
+
+            count = 0;
+            for (int i = 0; i < 6; i++)
+            {
+                for (int j = 0; j < 5; j++)
+                {
+                    angerFrames[count] = new Rectangle(EMOTE_FRAME_WIDTH * i, EMOTE_FRAME_HEIGHT * j, EMOTE_FRAME_WIDTH, EMOTE_FRAME_HEIGHT);
+                    count++;
+                }
+            }
+            angerCurrentFrame = angerFrames[angerFrameCounter];
+
         }
 
         public void celebUpdate(GameTime gameTime)
         {
             animTimer += gameTime.ElapsedGameTime.TotalSeconds;
+
             if (animTimer > frameTime) //every 1/30 seconds for normals, 1/60 for gigas
             {
-                frameCounter++;
-                if (frameCounter >= 180)
+                celebFrameCounter++;
+                if (celebFrameCounter >= 180)
                 {
-                    frameCounter = 0;
+                    celebFrameCounter = 0;
                 }
-                currentFrame = frames[frameCounter];
+                celebCurrentFrame = celebFrames[celebFrameCounter];
+
+                heartsFrameCounter++;
+                if (heartsFrameCounter >= 30)
+                {
+                    heartsFrameCounter = 0;
+                }
+                heartsCurrentFrame = heartsFrames[heartsFrameCounter];
+
+                angerFrameCounter++;
+                if (angerFrameCounter >= 30)
+                {
+                    angerFrameCounter = 0;
+                }
+                angerCurrentFrame = angerFrames[angerFrameCounter];
+
                 animTimer = 0;
             }
             
@@ -82,43 +137,29 @@ namespace Slapstick
         public void LoadContent(ContentManager Content)
         {
             clearThroatSFX = Content.Load<SoundEffect>("Sounds/clear_throat");
+            cameraSFX = Content.Load<SoundEffect>("Sounds/camera");
 
             texture = Content.Load<Texture2D>("Images/CelebWave");
             heart = Content.Load<Texture2D>("Images/heart");
             anger = Content.Load<Texture2D>("Images/anger");
 
-            textureWidthDifference = (int)(heart.Width * 1.5f);
+            heartsFX = Content.Load<Texture2D>("Images/hearts_fx");
+            angerFX = Content.Load<Texture2D>("Images/anger_fx");
+
+            emoteWidthDifference = (int)(EMOTE_FRAME_WIDTH * emoteScale * 1.5f);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(texture, position, currentFrame, Color.White, 0.0f, zeroVector,scale, SpriteEffects.None, 0.0f);
-            
-            if (GameState.Lives == 3)
-            {
-                spriteBatch.Draw(heart, new Vector2(position.X - textureWidthDifference, position.Y - HEALTH_HEIGHT_ABOVE_CELEB), Color.White);
-                spriteBatch.Draw(heart, new Vector2(position.X, position.Y - HEALTH_HEIGHT_ABOVE_CELEB), Color.White);
-                spriteBatch.Draw(heart, new Vector2(position.X + textureWidthDifference, position.Y - HEALTH_HEIGHT_ABOVE_CELEB), Color.White);
-            }
-            else if(GameState.Lives == 2)
-            {
-                spriteBatch.Draw(anger, new Vector2(position.X - textureWidthDifference, position.Y - HEALTH_HEIGHT_ABOVE_CELEB), Color.White);
-                spriteBatch.Draw(heart, new Vector2(position.X, position.Y - HEALTH_HEIGHT_ABOVE_CELEB), Color.White);
-                spriteBatch.Draw(heart, new Vector2(position.X + textureWidthDifference, position.Y - HEALTH_HEIGHT_ABOVE_CELEB), Color.White);
-            }
-            else if(GameState.Lives == 1)
-            {
-                spriteBatch.Draw(anger, new Vector2(position.X - textureWidthDifference, position.Y - HEALTH_HEIGHT_ABOVE_CELEB), Color.White);
-                spriteBatch.Draw(anger, new Vector2(position.X, position.Y - HEALTH_HEIGHT_ABOVE_CELEB), Color.White);
-                spriteBatch.Draw(heart, new Vector2(position.X + textureWidthDifference, position.Y - HEALTH_HEIGHT_ABOVE_CELEB), Color.White);
-            }
-            else
-            {
-                spriteBatch.Draw(anger, new Vector2(position.X - textureWidthDifference, position.Y - HEALTH_HEIGHT_ABOVE_CELEB), Color.White);
-                spriteBatch.Draw(anger, new Vector2(position.X, position.Y - HEALTH_HEIGHT_ABOVE_CELEB), Color.White);
-                spriteBatch.Draw(anger, new Vector2(position.X + textureWidthDifference, position.Y - HEALTH_HEIGHT_ABOVE_CELEB), Color.White);
-            }
+            Texture2D life1Texture = GameState.Lives >= 1 ? heartsFX : angerFX;
+            Texture2D life2Texture = GameState.Lives >= 2 ? heartsFX : angerFX;
+            Texture2D life3Texture = GameState.Lives >= 3 ? heartsFX : angerFX;
 
+            spriteBatch.Draw(texture, position, celebCurrentFrame, Color.White, 0.0f, zeroVector, scale, SpriteEffects.None, 0.0f);
+
+            spriteBatch.Draw(life3Texture, new Vector2(position.X + (CELEB_FRAME_WIDTH / 2) - (EMOTE_FRAME_WIDTH * emoteScale / 2) - 100, position.Y - HEALTH_HEIGHT_ABOVE_CELEB), heartsCurrentFrame, Color.White, 0.0f, zeroVector, emoteScale, SpriteEffects.None, 0.0f);
+            spriteBatch.Draw(life2Texture, new Vector2(position.X + (CELEB_FRAME_WIDTH / 2) - (EMOTE_FRAME_WIDTH * emoteScale / 2), position.Y - HEALTH_HEIGHT_ABOVE_CELEB), heartsCurrentFrame, Color.White, 0.0f, zeroVector, emoteScale, SpriteEffects.None, 0.0f);
+            spriteBatch.Draw(life1Texture, new Vector2(position.X + (CELEB_FRAME_WIDTH / 2) - (EMOTE_FRAME_WIDTH * emoteScale / 2) + 100, position.Y - HEALTH_HEIGHT_ABOVE_CELEB), heartsCurrentFrame, Color.White, 0.0f, zeroVector, emoteScale, SpriteEffects.None, 0.0f);
         }
 
         public void collision(bool isNoisy)
@@ -127,6 +168,7 @@ namespace Slapstick
             {
                 GameState.Lives--;
                 clearThroatSFX.Play();
+                cameraSFX.Play();
             }
             else
             {

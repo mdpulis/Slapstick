@@ -84,7 +84,7 @@ namespace Slapstick
         {
             cloudTimer += (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-            if(cloudTimer >= 5.0f)
+            if(cloudTimer >= 9.0f)
             {
                 MakeCloud();
                 cloudTimer = 0.0f;

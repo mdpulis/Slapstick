@@ -10,6 +10,7 @@
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Fonts/Score.spritefont</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/anger.png</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/anger_fx.png</File>
+    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/anger_outline.png</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/anger_symbol.png</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/ball.png</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/Balloon_Present.png</File>
@@ -31,6 +32,7 @@
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/Crazy_SpriteSheet8.png</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/earth.png</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/heart.png</File>
+    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/heart_outline.png</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/hearts_fx.png</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/newspaper.png</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/Normie_SpriteSheet_New1.png</File>
@@ -78,6 +80,7 @@
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Images/tree.png</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Sounds/balloon_pop.wav</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Sounds/boing.wav</File>
+    <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Sounds/camera.wav</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Sounds/clear_throat.wav</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Sounds/crowd_ambiance.mp3</File>
     <File>D:/Documents/GradSchool/RapidPrototyping/Slapstick/Slapstick/Content/Sounds/metronome_beat.wav</File>
@@ -134,6 +137,8 @@
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File>Images/slapper_a.png</File>
     <File>Images/slapper_a2.png</File>
     <File xsi:nil="true" />
@@ -146,6 +151,7 @@
     <File>Images/slapper_l2.png</File>
     <File>Images/slapper_s2.png</File>
     <File>Images/slapper_s.png</File>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
